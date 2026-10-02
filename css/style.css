@@ -1,613 +1,491 @@
-/* Color palette and typography variables */
+/* Base Resets & Global Variables */
 :root {
-    --color-navy-dark: #071A2C;
-    --color-navy-button: #082A43;
-    --color-gold-light: #FFE599;
-    --color-white: #FFFFFF;
+    --bg-dark-blue: #091a2b;
+    --text-gold: #e2c17c;
+    --text-white: #ffffff;
+    --text-body: #111111;
+    --box-border-gold: #c9a562;
+    --card-bg-dark: #0a1b2c;
     
-    --max-content-width: 1715px;
-    --header-height: 110px;
-    --banner-height: 85px;
-    
-    --font-heading: "Crimson Pro", serif;
-    --font-guide-header: "Crimson Text", serif;
-    --font-nav: "Crimson Text", serif;
-    --font-inc-footer: "Crimson Text", serif;
-    --font-body: "Inter", sans-serif;
+    --font-heading: 'Crimson Pro', serif;
+    --font-subheading: 'Crimson Text', serif;
+    --font-sans: 'Inter', sans-serif;
 }
 
-/* Global browser reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Smooth page scrolling */
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: var(--header-height);
-}
-
 body {
-    background-color: #040F1B;
-    color: var(--color-white);
-    font-family: var(--font-body);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-family: var(--font-sans);
+    background-color: var(--bg-dark-blue);
+    color: var(--text-body);
     overflow-x: hidden;
 }
 
-/* Helper class for flexbox centering */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Navigation bar */
+/* Header & Navigation */
 .navbar {
-    width: 100%;
-    height: var(--header-height);
-    background-color: #071A2C;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 4rem;
-    position: fixed;
+    align-items: center;
+    padding: 1rem 5rem;
+    background-color: var(--bg-dark-blue);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
     top: 0;
-    left: 0;
-    z-index: 9999;
-    border-bottom: 2px solid rgba(255, 229, 153, 0.3);
+    z-index: 100;
 }
 
 .logo-brand {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.1rem;
-    text-decoration: none;
+    margin-right: 3rem;
 }
 
 .logo-main {
-    height: 28px;
+    height: 30px;
     object-fit: contain;
 }
 
 .logo-subtitle {
-    height: 12px;
+    height: 10px;
+    margin-top: 4px;
     object-fit: contain;
 }
 
 .navbar nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
-    align-items: center;
+    gap: 2.5rem;
 }
 
-/* Top Navbar Links set to Crimson Text */
 .navbar nav a {
-    font-family: var(--font-nav);
-    font-size: 26px;
+    color: var(--text-white);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
     font-weight: 600;
-    color: var(--color-white);
-    text-decoration: none;
     letter-spacing: 0.5px;
-    transition: color 0.25s ease;
+    transition: color 0.2s;
 }
 
 .navbar nav a:hover,
 .navbar nav a.active {
-    color: var(--color-gold-light);
+    color: var(--text-gold);
 }
 
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1.5rem;
 }
 
 .search-btn {
-    background: none;
+    background: transparent;
     border: none;
     cursor: pointer;
 }
 
 .btn-login {
-    width: 220px;
-    height: 42px;
-    background-color: var(--color-navy-button);
-    border: 1px solid var(--color-gold-light);
+    border: 1px solid var(--text-gold);
+    color: var(--text-white);
+    padding: 0.4rem 1.2rem;
     border-radius: 6px;
-    color: var(--color-white);
     font-family: var(--font-heading);
-    font-size: 24px;
     font-weight: 600;
-    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s;
 }
 
-/* Hero banner area */
+.btn-login:hover {
+    background-color: var(--text-gold);
+    color: var(--bg-dark-blue);
+}
+
+/* Hero Section Base */
 .hero-container {
-    width: 100%;
-    height: 800px;
-    margin-top: var(--header-height);
-    background: 
-        radial-gradient(645.54% 113.25% at 50.03% 54.81%, rgba(7, 26, 44, 0.35) 0%, rgba(23, 86, 146, 0.35) 100%),
-        url('../assets/images/mondstadt-hero-bg.jpg') center/cover no-repeat;
+    height: calc(100vh - 65px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-left: 8rem;
-    gap: 1.25rem;
+    text-align: left;
+    padding: 0 5rem;
 }
 
 .hero-tagline-img {
-    width: 420px;
+    max-width: 480px;
+    width: 90%;
     height: auto;
-    object-fit: contain;
-    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.6));
+    margin-bottom: 1rem;
 }
 
 .hero-title-img {
-    width: 650px;
+    max-width: 380px;
+    width: 80%;
     height: auto;
-    object-fit: contain;
-    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.6));
+    margin-bottom: 1.5rem;
 }
 
 .hero-description-text {
-    max-width: 750px;
-    color: var(--color-white);
-    font-size: 26px;
-    font-weight: 600;
-    text-shadow: 0px 4px 6px #071A2C;
+    color: var(--text-white);
+    font-size: 1.2rem;
+    max-width: 650px;
+    margin-bottom: 2rem;
+    line-height: 1.5;
 }
 
 .btn-hero-book {
-    width: 160px;
-    height: 44px;
-    background-color: var(--color-navy-button);
-    border: 1px solid var(--color-gold-light);
-    border-radius: 6px;
-    color: var(--color-white);
-    font-size: 20px;
+    background-color: var(--card-bg-dark);
+    color: var(--text-gold);
+    border: 1px solid var(--box-border-gold);
+    padding: 0.75rem 2.5rem;
+    font-family: var(--font-heading);
     font-weight: 700;
-    text-decoration: none;
-    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.2s;
 }
 
-/* Section title bar using Crimson Pro */
+.btn-hero-book:hover {
+    transform: translateY(-2px);
+}
+
+/* Hero Backgrounds */
+.hero-mondstadt {
+    background: 
+        radial-gradient(645.54% 113.25% at 50.03% 54.81%, rgba(7, 26, 44, 0.35) 0%, rgba(23, 86, 146, 0.35) 100%),
+        url('../assets/images/mondstadt-hero-bg.png') center/cover no-repeat;
+}
+
+.hero-liyue {
+    background: 
+        radial-gradient(645.54% 113.25% at 50.03% 54.81%, rgba(7, 26, 44, 0.35) 0%, rgba(23, 86, 146, 0.35) 100%),
+        url('../assets/images/liyue-hero-bg.png') center/cover no-repeat;
+}
+
+/* Section Header Bar */
 .section-banner-bar {
     width: 100%;
-    height: var(--banner-height);
-    background-color: var(--color-navy-dark);
-    display: flex;
-    align-items: center;
-    padding-left: 5rem;
-    border-top: 1px solid var(--color-gold-light);
-    border-bottom: 1px solid var(--color-gold-light);
-    margin: 2.5rem 0;
+    background-color: var(--bg-dark-blue);
+    padding: 1.2rem 5rem;
+    text-align: left;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .section-banner-title {
+    color: var(--text-gold);
     font-family: var(--font-heading);
-    font-size: 42px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    color: var(--color-gold-light);
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
-/* Overview section */
+/* Shared Brightened Background Styles (Whiter / Cleaner) */
 .overview-wrapper {
-    width: var(--max-content-width);
-    max-width: 100%;
-    padding: 0 2rem;
+    width: 100%;
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), 
+        url('../assets/images/overall-bg.png') center/cover repeat-y;
 }
 
 .overview-card {
-    background: url('../assets/images/mondstadt-overview-bg.jpg') center/cover no-repeat;
-    border-radius: 12px;
-    padding: 3rem;
+    padding: 3.5rem 5rem;
     display: grid;
     grid-template-columns: 1fr 1.2fr;
-    gap: 3.5rem;
+    gap: 4rem;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .overview-media-card {
-    border-radius: 6px;
-    overflow: hidden;
-    border: 2px solid var(--color-gold-light);
-    background-color: var(--color-navy-dark);
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
 }
 
-.overview-media-card img.overview-card-img {
+.overview-card-img {
     width: 100%;
     height: auto;
     display: block;
-}
-
-.overview-media-info {
-    background-color: var(--color-navy-dark);
-    padding: 1.25rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-}
-
-/* Circular emblem container for SVG */
-.overview-media-info .emblem-container {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: #FFFFFF;
-    border: 2px solid #E54C4C;
-    padding: 0;
-    margin: 0;
-    flex-shrink: 0;
-    overflow: hidden;
-}
-
-.overview-media-info .emblem-icon {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-    display: block;
-}
-
-.overview-media-text h3 {
-    color: var(--color-gold-light);
-    font-family: var(--font-heading);
-    font-size: 28px;
-    font-weight: 700;
-}
-
-.overview-media-text p {
-    color: var(--color-white);
-    font-size: 12px;
 }
 
 .overview-details {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 1.5rem;
 }
 
-/* Quote box with corner stars */
 .overview-quote-box {
     position: relative;
-    border-top: 2px solid #071A2C;
-    border-bottom: 2px solid #071A2C;
-    padding: 1.75rem 0.5rem;
-    margin: 0.5rem 0;
+    padding: 2rem;
+    text-align: center;
+    font-family: var(--font-subheading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.4;
+    border-top: 2px solid var(--bg-dark-blue);
+    border-bottom: 2px solid var(--bg-dark-blue);
+    color: var(--text-body);
 }
 
 .quote-star {
     position: absolute;
-    width: 22px;
-    height: 22px;
-    object-fit: contain;
+    width: 18px;
 }
 
-.star-top-left {
-    top: -12px;
-    left: -12px;
-}
-
-.star-bottom-right {
-    bottom: -12px;
-    right: -12px;
-}
-
-.overview-quote-box p {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.6;
-    color: #071A2C;
-}
-
-/* Price badges */
-.badge-base-price,
-.badge-price-details {
-    display: inline-block;
-    align-self: flex-start;
-    background-color: var(--color-navy-dark);
-    border-radius: 4px;
-    border: 1px solid var(--color-gold-light);
-}
+.star-top-left { top: -9px; left: 0; }
+.star-bottom-right { bottom: -9px; right: 0; }
 
 .badge-base-price {
-    color: var(--color-gold-light);
+    background-color: var(--card-bg-dark);
+    color: var(--text-gold);
+    padding: 0.5rem 1.5rem;
     font-family: var(--font-heading);
-    font-size: 20px;
-    font-weight: 700;
-    padding: 0.5rem 1.75rem;
+    font-size: 1.2rem;
+    width: fit-content;
+    border-radius: 4px;
 }
 
 .badge-price-details {
-    color: var(--color-white);
-    font-size: 18px;
-    font-weight: 600;
-    padding: 0.75rem 2rem;
+    background-color: var(--card-bg-dark);
+    color: var(--text-white);
+    padding: 0.8rem 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    border-radius: 6px;
+    border: 1px solid var(--box-border-gold);
 }
 
-/* Featured itineraries section with individual blurred backgrounds */
+/* Featured Itineraries Section */
 .featured-itineraries-section {
     width: 100%;
-    background-color: #040F1B;
-    padding-bottom: 2rem;
 }
 
 .location-card-container {
+    padding: 3.5rem 5rem;
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
-    padding: 3rem 0;
+}
+
+/* Blurred Background Images for Mondstadt */
+.itinerary-cider-lake { background-image: url('../assets/images/cider-lake-bg-blur.png'); }
+.itinerary-windrise { background-image: url('../assets/images/windrise-bg-blur.png'); }
+.itinerary-cathedral { background-image: url('../assets/images/cathedral-bg-blur.png'); }
+
+/* Blurred Background Images for Liyue */
+.itinerary-liyue-harbor { background-image: url('../assets/images/liyue-harbor-bg-blur.png'); }
+.itinerary-mt-aocang { background-image: url('../assets/images/mt-aocang-bg-blur.png'); }
+.itinerary-wangshu-inn { background-image: url('../assets/images/wangshu-inn-bg-blur.png'); }
+
+.itinerary-card-item {
+    max-width: 950px;
     width: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
-/* Dedicated blurred background per itinerary */
-.itinerary-cider-lake {
-    background-image: url('../assets/images/cider-lake-bg-blur.jpg');
-}
-
-.itinerary-windrise {
-    background-image: url('../assets/images/windrise-bg-blur.jpg');
-}
-
-.itinerary-cathedral {
-    background-image: url('../assets/images/cathedral-bg-blur.jpg');
-}
-
-/* Inner card framing */
-.location-card {
-    position: relative;
-    width: 1200px;
-    max-width: 90%;
-    height: 480px;
-    border: 2px solid var(--color-gold-light);
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.location-card-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
+.itinerary-full-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
-.location-card-title-img {
-    position: relative;
-    z-index: 2;
-    margin: auto auto;
-    max-width: 60%;
     height: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+    display: block;
 }
 
-.location-card-caption {
-    position: relative;
-    z-index: 2;
-    background-color: rgba(7, 26, 44, 0.95);
-    border-top: 1px solid rgba(255, 229, 153, 0.3);
-    padding: 1.25rem 2rem;
-}
-
-.location-card-caption p {
-    color: var(--color-white);
-    font-size: 15px;
-    line-height: 1.5;
-}
-
-/* Package inclusions grid */
+/* Package Inclusions & Exclusions Section */
 .inclusions-section {
     width: 100%;
-    background: url('../assets/images/packages-bg-blur.jpg') center/cover no-repeat;
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), 
+        url('../assets/images/overall-bg.png') center/cover repeat-y;
     padding-bottom: 4rem;
 }
 
 .inclusions-grid {
-    display: flex;
-    justify-content: center;
-    gap: 3.5rem;
-    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 3rem auto 0 auto;
+    padding: 0 2rem;
+    align-items: stretch;
 }
 
 .inc-card {
-    width: 480px;
-    background-color: #FDFBF7;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid var(--color-gold-light);
     display: flex;
     flex-direction: column;
+    border: 2px solid var(--card-bg-dark);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--text-white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.inc-card-header,
-.inc-card-footer {
-    background-color: var(--color-navy-dark);
+.inc-card-header {
+    background-color: var(--card-bg-dark);
+    color: var(--text-gold);
     text-align: center;
-    padding: 1.25rem;
-}
-
-.inc-card-header h3 {
-    color: var(--color-gold-light);
-    font-family: var(--font-heading); /* Crimson Pro for PACKAGE header */
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-.inc-card-footer h3 {
-    color: var(--color-gold-light);
-    font-family: var(--font-inc-footer); /* Crimson Text for INCLUSIONS / EXCLUSIONS */
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: 2px;
+    padding: 0.8rem;
+    font-family: var(--font-heading);
 }
 
 .inc-card-body {
-    padding: 2.25rem;
+    flex: 1;
+    padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    flex-grow: 1;
+    gap: 1.2rem;
+}
+
+.inc-card-footer {
+    background-color: var(--card-bg-dark);
+    color: var(--text-gold);
+    text-align: center;
+    padding: 0.8rem;
+    font-family: var(--font-heading);
+    margin-top: auto;
 }
 
 .inc-item {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
-    font-size: 16px;
+    gap: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    color: var(--color-navy-dark);
 }
 
 .badge-icon-img {
-    width: 26px;
-    height: 26px;
-    object-fit: contain;
-    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
 }
 
-/* Travel guide section - Crimson Text for headers, Inter for paragraph body */
+/* Travel Guide Section */
 .travel-guide-section {
     width: 100%;
-    background: url('../assets/images/travel-guide-bg-blur.jpg') center/cover no-repeat;
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), 
+        url('../assets/images/overall-bg.png') center/cover repeat-y;
     padding-bottom: 5rem;
 }
 
 .travel-guide-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
+    max-width: 900px;
+    margin: 3rem auto 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 2rem;
+    padding: 0 2rem;
 }
 
 .guide-box {
-    background-color: var(--color-navy-dark);
-    border-radius: 8px;
-    padding: 2rem 3rem;
-    border-left: 10px solid var(--color-gold-light);
+    background-color: var(--card-bg-dark);
+    color: var(--text-white);
+    border: none;
+    border-left: 8px solid var(--text-gold);
+    border-radius: 0;
+    padding: 2rem 2.5rem;
 }
 
-.guide-box h3.guide-title {
-    color: var(--color-gold-light);
-    font-family: var(--font-guide-header); /* Crimson Text */
-    font-size: 32px;
-    font-weight: 700;
+.guide-title {
+    color: var(--text-gold);
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
     margin-bottom: 0.8rem;
-    letter-spacing: 1px;
 }
 
 .guide-box p {
-    color: var(--color-white);
-    font-family: var(--font-body); /* Inter */
-    font-size: 16px;
     line-height: 1.6;
+    font-size: 0.95rem;
 }
 
-/* Footer section - Inter for body & links */
+/* Footer Section */
 .footer-container {
-    width: 100%;
-    background: linear-gradient(rgba(7, 26, 44, 0.88), rgba(7, 26, 44, 0.96)),
-                url('../assets/images/footer-bg.jpg') center/cover no-repeat;
-    color: var(--color-white);
-    font-family: var(--font-body);
-    padding: 4rem 5rem 3rem 5rem;
-    border-top: 1px solid var(--color-gold-light);
+    background: 
+        linear-gradient(rgba(7, 26, 44, 0.58), rgba(7, 26, 44, 0.58)), 
+        url('../assets/images/footer-bg.png') center/cover no-repeat;
+    color: var(--text-white);
+    padding: 4rem 5rem 2rem 5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .footer-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 3.5rem;
-}
-
-.footer-brand {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.2rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    margin-bottom: 3rem;
 }
 
 .footer-tagline {
-    font-size: 20px;
-    font-weight: 600;
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--text-white);
 }
 
 .footer-columns {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3.5rem;
+    gap: 2.5rem;
 }
 
 .footer-col-title {
-    font-size: 18px;
+    color: var(--text-white);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
     font-weight: 700;
-    font-family: var(--font-body);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.footer-col-title::before {
-    content: "";
-    width: 6px;
-    height: 18px;
-    background-color: var(--color-gold-light);
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+    border-left: 5px solid var(--text-gold);
+    padding-left: 0.6rem;
+    display: inline-block;
 }
 
 .footer-col ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.6rem;
 }
 
-.footer-col a, .footer-col span {
-    color: var(--color-white);
-    font-family: var(--font-body);
-    font-size: 15px;
-    text-decoration: none;
+.footer-col a {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    transition: opacity 0.2s;
 }
 
 .footer-col a:hover {
-    color: var(--color-gold-light);
+    opacity: 1;
+    color: var(--text-gold);
 }
 
 .footer-contact-item {
     display: flex;
     align-items: center;
-    gap: 0.85rem;
-    margin-bottom: 1rem;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.85rem;
 }
 
 .footer-social-list li a {
     display: flex;
     align-items: center;
-    gap: 0.85rem;
-}
-
-.footer-contact-item img,
-.footer-social-list img {
-    object-fit: contain;
+    gap: 0.6rem;
 }
