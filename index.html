@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teyvat Travel Services - Mondstadt</title>
+    
+    <!-- Google Fonts Import for Crimson Pro, Crimson Text, and Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700;800&family=Crimson+Text:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Main stylesheet link -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header and main navigation links -->
+    <header class="navbar">
+        <a href="index.html" class="logo-brand">
+            <img src="assets/images/teyvat-logo.png" alt="TEYVAT" class="logo-main">
+            <img src="assets/images/travel-services.png" alt="TRAVEL SERVICES" class="logo-subtitle">
+        </a>
+
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#destinations" class="active">Destinations</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#itinerary">Itinerary</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="search-btn flex-center" aria-label="Search">
+                <img src="assets/icons/search-icon.png" alt="Search" width="24" height="24">
+            </button>
+            <a href="#" class="btn-login flex-center">Log In / Sign Up</a>
+        </div>
+    </header>
+
+    <!-- Hero banner area -->
+    <section class="hero-container">
+        <img src="assets/images/tagline-city-of-freedom.png" alt="THE CITY OF FREEDOM" class="hero-tagline-img">
+        <img src="assets/images/title-mondstadt.png" alt="MONDSTADT" class="hero-title-img">
+        <p class="hero-description-text">Where the winds tell stories and the skies are within reach.</p>
+        <a href="#packages" class="btn-hero-book flex-center">BOOK NOW</a>
+    </section>
+
+    <!-- Destination overview section -->
+    <section id="destinations" class="overview-wrapper">
+        <div class="section-banner-bar">
+            <h2 class="section-banner-title">OVERVIEW</h2>
+        </div>
+
+        <div class="overview-card">
+            <div class="overview-media-card">
+                <img src="assets/images/mondstadt-overview-card.jpg" alt="Mondstadt City View" class="overview-card-img">
+                
+                <div class="overview-media-info">
+                    <div class="emblem-container flex-center">
+                        <img src="assets/icons/mondstadt-emblem.svg" alt="Mondstadt Symbol" class="emblem-icon">
+                    </div>
+                    <div class="overview-media-text">
+                        <h3>MONDSTADT</h3>
+                        <p>The City of Freedom, nestled in the northeastern lands of Teyvat.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overview-details">
+                <div class="overview-quote-box">
+                    <img src="assets/icons/star-blue-top.png" alt="Star Accent" class="quote-star star-top-left">
+                    <p>Experience the romantic charm of windmills, rolling green hills, and historic stone architecture. Perfect for travelers looking for a relaxing nature getaway.</p>
+                    <img src="assets/icons/star-blue-bottom.png" alt="Star Accent" class="quote-star star-bottom-right">
+                </div>
+
+                <div class="badge-base-price">BASE PRICE:</div>
+                <div class="badge-price-details">PHP 12, 500.00 (Per Person) | 3 Days and 2 Nights</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured itineraries section with individual blurred backgrounds -->
+    <section id="itinerary" class="featured-itineraries-section">
+        <div class="section-banner-bar">
+            <h2 class="section-banner-title">FEATURED ITINERARIES</h2>
+        </div>
+
+        <!-- Cider Lake Card Wrapper -->
+        <div class="location-card-container itinerary-cider-lake">
+            <div class="location-card">
+                <img src="assets/images/cider-lake.jpg" alt="Cider Lake" class="location-card-bg">
+                <img src="assets/images/title-cider-lake.png" alt="CIDER LAKE" class="location-card-title-img">
+                <div class="location-card-caption">
+                    <p>A pristine freshwater lake with a vast, crystal-clear surface that has remained unchanged for countless years. Its waters are so clear that the lakebed can be seen beneath the surface, while its cool and refreshing taste provides the perfect source for Mondstadt's renowned ciders and wines. Today, Cider Lake stands as one of the most recognizable symbols of Mondstadt.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Windrise Card Wrapper -->
+        <div class="location-card-container itinerary-windrise">
+            <div class="location-card">
+                <img src="assets/images/windrise.jpg" alt="Windrise" class="location-card-bg">
+                <img src="assets/images/title-windrise.png" alt="WINDIRISE" class="location-card-title-img">
+                <div class="location-card-caption">
+                    <p>Windrise is a scenic destination in the Galesong Hill area of Mondstadt, known for its peaceful surroundings and magnificent oak tree. According to local legends, the site is closely associated with Vennessa, a celebrated figure in Mondstadt's history who is believed to have ascended to Celestia. Today, the towering oak tree and its surrounding landscape make Windrise a memorable destination, offering travelers a peaceful retreat surrounded by nature.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cathedral Card Wrapper -->
+        <div class="location-card-container itinerary-cathedral">
+            <div class="location-card">
+                <img src="assets/images/cathedral.jpg" alt="Cathedral of Mondstadt" class="location-card-bg">
+                <img src="assets/images/title-cathedral.png" alt="CATHEDRAL OF MONDSTADT" class="location-card-title-img">
+                <div class="location-card-caption">
+                    <p>The Favonius Cathedral, also known as the Mondstadt Cathedral, is a prominent landmark located in the heart of Mondstadt City. It is maintained by the Church of Favonius and serves as a place of worship dedicated to Barbatos, the Anemo Archon and God of Freedom. With its grand architecture and peaceful surroundings, the cathedral is an important part of Mondstadt's cultural and spiritual heritage. Visitors can admire its impressive structure while experiencing a quieter side of the lively City of Freedom.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package inclusions and exclusions section -->
+    <section id="packages" class="inclusions-section">
+        <div class="section-banner-bar">
+            <h2 class="section-banner-title">PACKAGE INCLUSIONS/ EXCLUSIONS</h2>
+        </div>
+
+        <div class="inclusions-grid">
+            <div class="inc-card">
+                <div class="inc-card-header"><h3>PACKAGE</h3></div>
+                <div class="inc-card-body">
+                    <div class="inc-item">
+                        <img src="assets/icons/check-icon.png" alt="Included" class="badge-icon-img">
+                        <span>3 Days and 2 Nights Hotel Accommodation</span>
+                    </div>
+                    <div class="inc-item">
+                        <img src="assets/icons/check-icon.png" alt="Included" class="badge-icon-img">
+                        <span>Daily Hotel Breakfasts</span>
+                    </div>
+                    <div class="inc-item">
+                        <img src="assets/icons/check-icon.png" alt="Included" class="badge-icon-img">
+                        <span>Round Trip Airport Transfer</span>
+                    </div>
+                </div>
+                <div class="inc-card-footer"><h3>INCLUSIONS</h3></div>
+            </div>
+
+            <div class="inc-card">
+                <div class="inc-card-header"><h3>PACKAGE</h3></div>
+                <div class="inc-card-body">
+                    <div class="inc-item">
+                        <img src="assets/icons/cross-icon.png" alt="Excluded" class="badge-icon-img">
+                        <span>Round Trip Airfare</span>
+                    </div>
+                    <div class="inc-item">
+                        <img src="assets/icons/cross-icon.png" alt="Excluded" class="badge-icon-img">
+                        <span>Other meals and personal expenses</span>
+                    </div>
+                    <div class="inc-item">
+                        <img src="assets/icons/cross-icon.png" alt="Excluded" class="badge-icon-img">
+                        <span>Hotel security deposits</span>
+                    </div>
+                    <div class="inc-item">
+                        <img src="assets/icons/cross-icon.png" alt="Excluded" class="badge-icon-img">
+                        <span>Optional tours</span>
+                    </div>
+                    <div class="inc-item">
+                        <img src="assets/icons/cross-icon.png" alt="Excluded" class="badge-icon-img">
+                        <span>Other expenses not included above in inclusions</span>
+                    </div>
+                </div>
+                <div class="inc-card-footer"><h3>EXCLUSIONS</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel guide section -->
+    <section id="about" class="travel-guide-section">
+        <div class="section-banner-bar">
+            <h2 class="section-banner-title">TRAVEL GUIDE</h2>
+        </div>
+
+        <div class="travel-guide-container">
+            <div class="guide-box">
+                <h3 class="guide-title">Vibe & Atmosphere</h3>
+                <p>Welcome to Mondstadt, where you will experience breezy days, rolling hills, and a relaxed countryside atmosphere that is absolutely perfect for walking and picnicking.</p>
+            </div>
+
+            <div class="guide-box">
+                <h3 class="guide-title">Wardrobe & Essential Gear</h3>
+                <p>When preparing your wardrobe, we highly recommend packing light layers and a trusty windbreaker to comfortably handle the constant Anemo breezes near Cider Lake and Windrise. You will also want to bring comfortable, flat walking shoes for climbing the endless flights of stairs leading up to the grand Cathedral, along with a picnic blanket, your Wind Glider license, and a reusable water bottle.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer id="faq" class="footer-container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="assets/images/teyvat-logo.png" alt="TEYVAT" class="logo-main">
+                <img src="assets/images/travel-services.png" alt="TRAVEL SERVICES" class="logo-subtitle">
+            </div>
+            <div class="footer-tagline">
+                Seven Nations. One Extraordinary Journey.
+            </div>
+        </div>
+
+        <div class="footer-columns">
+            <div class="footer-col">
+                <div class="footer-col-title">NAVIGATE</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#itinerary">Itinerary</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-col-title">EXPLORE</div>
+                <ul>
+                    <li><a href="#">Mondstadt</a></li>
+                    <li><a href="#">Liyue</a></li>
+                    <li><a href="#">Inazuma</a></li>
+                    <li><a href="#">Sumeru</a></li>
+                    <li><a href="#">Fontaine</a></li>
+                    <li><a href="#">Natlan</a></li>
+                    <li><a href="#">Snezhnaya</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-col-title">CONTACT US</div>
+                <div class="footer-contact-item">
+                    <img src="assets/icons/mail-icon.png" alt="Email" width="20">
+                    <span>teyvattravelservices@gmail.com</span>
+                </div>
+                <div class="footer-contact-item">
+                    <img src="assets/icons/phone-icon.png" alt="Phone" width="20">
+                    <span>(+63) 91234567910</span>
+                </div>
+                <div class="footer-contact-item">
+                    <img src="assets/icons/location-icon.png" alt="Location" width="20">
+                    <span>Liyue, Teyvat Travel Services</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-col-title">CONNECT WITH US</div>
+                <ul class="footer-social-list">
+                    <li><a href="#"><img src="assets/icons/facebook-icon.png" alt="FB" width="18"> Facebook: Teyvat Travel Services</a></li>
+                    <li><a href="#"><img src="assets/icons/instagram-icon.png" alt="IG" width="18"> Instagram: @teyvattravelservices</a></li>
+                    <li><a href="#"><img src="assets/icons/x-icon.png" alt="X" width="18"> X: @teyvattravelservices</a></li>
+                    <li><a href="#"><img src="assets/icons/youtube-icon.png" alt="YouTube" width="18"> YouTube: Teyvat Travel Services</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
