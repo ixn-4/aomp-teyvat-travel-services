@@ -1,233 +1,689 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teyvat Travel Services - Mondstadt</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700;800&family=Crimson+Text:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teyvat Travel Services</title>
+  
+  <!-- Fonts: Crimson Text & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <header class="navbar">
-        <a href="index.html" class="logo-brand">
-            <img src="assets/images/teyvat-logo.png" alt="TEYVAT" class="logo-main">
-            <img src="assets/images/travel-services.png" alt="TRAVEL SERVICES" class="logo-subtitle">
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <nav class="navbar">
+    <!-- Logo -->
+    <a href="#" class="brand-logo">
+      <img src="Images/TeyvatLogo.png" alt="Teyvat Travel Services" class="logo-image" />
+    </a>
+
+    <!-- Navigation Menu Links -->
+    <ul class="nav-menu">
+      <li><a href="#" class="nav-item active">Home</a></li>
+      <li><a href="#">Destinations</a></li>
+      <li><a href="#">Packages</a></li>
+      <li><a href="#">Itinerary</a></li>
+      <li><a href="#">AboutUs</a></li>
+      <li><a href="#">FAQ</a></li>
+    </ul>
+
+    <!-- Search Icon & Login Button -->
+    <div class="nav-actions">
+      <button class="search-icon-btn" aria-label="Search">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+      <a href="#" class="btn-login">Log In/ Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION (home-bg.png) ==================== -->
+  <header class="hero-container" style="background-image: url('Images/gBG1.png');">
+    <div class="hero-main">
+      <!-- Title Graphic -->
+      <div class="title-container">
+        <img src="Images/HomeTitle.png" alt="Your journey across Teyvat begins here" class="hero-title-img" />
+      </div>
+
+      <!-- Subtitle -->
+      <p class="hero-subheading">Seven Nations. One Extraordinary Journey.</p>
+
+      <!-- Action Buttons -->
+      <div class="cta-buttons">
+        <a href="#" class="cta-btn">BOOK NOW</a>
+        <a href="#" class="cta-btn">INQUIRE NOW</a>
+      </div>
+    </div>
+  </header>
+ <!-- ==================== DESTINATIONS SECTION (bg3.png) ==================== -->
+<section class="destinations-section" style="background-image: url('Images/gBG3.png');">
+  <div class="destinations-header-bar">
+    <h2>DESTINATIONS</h2>
+  </div>
+
+  <div class="destinations-wrapper">
+    <div class="destinations-headings">
+      <h3 class="destinations-main-title">EXPLORE THE BEAUTY OF TEYVAT’S SEVEN NATIONS</h3>
+      <p class="destinations-subtitle">From windmills to floating islands, ancient cities to frozen peaks, each nation holds a unique story waiting for you.</p>
+    </div>
+
+    <div class="explore-btn-wrapper">
+      <a href="#" class="btn-explore-all">
+        Explore Destinations
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+
+    <div class="destinations-cards-grid">
+      
+      <!-- 1. Mondstadt  -->
+      <div class="nation-card">
+        <div class="card-img-container">
+          <img src="Images/p3Mondstadt.png" alt="Mondstadt" class="nation-bg-img" />
+          <div class="element-icon-circle">
+            <img src="Images/anemologo.png" alt="Anemo" />
+          </div>
+        </div>
+        <div class="card-info bg-mondstadt">
+          <h4>MONDSTADT</h4>
+          <span class="nation-desc">City of Freedom</span>
+          <a href="#" class="btn-card-explore">
+            Explore <img src="Images/diamond.png" alt="" class="diamond-img" />
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Liyue  -->
+      <div class="nation-card">
+        <div class="card-img-container">
+          <img src="Images/p3Liyue.png" alt="Liyue" class="nation-bg-img" />
+          <div class="element-icon-circle">
+            <img src="Images/geologo.png" alt="Geo" />
+          </div>
+        </div>
+        <div class="card-info bg-liyue">
+          <h4>LIYUE</h4>
+          <span class="nation-desc">Harbor of Stone and Contracts</span>
+          <a href="#" class="btn-card-explore">
+            Explore <img src="Images/diamond.png" alt="" class="diamond-img" />
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Inazuma -->
+      <div class="nation-card">
+        <div class="card-img-container">
+          <img src="Images/p3Inazuma.png" alt="Inazuma" class="nation-bg-img" />
+          <div class="element-icon-circle">
+            <img src="Images/electrologo.png" alt="Electro" />
+          </div>
+        </div>
+        <div class="card-info bg-inazuma">
+          <h4>INAZUMA</h4>
+          <span class="nation-desc">Realm of Eternal Thunder</span>
+          <a href="#" class="btn-card-explore">
+            Explore <img src="Images/diamond.png" alt="" class="diamond-img" />
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. Sumeru  -->
+      <div class="nation-card">
+        <div class="card-img-container">
+          <img src="Images/p3Sumeru.png" alt="Sumeru" class="nation-bg-img" />
+          <div class="element-icon-circle">
+            <img src="Images/denrologo.png" alt="Dendro" />
+          </div>
+        </div>
+        <div class="card-info bg-sumeru">
+          <h4>SUMERU</h4>
+          <span class="nation-desc">City of Wisdom</span>
+          <a href="#" class="btn-card-explore">
+            Explore <img src="Images/diamond.png" alt="" class="diamond-img" />
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. Fontaine -->
+      <div class="nation-card">
+        <div class="card-img-container">
+          <img src="Images/p3Fontaine.png" alt="Fontaine" class="nation-bg-img" />
+          <div class="element-icon-circle">
+            <img src="Images/hydrologo.png" alt="Hydro" />
+          </div>
+        </div>
+        <div class="card-info bg-fontaine">
+          <h4>FONTAINE</h4>
+          <span class="nation-desc">Capital of Justice</span>
+          <a href="#" class="btn-card-explore">
+            Explore <img src="Images/diamond.png" alt="" class="diamond-img" />
+          </a>
+        </div>
+      </div>
+
+      <!-- 6. Natlan  -->
+      <div class="nation-card">
+        <div class="card-img-container">
+          <img src="Images/p3Natlan.png" alt="Natlan" class="nation-bg-img" />
+          <div class="element-icon-circle">
+            <img src="Images/pyrologo.png" alt="Pyro" />
+          </div>
+        </div>
+        <div class="card-info bg-natlan">
+          <h4>NATLAN</h4>
+          <span class="nation-desc">Land of Ash, Hot Springs, and Valor</span>
+          <a href="#" class="btn-card-explore">
+            Explore <img src="Images/diamond.png" alt="" class="diamond-img" />
+          </a>
+        </div>
+      </div>
+
+      <!-- 7. Snezhnaya  -->
+      <div class="nation-card">
+        <div class="card-img-container">
+          <img src="Images/p3Snezhnaya.png" alt="Snezhnaya" class="nation-bg-img" />
+          <div class="element-icon-circle">
+            <img src="Images/cryologo.png" alt="Cryo" />
+          </div>
+        </div>
+        <div class="card-info bg-snezhnaya">
+          <h4>SNEZHNAYA</h4>
+          <span class="nation-desc">Eternal White Tundra</span>
+          <a href="#" class="btn-card-explore">
+            Explore <img src="Images/diamond.png" alt="" class="diamond-img" />
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ==================== ABOUT SECTION (bg2.png) ==================== -->
+  <section class="about-section" style="background-image: url('Images/gBG2.png');">
+    <!-- Header Bar -->
+    <div class="about-header-bar">
+      <h2>TEYVAT TRAVEL SERVICES</h2>
+    </div>
+
+    <div class="about-content-wrapper">
+      
+      <!-- Know More Button -->
+      <div class="know-more-container">
+        <a href="#" class="btn-know-more">
+          Know More 
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
         </a>
+      </div>
 
-        <nav aria-label="Main Navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html" class="active">Destinations</a></li>
-                <li><a href="#packages">Packages</a></li>
-                <li><a href="#itinerary">Itinerary</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
-
-        <div class="nav-actions">
-            <button class="search-btn flex-center" aria-label="Search">
-                <img src="assets/icons/search-icon.png" alt="Search" width="24" height="24">
-            </button>
-            <a href="#" class="btn-login flex-center">Log In / Sign Up</a>
+      <!-- Unang PART: Profile Larawan sa Left, Text Card sa Kanan -->
+      <div class="about-grid-row">
+        <div class="about-image-box">
+          <img src="Images/Director's Profile.png" alt="Director Zhongli" class="profile-img" />
         </div>
-    </header>
-
-    <section class="hero-container hero-mondstadt">
-        <img src="assets/images/tagline-city-of-freedom.png" alt="THE CITY OF FREEDOM" class="hero-tagline-img">
-        <img src="assets/images/title-mondstadt.png" alt="MONDSTADT" class="hero-title-img">
-        <p class="hero-description-text">Where the winds tell stories and the skies are within reach.</p>
-        <a href="#packages" class="btn-hero-book flex-center">BOOK NOW</a>
-    </section>
-
-    <section id="destinations" class="overview-wrapper">
-        <div class="section-banner-bar">
-            <h2 class="section-banner-title">OVERVIEW</h2>
+        <div class="about-card-box card-border-right">
+          <p>
+            Teyvat Travel Services was founded by Mr. Zhongli, a former traveler who once wandered through the beauty of the seven nations of Teyvat. Inspired by his experiences, he envisioned himself as a beacon of light for others, allowing them to experience and witness the mesmerizing landscapes, cultures, and sceneries that Teyvat has to offer.
+          </p>
         </div>
+      </div>
 
-        <div class="overview-card">
-            <div class="overview-media-card">
-                <img src="assets/images/mondstadt-overview-card.png" alt="Mondstadt Overview" class="overview-card-img">
+      <!-- Pangalawang Side: Text Card sa Left, Background Banner Card sa Kanan (gamit ang 8090728 1.png bilang BG) -->
+      <div class="about-grid-row reverse-row">
+        <div class="about-card-box card-border-left">
+          <p>
+            Ever since Teyvat Travel Services was established, it has become one of the trusted travel agencies in the land of Teyvat. Although the agency has just started, our mission to provide excellent and accommodating services and our vision to continuously improve our services to meet our clients' needs are the foundations of a growing legacy that will reach future generations.
+          </p>
+        </div>
+        
+        <!-- Banner Card na may 8090728 1.png bilang Background Image at Group 89.png/Logo sa gitna -->
+        <div class="about-banner-card" style="background-image: url('Images/8090728 1.png');">
+          <img src="Images/Group 89.png" alt="Teyvat Travel Services Logo" class="banner-overlay-img" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+ 
+ <!-- ==================== POPULAR STOPS SECTION (bg4.png) ==================== -->
+  <section class="popular-stops-section" style="background-image: url('Images/gBG4.png');">
+    <!-- Section Top Header Bar -->
+    <div class="stops-header-bar">
+      <h2>POPULAR STOPS</h2>
+    </div>
+
+    <!-- Main Carousel Layout Container -->
+    <div class="stops-container">
+      <!-- Left Carousel Arrow -->
+      <button class="carousel-arrow prev-arrow" aria-label="Previous Stop">&lt;</button>
+
+      <!-- 3 Popular Stops Cards Wrapper -->
+      <div class="stops-cards-wrapper">
+        
+        <!-- Card 1: Mondstadt -->
+        <div class="stop-card">
+          <img src="Images/MONDSTADT PACKAGE.png" alt="Cathedral of Mondstadt" class="stop-bg-img" />
+          <div class="stop-overlay">
+            <div class="stop-element-badge">
+              <img src="Images/anemologo.png" alt="Anemo" />
             </div>
-
-            <div class="overview-details">
-                <div class="overview-quote-box">
-                    <img src="assets/icons/star-blue-top.png" alt="Star Accent" class="quote-star star-top-left">
-                    <p>Experience the romantic charm of windmills, rolling green hills, and historic stone architecture. Perfect for travelers looking for a relaxing nature getaway.</p>
-                    <img src="assets/icons/star-blue-bottom.png" alt="Star Accent" class="quote-star star-bottom-right">
-                </div>
-
-                <div class="badge-base-price">BASE PRICE:</div>
-                <div class="badge-price-details">PHP 12, 500.00 (Per Person) | 3 Days and 2 Nights</div>
+            
+            <div class="stop-bottom-wrapper">
+              <div class="location-tag">
+                <img src="Images/LocationVector.png" alt="Location" class="location-pin" />
+                <span>MONDSTADT</span>
+              </div>
+              <div class="stop-bottom-banner banner-mondstadt">
+                <h3 class="stop-name">Cathedral of Mondstadt</h3>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <section id="itinerary" class="featured-itineraries-section">
-        <div class="section-banner-bar">
-            <h2 class="section-banner-title">FEATURED ITINERARIES</h2>
-        </div>
-
-        <div class="location-card-container itinerary-cider-lake">
-            <div class="itinerary-card-item">
-                <img src="assets/images/cider-lake-card.png" alt="Cider Lake Itinerary" class="itinerary-full-img">
-            </div>
-        </div>
-
-        <div class="location-card-container itinerary-windrise">
-            <div class="itinerary-card-item">
-                <img src="assets/images/windrise-card.png" alt="Windrise Itinerary" class="itinerary-full-img">
-            </div>
-        </div>
-
-        <div class="location-card-container itinerary-cathedral">
-            <div class="itinerary-card-item">
-                <img src="assets/images/cathedral-card.png" alt="Cathedral Itinerary" class="itinerary-full-img">
-            </div>
-        </div>
-    </section>
-
-    <section id="packages" class="inclusions-section">
-        <div class="section-banner-bar">
-            <h2 class="section-banner-title">PACKAGE INCLUSIONS/ EXCLUSIONS</h2>
+          </div>
         </div>
 
-        <div class="inclusions-grid">
-            <div class="inc-card">
-                <div class="inc-card-header"><h3>PACKAGE</h3></div>
-                <div class="inc-card-body">
-                    <div class="inc-item">
-                        <img src="assets/icons/check-icon.png" alt="Included" class="badge-icon-img">
-                        <span>3 Days and 2 Nights Hotel Accommodation</span>
-                    </div>
-                    <div class="inc-item">
-                        <img src="assets/icons/check-icon.png" alt="Included" class="badge-icon-img">
-                        <span>Daily Hotel Breakfasts</span>
-                    </div>
-                    <div class="inc-item">
-                        <img src="assets/icons/check-icon.png" alt="Included" class="badge-icon-img">
-                        <span>Round Trip Airport Transfer</span>
-                    </div>
-                </div>
-                <div class="inc-card-footer"><h3>INCLUSIONS</h3></div>
+        <!-- Card 2: Liyue -->
+        <div class="stop-card">
+          <img src="Images/LIYUE PACKAGE.png" alt="Mt. Aocang" class="stop-bg-img" />
+          <div class="stop-overlay">
+            <div class="stop-element-badge">
+              <img src="Images/geologo.png" alt="Geo" />
             </div>
-
-            <div class="inc-card">
-                <div class="inc-card-header"><h3>PACKAGE</h3></div>
-                <div class="inc-card-body">
-                    <div class="inc-item">
-                        <img src="assets/icons/cross-icon.png" alt="Excluded" class="badge-icon-img">
-                        <span>Round Trip Airfare</span>
-                    </div>
-                    <div class="inc-item">
-                        <img src="assets/icons/cross-icon.png" alt="Excluded" class="badge-icon-img">
-                        <span>Other meals and personal expenses</span>
-                    </div>
-                    <div class="inc-item">
-                        <img src="assets/icons/cross-icon.png" alt="Excluded" class="badge-icon-img">
-                        <span>Hotel security deposits</span>
-                    </div>
-                    <div class="inc-item">
-                        <img src="assets/icons/cross-icon.png" alt="Excluded" class="badge-icon-img">
-                        <span>Optional tours</span>
-                    </div>
-                    <div class="inc-item">
-                        <img src="assets/icons/cross-icon.png" alt="Excluded" class="badge-icon-img">
-                        <span>Other expenses not included above in inclusions</span>
-                    </div>
-                </div>
-                <div class="inc-card-footer"><h3>EXCLUSIONS</h3></div>
+            
+            <div class="stop-bottom-wrapper">
+              <div class="location-tag">
+                <img src="Images/LocationVector.png" alt="Location" class="location-pin" />
+                <span>LIYUE</span>
+              </div>
+              <div class="stop-bottom-banner banner-liyue">
+                <h3 class="stop-name">Mt. Aocang</h3>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <section id="about" class="travel-guide-section">
-        <div class="section-banner-bar">
-            <h2 class="section-banner-title">TRAVEL GUIDE</h2>
+          </div>
         </div>
 
-        <div class="travel-guide-container">
-            <div class="guide-box">
-                <h3 class="guide-title">Vibe & Atmosphere</h3>
-                <p>Welcome to Mondstadt, where you will experience breezy days, rolling hills, and a relaxed countryside atmosphere that is absolutely perfect for walking and picnicking.</p>
+        <!-- Card 3: Inazuma -->
+        <div class="stop-card">
+          <img src="Images/INAZUMA PACKAGE.png" alt="Tenshukaku" class="stop-bg-img" />
+          <div class="stop-overlay">
+            <div class="stop-element-badge">
+              <img src="Images/electrologo.png" alt="Electro" />
             </div>
-
-            <div class="guide-box">
-                <h3 class="guide-title">Wardrobe & Essential Gear</h3>
-                <p>When preparing your wardrobe, we highly recommend packing light layers and a trusty windbreaker to comfortably handle the constant Anemo breezes near Cider Lake and Windrise. You will also want to bring comfortable, flat walking shoes for climbing the endless flights of stairs leading up to the grand Cathedral, along with a picnic blanket, your Wind Glider license, and a reusable water bottle.</p>
+            
+            <div class="stop-bottom-wrapper">
+              <div class="location-tag">
+                <img src="Images/LocationVector.png" alt="Location" class="location-pin" />
+                <span>INAZUMA</span>
+              </div>
+              <div class="stop-bottom-banner banner-inazuma">
+                <h3 class="stop-name">Tenshukaku</h3>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <footer id="faq" class="footer-container">
-        <div class="footer-top">
-            <a href="index.html" class="logo-brand">
-                <img src="assets/images/teyvat-logo.png" alt="TEYVAT" class="logo-main">
-                <img src="assets/images/travel-services.png" alt="TRAVEL SERVICES" class="logo-subtitle">
-            </a>
-            <div class="footer-tagline">
-                Seven Nations. One Extraordinary Journey.
-            </div>
+          </div>
         </div>
 
-        <div class="footer-columns">
-            <div class="footer-col">
-                <div class="footer-col-title">NAVIGATE</div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#destinations">Destinations</a></li>
-                    <li><a href="#packages">Packages</a></li>
-                    <li><a href="#itinerary">Itinerary</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </div>
+      </div>
 
-            <div class="footer-col">
-                <div class="footer-col-title">EXPLORE</div>
-                <ul>
-                    <li><a href="index.html">Mondstadt</a></li>
-                    <li><a href="liyue.html">Liyue</a></li>
-                    <li><a href="inazuma.html">Inazuma</a></li>
-                    <li><a href="sumeru.html">Sumeru</a></li>
-                    <li><a href="fontaine.html">Fontaine</a></li>
-                    <li><a href="natlan.html">Natlan</a></li>
-                    <li><a href="snezhnaya.html">Snezhnaya</a></li>
-                </ul>
-            </div>
+      <!-- Right Carousel Arrow -->
+      <button class="carousel-arrow next-arrow" aria-label="Next Stop">&gt;</button>
+    </div>
+  </section>
 
-            <div class="footer-col">
-                <div class="footer-col-title">CONTACT US</div>
-                <div class="footer-contact-item">
-                    <img src="assets/icons/mail-icon.png" alt="Email" width="20">
-                    <span>teyvattravelservices@gmail.com</span>
-                </div>
-                <div class="footer-contact-item">
-                    <img src="assets/icons/phone-icon.png" alt="Phone" width="20">
-                    <span>(+63) 91234567910</span>
-                </div>
-                <div class="footer-contact-item">
-                    <img src="assets/icons/location-icon.png" alt="Location" width="20">
-                    <span>Mondstadt, Teyvat Travel Services</span>
-                </div>
-            </div>
+  <!-- ==================== SPLIT SECTION: WHY TRAVEL WITH US (bg5.1.png) & FAQ (bg5.2.png) ==================== -->
+  <section class="split-info-section">
 
-            <div class="footer-col">
-                <div class="footer-col-title">CONNECT WITH US</div>
-                <ul class="footer-social-list">
-                    <li><a href="#"><img src="assets/icons/facebook-icon.png" alt="FB" width="18"> Facebook: Teyvat Travel Services</a></li>
-                    <li><a href="#"><img src="assets/icons/instagram-icon.png" alt="IG" width="18"> Instagram: @teyvattravelservices</a></li>
-                    <li><a href="#"><img src="assets/icons/x-icon.png" alt="X" width="18"> X: @teyvattravelservices</a></li>
-                    <li><a href="#"><img src="assets/icons/youtube-icon.png" alt="YouTube" width="18"> YouTube: Teyvat Travel Services</a></li>
-                </ul>
+    <!-- KALIWA: WHY TRAVEL WITH US -->
+    <div class="split-col why-travel-col" style="background-image: url('Images/gBG5.1.png');">
+      <div class="split-header-bar">
+        <h2>WHY TRAVEL WITH US?</h2>
+        <p class="split-subtitle">More than just a trip, it's a journey you'll never forget.</p>
+      </div>
+
+      <div class="why-travel-cards">
+        
+        <!-- 1. Local Experience -->
+        <div class="why-card">
+          <div class="why-card-img">
+            <img src="Images/LEphoto.png" alt="Local Experience" />
+          </div>
+          <div class="why-card-text">
+            <div class="why-icon">
+              <img src="Images/GroupLogo.png" alt="Group Logo" class="feature-icon-img" />
             </div>
+            <h3>LOCAL EXPERIENCE</h3>
+            <p>Immerse in authentic culture, food and traditions.</p>
+          </div>
         </div>
-    </footer>
+
+        <!-- 2. Easy Inquiry -->
+        <div class="why-card">
+          <div class="why-card-img">
+            <img src="Images/EIphoto.png" alt="Easy Inquiry" />
+          </div>
+          <div class="why-card-text">
+            <div class="why-icon">
+              <img src="Images/MessageLogo.png" alt="Message Logo" class="feature-icon-img" />
+            </div>
+            <h3>EASY INQUIRY</h3>
+            <p>Quick and hassle-free communication and booking.</p>
+          </div>
+        </div>
+
+        <!-- 3. Chosen Tours -->
+        <div class="why-card">
+          <div class="why-card-img">
+            <img src="Images/CTphoto.png" alt="Chosen Tours" />
+          </div>
+          <div class="why-card-text">
+            <div class="why-icon">
+              <img src="Images/CompassLogo.png" alt="Compass Logo" class="feature-icon-img" />
+            </div>
+            <h3>CHOSEN TOURS</h3>
+            <p>Well-planned itineraries for a seamless and memorable experience.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RAYT: FREQUENTLY ASKED QUESTIONS -->
+    <div class="split-col faq-col" style="background-image: url('Images/gBG5.2.png');">
+      <div class="split-header-bar">
+        <h2>FREQUENTLY ASKED QUESTIONS</h2>
+        <p class="split-subtitle">Find quick answers to common questions.</p>
+      </div>
+
+      <div class="faq-content-wrapper">
+        <ul class="faq-list">
+          <li class="faq-item">How much for a group of 4?</li>
+          <li class="faq-item">What are your tour packages?</li>
+          <li class="faq-item">What's included in the package?</li>
+          <li class="faq-item">Can I customize the itinerary?</li>
+          <li class="faq-item">What are the available payment methods?</li>
+          <li class="faq-item">Do you offer group discounts?</li>
+          <li class="faq-item">How does the cancellation policy work?</li>
+          <li class="faq-item">How quickly can the agency respond to client inquiries?</li>
+          <li class="faq-item">Does the travel agency offer installment payment options?</li>
+        </ul>
+
+        <div class="faq-action-wrapper">
+          <a href="#" class="btn-know-more">
+            Know More
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==================== PAYMENT METHOD AND GUIDELINES SECTION (bg6.png) ==================== -->
+  <section class="payment-section" style="background-image: url('Images/gBG6.png');">
+    <!-- Top Header Bar -->
+    <div class="payment-header-bar">
+      <h2>PAYMENT METHOD AND GUIDELINES</h2>
+      <p class="payment-subtext">Choose your preferred payment method. All transactions are secured and encrypted</p>
+    </div>
+
+    <div class="payment-wrapper">
+      
+      <!-- SUBSECTION 1: ACCEPTED PAYMENT METHOD -->
+      <div class="payment-block">
+        <div class="section-badge-title">
+          <span>ACCEPTED PAYMENT METHOD</span>
+        </div>
+
+        <div class="payment-methods-card">
+          <div class="payment-logos-grid">
+            <div class="pay-logo-item">
+              <img src="Images/visa.png" alt="Visa" />
+            </div>
+            <div class="pay-logo-item">
+              <img src="Images/bdo.png" alt="BDO" />
+            </div>
+            <div class="pay-logo-item">
+              <img src="Images/metrobank.png" alt="Metrobank" />
+            </div>
+            <div class="pay-logo-item">
+              <img src="Images/bpi.png" alt="BPI" />
+            </div>
+            <div class="pay-logo-item">
+              <img src="Images/mastercard.png" alt="Mastercard" />
+            </div>
+            <div class="pay-logo-item">
+              <img src="Images/gcash.png" alt="GCash" />
+            </div>
+            <div class="pay-logo-item">
+              <img src="Images/paymaya.png" alt="PayMaya" />
+            </div>
+          </div>
+          <p class="payment-card-footnote">You may choose from the following secure and trusted payment options.</p>
+        </div>
+      </div>
+
+      <!-- SUBSECTION 2: PAYMENT GUIDELINES -->
+      <div class="payment-block">
+        <div class="section-badge-title">
+          <span>PAYMENT GUIDELINES</span>
+        </div>
+
+        <div class="guidelines-grid">
+          <!-- 1. Full Payment -->
+          <div class="guideline-card">
+            <h3>FULL PAYMENT</h3>
+            <p>Pay the total amount at once via your preferred payment method. This option is quick, secure, and automatically confirms your booking.</p>
+          </div>
+
+          <!-- 2. Half Payment -->
+          <div class="guideline-card">
+            <h3>HALF PAYMENT</h3>
+            <p>Pay a portion of the total amount (usually 30-50%) to reserve your slot. The remaining balance can be paid before your travel date.</p>
+          </div>
+
+          <!-- 3. Down Payment -->
+          <div class="guideline-card">
+            <h3>DOWN PAYMENT</h3>
+            <p>Pay 50% of the total amount now, and the remaining 50% before your travel date. A great option for a balanced payment plan.</p>
+          </div>
+
+          <!-- 4. Installment Payment -->
+          <div class="guideline-card">
+            <h3>INSTALLMENT PAYMENT</h3>
+            <p>For selected packages, we offer installment options through partner banks and payment gateways. Terms may vary depending on the package and provider.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== REFUND AND CANCELLATION POLICY SECTION (bg7.png) ==================== -->
+  <section class="refund-section" style="background-image: url('Images/gBG7.png');">
+    <!-- Header Bar -->
+    <div class="refund-header-bar">
+      <h2>REFUND AND CANCELLATION POLICY</h2>
+      <p class="refund-subtext">Plan with confidence. Simple policies for your seamless journey.</p>
+    </div>
+
+    <div class="refund-wrapper">
+      <!-- 3 Policy Cards Grid -->
+      <div class="policy-cards-grid">
+        
+        <!-- 1. Cancellation -->
+        <div class="policy-card">
+          <div class="policy-card-top">
+            <div class="policy-icon-box">
+              <img src="Images/cancellation.png" alt="Cancellation" />
+            </div>
+            <h3>CANCELLATION</h3>
+          </div>
+          <p class="policy-card-desc">
+            Cancel 7+ days before departure to qualify for a partial refund. Cancellations within 6 days may incur a fee.
+          </p>
+        </div>
+
+        <!-- 2. Rescheduling -->
+        <div class="policy-card">
+          <div class="policy-card-top">
+            <div class="policy-icon-box">
+              <img src="Images/rescheduling.png" alt="Rescheduling" />
+            </div>
+            <h3>RESCHEDULING</h3>
+          </div>
+          <p class="policy-card-desc">
+            You may reschedule your trip up to 5 days before departure, subject to availability and possible fare adjustment.
+          </p>
+        </div>
+
+        <!-- 3. Refund Eligibility -->
+        <div class="policy-card">
+          <div class="policy-card-top">
+            <div class="policy-icon-box">
+              <img src="Images/refund.png" alt="Refund" />
+            </div>
+            <h3>REFUND<br>ELIGIBILITY</h3>
+          </div>
+          <p class="policy-card-desc">
+            Refund are processed within 7-14 business days after approval. The amount may vary depending on the package and cancellations terms.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Bottom Action Row: Help Tag sa LEFT, View Full Policy Button sa RIGHT -->
+      <div class="policy-bottom-row">
+        <div class="policy-help-pill">
+          <span>Need help with a change? Contact our travel team</span>
+        </div>
+
+        <a href="#" class="btn-view-policy">
+          View Full Policy
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER SECTION (bg8.png) ==================== -->
+  <footer class="footer-section" style="background-image: url('Images/gBG8.png');">
+    <div class="footer-wrapper">
+      
+      <!-- Top Header Row: Logo sa Kaliwa, Slogan sa Kanan -->
+      <div class="footer-top-row">
+        <a href="#" class="footer-logo">
+          <img src="Images/TeyvatLogo.png" alt="Teyvat Travel Services" />
+        </a>
+        <p class="footer-slogan">Seven Nations. One Extraordinary Journey.</p>
+      </div>
+
+      <!-- Main Columns Grid -->
+      <div class="footer-grid">
+
+        <!-- Column 1: Navigate -->
+        <div class="footer-col">
+          <h3 class="footer-heading">NAVIGATE</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">Packages</a></li>
+            <li><a href="#">Itinerary</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Explore -->
+        <div class="footer-col">
+          <h3 class="footer-heading">EXPLORE</h3>
+          <ul class="footer-links">
+            <li><a href="#">Mondstadt</a></li>
+            <li><a href="#">Liyue</a></li>
+            <li><a href="#">Inazuma</a></li>
+            <li><a href="#">Sumeru</a></li>
+            <li><a href="#">Fontaine</a></li>
+            <li><a href="#">Natlan</a></li>
+            <li><a href="#">Snezhnaya</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact Us -->
+        <div class="footer-col">
+          <h3 class="footer-heading">CONTACT US</h3>
+          <ul class="footer-contact-list">
+            <li>
+              <div class="contact-icon-circle">
+                <img src="Images/Email.png" alt="Email" />
+              </div>
+              <span>teyvattravelservices@gmail.com</span>
+            </li>
+            <li>
+              <div class="contact-icon-circle">
+                <img src="Images/Call.png" alt="Call" />
+              </div>
+              <span>(+63) 91234567910</span>
+            </li>
+            <li>
+              <div class="contact-icon-circle">
+                <img src="Images/location.png" alt="Location" />
+              </div>
+              <span>Liyue, Teyvat Travel Services</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Connect With Us -->
+        <div class="footer-col">
+          <h3 class="footer-heading">CONNECT WITH US</h3>
+          <ul class="footer-contact-list">
+            <li>
+              <div class="contact-icon-circle">
+                <img src="Images/fb.png" alt="Facebook" />
+              </div>
+              <a href="#">Teyvat Travel Services</a>
+            </li>
+            <li>
+              <div class="contact-icon-circle">
+                <img src="Images/ig.png" alt="Instagram" />
+              </div>
+              <a href="#">@teyvattravelservices</a>
+            </li>
+            <li>
+              <div class="contact-icon-circle">
+                <img src="Images/x.png" alt="X" />
+              </div>
+              <a href="#">@teyvattravelservices</a>
+            </li>
+            <li>
+              <div class="contact-icon-circle">
+                <img src="Images/youtube.png" alt="YouTube" />
+              </div>
+              <a href="#">Teyvat Travel Services</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
 
 </body>
 </html>
