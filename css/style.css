@@ -179,6 +179,36 @@ a {
         url('../assets/images/liyue-hero-bg.png') center/cover no-repeat;
 }
 
+.hero-inazuma {
+    background: 
+        radial-gradient(645.54% 113.25% at 50.03% 54.81%, rgba(7, 26, 44, 0.35) 0%, rgba(23, 86, 146, 0.35) 100%),
+        url('../assets/images/inazuma-hero-bg.png') center/cover no-repeat;
+}
+
+.hero-sumeru {
+    background: 
+        radial-gradient(645.54% 113.25% at 50.03% 54.81%, rgba(7, 26, 44, 0.35) 0%, rgba(23, 86, 146, 0.35) 100%),
+        url('../assets/images/sumeru-hero-bg.png') center/cover no-repeat;
+}
+
+.hero-fontaine {
+    background: 
+        radial-gradient(645.54% 113.25% at 50.03% 54.81%, rgba(7, 26, 44, 0.35) 0%, rgba(23, 86, 146, 0.35) 100%),
+        url('../assets/images/fontaine-hero-bg.png') center/cover no-repeat;
+}
+
+.hero-natlan {
+    background: 
+        radial-gradient(645.54% 113.25% at 50.03% 54.81%, rgba(7, 26, 44, 0.35) 0%, rgba(23, 86, 146, 0.35) 100%),
+        url('../assets/images/natlan-hero-bg.png') center/cover no-repeat;
+}
+
+.hero-snezhnaya {
+    background: 
+        radial-gradient(645.54% 113.25% at 50.03% 54.81%, rgba(7, 26, 44, 0.35) 0%, rgba(23, 86, 146, 0.35) 100%),
+        url('../assets/images/snezhnaya-hero-bg.png') center/cover no-repeat;
+}
+
 /* Section Header Bar */
 .section-banner-bar {
     width: 100%;
@@ -197,7 +227,7 @@ a {
     letter-spacing: 2px;
 }
 
-/* Shared Brightened Background Styles (Whiter / Cleaner) */
+/* Shared Brightened Background Styles */
 .overview-wrapper {
     width: 100%;
     background: 
@@ -288,15 +318,40 @@ a {
     justify-content: center;
 }
 
-/* Blurred Background Images for Mondstadt */
+/* Blurred Background Images - Mondstadt */
 .itinerary-cider-lake { background-image: url('../assets/images/cider-lake-bg-blur.png'); }
 .itinerary-windrise { background-image: url('../assets/images/windrise-bg-blur.png'); }
 .itinerary-cathedral { background-image: url('../assets/images/cathedral-bg-blur.png'); }
 
-/* Blurred Background Images for Liyue */
+/* Blurred Background Images - Liyue */
 .itinerary-liyue-harbor { background-image: url('../assets/images/liyue-harbor-bg-blur.png'); }
 .itinerary-mt-aocang { background-image: url('../assets/images/mt-aocang-bg-blur.png'); }
 .itinerary-wangshu-inn { background-image: url('../assets/images/wangshu-inn-bg-blur.png'); }
+
+/* Blurred Background Images - Inazuma */
+.itinerary-grand-shrine { background-image: url('../assets/images/grand-shrine-bg-blur.png'); }
+.itinerary-ritou { background-image: url('../assets/images/ritou-bg-blur.png'); }
+.itinerary-tenshukaku { background-image: url('../assets/images/tenshukaku-bg-blur.png'); }
+
+/* Blurred Background Images - Sumeru */
+.itinerary-sumeru-academy { background-image: url('../assets/images/sumeru-academy-bg-blur.png'); }
+.itinerary-gandharva-ville { background-image: url('../assets/images/gandharva-ville-bg-blur.png'); }
+.itinerary-caravan-ribat { background-image: url('../assets/images/caravan-ribat-bg-blur.png'); }
+
+/* Blurred Background Images - Fontaine */
+.itinerary-court-of-fontaine { background-image: url('../assets/images/court-of-fontaine-bg-blur.png'); }
+.itinerary-opera-epiclese { background-image: url('../assets/images/opera-epiclese-bg-blur.png'); }
+.itinerary-lucine-fountain { background-image: url('../assets/images/lucine-fountain-bg-blur.png'); }
+
+/* Blurred Background Images - Natlan */
+.itinerary-tepecac-stadium { background-image: url('../assets/images/tepecac-stadium-bg-blur.png'); }
+.itinerary-children-echoes { background-image: url('../assets/images/children-echoes-bg-blur.png'); }
+.itinerary-people-springs { background-image: url('../assets/images/people-springs-bg-blur.png'); }
+
+/* Blurred Background Images - Snezhnaya */
+.itinerary-zapolyarny { background-image: url('../assets/images/zapolyarny-bg-blur.png'); }
+.itinerary-frost-bound { background-image: url('../assets/images/frost-bg-blur.png'); }
+.itinerary-glacial-outposts { background-image: url('../assets/images/glacial-bg-blur.png'); }
 
 .itinerary-card-item {
     max-width: 950px;
