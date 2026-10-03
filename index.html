@@ -14,21 +14,21 @@
 </head>
 <body>
 
-  <!-- ==================== NAVIGATION BAR ==================== -->
+  <!---------------------- NAVIGATION BAR ------------------------->
   <nav class="navbar">
     <!-- Logo -->
-    <a href="#" class="brand-logo">
-      <img src="Images/TeyvatLogo.png" alt="Teyvat Travel Services" class="logo-image" />
+    <a href="index.html" class="brand-logo">
+      <img src="assets/images/travel-logo.png" alt="Teyvat Travel Services" class="logo-image" />
     </a>
 
     <!-- Navigation Menu Links -->
     <ul class="nav-menu">
-      <li><a href="#" class="nav-item active">Home</a></li>
-      <li><a href="#">Destinations</a></li>
-      <li><a href="#">Packages</a></li>
-      <li><a href="#">Itinerary</a></li>
-      <li><a href="#">AboutUs</a></li>
-      <li><a href="#">FAQ</a></li>
+      <li><a href="#home" class="nav-item active">Home</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#other-services">Other Services</a></li>
     </ul>
 
     <!-- Search Icon & Login Button -->
@@ -43,12 +43,12 @@
     </div>
   </nav>
 
-  <!-- ==================== HERO SECTION (home-bg.png) ==================== -->
-  <header class="hero-container" style="background-image: url('Images/gBG1.png');">
+  <!----------------------------------- HERO SECTION (HOME) ---------------------------------->
+  <header id="home" class="hero-container">
     <div class="hero-main">
       <!-- Title Graphic -->
       <div class="title-container">
-        <img src="Images/HomeTitle.png" alt="Your journey across Teyvat begins here" class="hero-title-img" />
+        <img src="assets/images/home-title.png" alt="Your journey across Teyvat begins here" class="hero-title-img" />
       </div>
 
       <!-- Subtitle -->
@@ -61,8 +61,9 @@
       </div>
     </div>
   </header>
- <!-- ==================== DESTINATIONS SECTION (bg3.png) ==================== -->
-<section class="destinations-section" style="background-image: url('Images/gBG3.png');">
+
+ <!------------------------------- DESTINATIONS SECTION  --------------------------------->
+<section id="destinations" class="destinations-section">
   <div class="destinations-header-bar">
     <h2>DESTINATIONS</h2>
   </div>
@@ -73,165 +74,90 @@
       <p class="destinations-subtitle">From windmills to floating islands, ancient cities to frozen peaks, each nation holds a unique story waiting for you.</p>
     </div>
 
-    <div class="explore-btn-wrapper">
-      <a href="#" class="btn-explore-all">
-        Explore Destinations
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
-        </svg>
-      </a>
+
+   <!-- 7 Nation Cards -->
+      <div class="destinations-cards-grid">
+        <a href="mondstadt.html" class="destination-card-link">
+          <img src="assets/images/mondstadt-card.png" alt="Mondstadt" class="destination-card-img" />
+        </a>
+
+        <a href="liyue.html" class="destination-card-link">
+          <img src="assets/images/liyue-card.png" alt="Liyue" class="destination-card-img" />
+        </a>
+
+        <a href="inazuma.html" class="destination-card-link">
+          <img src="assets/images/inazuma-card.png" alt="Inazuma" class="destination-card-img" />
+        </a>
+
+        <a href="sumeru.html" class="destination-card-link">
+          <img src="assets/images/sumeru-card.png" alt="Sumeru" class="destination-card-img" />
+        </a>
+
+        <a href="fontaine.html" class="destination-card-link">
+          <img src="assets/images/fontaine-card.png" alt="Fontaine" class="destination-card-img" />
+        </a>
+
+        <a href="natlan.html" class="destination-card-link">
+          <img src="assets/images/natlan-card.png" alt="Natlan" class="destination-card-img" />
+        </a>
+
+        <a href="snezhnaya.html" class="destination-card-link">
+          <img src="assets/images/snezhnaya-card.png" alt="Snezhnaya" class="destination-card-img" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+   
+ <!---------------------------------- TOUR SECTION  ----------------------------->
+  <section id="packages" class="tour-section">
+    <!-- Section Top Header Bar -->
+    <div class="packages-header-bar">
+      <h2>TOUR PACKAGES</h2>
     </div>
 
-    <div class="destinations-cards-grid">
-      
-      <!-- 1. Mondstadt  -->
-      <div class="nation-card">
-        <div class="card-img-container">
-          <img src="Images/p3Mondstadt.png" alt="Mondstadt" class="nation-bg-img" />
-          <div class="element-icon-circle">
-            <img src="Images/anemologo.png" alt="Anemo" />
-          </div>
-        </div>
-        <div class="card-info bg-mondstadt">
-          <h4>MONDSTADT</h4>
-          <span class="nation-desc">City of Freedom</span>
-          <a href="#" class="btn-card-explore">
-            Explore <img src="Images/diamond.png" alt="" class="diamond-img" />
-          </a>
-        </div>
+    <!-- Main Carousel Layout Container -->
+    <div class="packages-carousel-container">
+      <!-- Previous (Left) Icon Button -->
+      <button class="carousel-nav-btn prev-btn" aria-label="Previous Package">
+        <img src="assets/images/previous-icon.png" alt="Previous" />
+      </button>
+
+      <!-- 3 Packages Cards Wrapper -->
+      <div class="packages-cards-grid">
+        <a href="#" class="package-card-link">
+          <img src="assets/images/package-mondstadt.png" alt="Mondstadt Tour Package" class="package-card-img" />
+        </a>
+
+        <a href="#" class="package-card-link">
+          <img src="assets/images/package-liyue.png" alt="Liyue Tour Package" class="package-card-img" />
+        </a>
+
+        <a href="#" class="package-card-link">
+          <img src="assets/images/package-inazuma.png" alt="Inazuma Tour Package" class="package-card-img" />
+        </a>
       </div>
 
-      <!-- 2. Liyue  -->
-      <div class="nation-card">
-        <div class="card-img-container">
-          <img src="Images/p3Liyue.png" alt="Liyue" class="nation-bg-img" />
-          <div class="element-icon-circle">
-            <img src="Images/geologo.png" alt="Geo" />
-          </div>
-        </div>
-        <div class="card-info bg-liyue">
-          <h4>LIYUE</h4>
-          <span class="nation-desc">Harbor of Stone and Contracts</span>
-          <a href="#" class="btn-card-explore">
-            Explore <img src="Images/diamond.png" alt="" class="diamond-img" />
-          </a>
-        </div>
-      </div>
-
-      <!-- 3. Inazuma -->
-      <div class="nation-card">
-        <div class="card-img-container">
-          <img src="Images/p3Inazuma.png" alt="Inazuma" class="nation-bg-img" />
-          <div class="element-icon-circle">
-            <img src="Images/electrologo.png" alt="Electro" />
-          </div>
-        </div>
-        <div class="card-info bg-inazuma">
-          <h4>INAZUMA</h4>
-          <span class="nation-desc">Realm of Eternal Thunder</span>
-          <a href="#" class="btn-card-explore">
-            Explore <img src="Images/diamond.png" alt="" class="diamond-img" />
-          </a>
-        </div>
-      </div>
-
-      <!-- 4. Sumeru  -->
-      <div class="nation-card">
-        <div class="card-img-container">
-          <img src="Images/p3Sumeru.png" alt="Sumeru" class="nation-bg-img" />
-          <div class="element-icon-circle">
-            <img src="Images/denrologo.png" alt="Dendro" />
-          </div>
-        </div>
-        <div class="card-info bg-sumeru">
-          <h4>SUMERU</h4>
-          <span class="nation-desc">City of Wisdom</span>
-          <a href="#" class="btn-card-explore">
-            Explore <img src="Images/diamond.png" alt="" class="diamond-img" />
-          </a>
-        </div>
-      </div>
-
-      <!-- 5. Fontaine -->
-      <div class="nation-card">
-        <div class="card-img-container">
-          <img src="Images/p3Fontaine.png" alt="Fontaine" class="nation-bg-img" />
-          <div class="element-icon-circle">
-            <img src="Images/hydrologo.png" alt="Hydro" />
-          </div>
-        </div>
-        <div class="card-info bg-fontaine">
-          <h4>FONTAINE</h4>
-          <span class="nation-desc">Capital of Justice</span>
-          <a href="#" class="btn-card-explore">
-            Explore <img src="Images/diamond.png" alt="" class="diamond-img" />
-          </a>
-        </div>
-      </div>
-
-      <!-- 6. Natlan  -->
-      <div class="nation-card">
-        <div class="card-img-container">
-          <img src="Images/p3Natlan.png" alt="Natlan" class="nation-bg-img" />
-          <div class="element-icon-circle">
-            <img src="Images/pyrologo.png" alt="Pyro" />
-          </div>
-        </div>
-        <div class="card-info bg-natlan">
-          <h4>NATLAN</h4>
-          <span class="nation-desc">Land of Ash, Hot Springs, and Valor</span>
-          <a href="#" class="btn-card-explore">
-            Explore <img src="Images/diamond.png" alt="" class="diamond-img" />
-          </a>
-        </div>
-      </div>
-
-      <!-- 7. Snezhnaya  -->
-      <div class="nation-card">
-        <div class="card-img-container">
-          <img src="Images/p3Snezhnaya.png" alt="Snezhnaya" class="nation-bg-img" />
-          <div class="element-icon-circle">
-            <img src="Images/cryologo.png" alt="Cryo" />
-          </div>
-        </div>
-        <div class="card-info bg-snezhnaya">
-          <h4>SNEZHNAYA</h4>
-          <span class="nation-desc">Eternal White Tundra</span>
-          <a href="#" class="btn-card-explore">
-            Explore <img src="Images/diamond.png" alt="" class="diamond-img" />
-          </a>
-        </div>
-      </div>
-
+      <!-- Next (Right) Icon Button -->
+      <button class="carousel-nav-btn next-btn" aria-label="Next Package">
+        <img src="assets/images/next-icon.png" alt="Next" />
+      </button>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- ==================== ABOUT SECTION (bg2.png) ==================== -->
-  <section class="about-section" style="background-image: url('Images/gBG2.png');">
+  <!------------------------------- TEYVAT TRAVEL SERVICES SECTION ----------------------------->
+  <section id="about" class="about-section">
     <!-- Header Bar -->
     <div class="about-header-bar">
       <h2>TEYVAT TRAVEL SERVICES</h2>
     </div>
 
     <div class="about-content-wrapper">
-      
-      <!-- Know More Button -->
-      <div class="know-more-container">
-        <a href="#" class="btn-know-more">
-          Know More 
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
-      </div>
 
-      <!-- Unang PART: Profile Larawan sa Left, Text Card sa Kanan -->
+      <!-- Unang pic: director -->
       <div class="about-grid-row">
         <div class="about-image-box">
-          <img src="Images/Director's Profile.png" alt="Director Zhongli" class="profile-img" />
+          <img src="assets/images/about-director.png" alt="Director Zhongli" class="profile-img" />
         </div>
         <div class="about-card-box card-border-right">
           <p>
@@ -240,111 +166,25 @@
         </div>
       </div>
 
-      <!-- Pangalawang Side: Text Card sa Left, Background Banner Card sa Kanan (gamit ang 8090728 1.png bilang BG) -->
+      <!-- Second pic: about -->
       <div class="about-grid-row reverse-row">
         <div class="about-card-box card-border-left">
           <p>
             Ever since Teyvat Travel Services was established, it has become one of the trusted travel agencies in the land of Teyvat. Although the agency has just started, our mission to provide excellent and accommodating services and our vision to continuously improve our services to meet our clients' needs are the foundations of a growing legacy that will reach future generations.
           </p>
         </div>
-        
-        <!-- Banner Card na may 8090728 1.png bilang Background Image at Group 89.png/Logo sa gitna -->
-        <div class="about-banner-card" style="background-image: url('Images/8090728 1.png');">
-          <img src="Images/Group 89.png" alt="Teyvat Travel Services Logo" class="banner-overlay-img" />
-        </div>
-      </div>
+        <div class="about-banner-card">
 
     </div>
   </section>
 
- 
- <!-- ==================== POPULAR STOPS SECTION (bg4.png) ==================== -->
-  <section class="popular-stops-section" style="background-image: url('Images/gBG4.png');">
-    <!-- Section Top Header Bar -->
-    <div class="stops-header-bar">
-      <h2>POPULAR STOPS</h2>
-    </div>
 
-    <!-- Main Carousel Layout Container -->
-    <div class="stops-container">
-      <!-- Left Carousel Arrow -->
-      <button class="carousel-arrow prev-arrow" aria-label="Previous Stop">&lt;</button>
 
-      <!-- 3 Popular Stops Cards Wrapper -->
-      <div class="stops-cards-wrapper">
-        
-        <!-- Card 1: Mondstadt -->
-        <div class="stop-card">
-          <img src="Images/MONDSTADT PACKAGE.png" alt="Cathedral of Mondstadt" class="stop-bg-img" />
-          <div class="stop-overlay">
-            <div class="stop-element-badge">
-              <img src="Images/anemologo.png" alt="Anemo" />
-            </div>
-            
-            <div class="stop-bottom-wrapper">
-              <div class="location-tag">
-                <img src="Images/LocationVector.png" alt="Location" class="location-pin" />
-                <span>MONDSTADT</span>
-              </div>
-              <div class="stop-bottom-banner banner-mondstadt">
-                <h3 class="stop-name">Cathedral of Mondstadt</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2: Liyue -->
-        <div class="stop-card">
-          <img src="Images/LIYUE PACKAGE.png" alt="Mt. Aocang" class="stop-bg-img" />
-          <div class="stop-overlay">
-            <div class="stop-element-badge">
-              <img src="Images/geologo.png" alt="Geo" />
-            </div>
-            
-            <div class="stop-bottom-wrapper">
-              <div class="location-tag">
-                <img src="Images/LocationVector.png" alt="Location" class="location-pin" />
-                <span>LIYUE</span>
-              </div>
-              <div class="stop-bottom-banner banner-liyue">
-                <h3 class="stop-name">Mt. Aocang</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3: Inazuma -->
-        <div class="stop-card">
-          <img src="Images/INAZUMA PACKAGE.png" alt="Tenshukaku" class="stop-bg-img" />
-          <div class="stop-overlay">
-            <div class="stop-element-badge">
-              <img src="Images/electrologo.png" alt="Electro" />
-            </div>
-            
-            <div class="stop-bottom-wrapper">
-              <div class="location-tag">
-                <img src="Images/LocationVector.png" alt="Location" class="location-pin" />
-                <span>INAZUMA</span>
-              </div>
-              <div class="stop-bottom-banner banner-inazuma">
-                <h3 class="stop-name">Tenshukaku</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Right Carousel Arrow -->
-      <button class="carousel-arrow next-arrow" aria-label="Next Stop">&gt;</button>
-    </div>
-  </section>
-
-  <!-- ==================== SPLIT SECTION: WHY TRAVEL WITH US (bg5.1.png) & FAQ (bg5.2.png) ==================== -->
-  <section class="split-info-section">
+  <!------------------------ SPLIT SECTION: WHY TRAVEL WITH US & FAQ   -------------------->
+  <section id="faq" class="split-info-section">
 
     <!-- KALIWA: WHY TRAVEL WITH US -->
-    <div class="split-col why-travel-col" style="background-image: url('Images/gBG5.1.png');">
+    <div class="split-col why-travel-col">
       <div class="split-header-bar">
         <h2>WHY TRAVEL WITH US?</h2>
         <p class="split-subtitle">More than just a trip, it's a journey you'll never forget.</p>
@@ -355,11 +195,11 @@
         <!-- 1. Local Experience -->
         <div class="why-card">
           <div class="why-card-img">
-            <img src="Images/LEphoto.png" alt="Local Experience" />
+            <img src="assets/images/LEphoto.png" alt="Local Experience" />
           </div>
           <div class="why-card-text">
             <div class="why-icon">
-              <img src="Images/GroupLogo.png" alt="Group Logo" class="feature-icon-img" />
+              <img src="assets/images/GroupLogo.png" alt="Group Logo" class="feature-icon-img" />
             </div>
             <h3>LOCAL EXPERIENCE</h3>
             <p>Immerse in authentic culture, food and traditions.</p>
@@ -369,11 +209,11 @@
         <!-- 2. Easy Inquiry -->
         <div class="why-card">
           <div class="why-card-img">
-            <img src="Images/EIphoto.png" alt="Easy Inquiry" />
+            <img src="assets/images/EIphoto.png" alt="Easy Inquiry" />
           </div>
           <div class="why-card-text">
             <div class="why-icon">
-              <img src="Images/MessageLogo.png" alt="Message Logo" class="feature-icon-img" />
+              <img src="assets/images/MessageLogo.png" alt="Message Logo" class="feature-icon-img" />
             </div>
             <h3>EASY INQUIRY</h3>
             <p>Quick and hassle-free communication and booking.</p>
@@ -383,11 +223,11 @@
         <!-- 3. Chosen Tours -->
         <div class="why-card">
           <div class="why-card-img">
-            <img src="Images/CTphoto.png" alt="Chosen Tours" />
+            <img src="assets/images/CTphoto.png" alt="Chosen Tours" />
           </div>
           <div class="why-card-text">
             <div class="why-icon">
-              <img src="Images/CompassLogo.png" alt="Compass Logo" class="feature-icon-img" />
+              <img src="assets/images/CompassLogo.png" alt="Compass Logo" class="feature-icon-img" />
             </div>
             <h3>CHOSEN TOURS</h3>
             <p>Well-planned itineraries for a seamless and memorable experience.</p>
@@ -398,7 +238,7 @@
     </div>
 
     <!-- RAYT: FREQUENTLY ASKED QUESTIONS -->
-    <div class="split-col faq-col" style="background-image: url('Images/gBG5.2.png');">
+    <div class="split-col faq-col">
       <div class="split-header-bar">
         <h2>FREQUENTLY ASKED QUESTIONS</h2>
         <p class="split-subtitle">Find quick answers to common questions.</p>
@@ -431,8 +271,8 @@
 
   </section>
 
-  <!-- ==================== PAYMENT METHOD AND GUIDELINES SECTION (bg6.png) ==================== -->
-  <section class="payment-section" style="background-image: url('Images/gBG6.png');">
+  <!------------------------------ PAYMENT METHOD AND GUIDELINES SECTION ------------------------->
+  <section id="other-services" class="payment-section">
     <!-- Top Header Bar -->
     <div class="payment-header-bar">
       <h2>PAYMENT METHOD AND GUIDELINES</h2>
@@ -450,25 +290,25 @@
         <div class="payment-methods-card">
           <div class="payment-logos-grid">
             <div class="pay-logo-item">
-              <img src="Images/visa.png" alt="Visa" />
+              <img src="assets/images/visa.png" alt="Visa" />
             </div>
             <div class="pay-logo-item">
-              <img src="Images/bdo.png" alt="BDO" />
+              <img src="assets/images/bdo.png" alt="BDO" />
             </div>
             <div class="pay-logo-item">
-              <img src="Images/metrobank.png" alt="Metrobank" />
+              <img src="assets/images/metrobank.png" alt="Metrobank" />
             </div>
             <div class="pay-logo-item">
-              <img src="Images/bpi.png" alt="BPI" />
+              <img src="assets/images/bpi.png" alt="BPI" />
             </div>
             <div class="pay-logo-item">
-              <img src="Images/mastercard.png" alt="Mastercard" />
+              <img src="assets/images/mastercard.png" alt="Mastercard" />
             </div>
             <div class="pay-logo-item">
-              <img src="Images/gcash.png" alt="GCash" />
+              <img src="assets/images/gcash.png" alt="GCash" />
             </div>
             <div class="pay-logo-item">
-              <img src="Images/paymaya.png" alt="PayMaya" />
+              <img src="assets/images/paymaya.png" alt="PayMaya" />
             </div>
           </div>
           <p class="payment-card-footnote">You may choose from the following secure and trusted payment options.</p>
@@ -511,8 +351,8 @@
     </div>
   </section>
 
-  <!-- ==================== REFUND AND CANCELLATION POLICY SECTION (bg7.png) ==================== -->
-  <section class="refund-section" style="background-image: url('Images/gBG7.png');">
+  <!---------------------------- REFUND AND CANCELLATION POLICY SECTION ---------------------->
+  <section class="refund-section">
     <!-- Header Bar -->
     <div class="refund-header-bar">
       <h2>REFUND AND CANCELLATION POLICY</h2>
@@ -525,12 +365,17 @@
         
         <!-- 1. Cancellation -->
         <div class="policy-card">
+
           <div class="policy-card-top">
             <div class="policy-icon-box">
-              <img src="Images/cancellation.png" alt="Cancellation" />
+              <img src="assets/images/cancellation.png" alt="Cancellation" />
             </div>
-            <h3>CANCELLATION</h3>
           </div>
+
+          <h3 style= "color: #FFE599; font-family: 'Crimson Text', serif; font-size: 19px; font-weight: 700; letter-spacing: 1.2px; line-height: 22px; margin: 10px 0px 0; text-align: center;">
+            CANCELLATION
+          </h3>
+        
           <p class="policy-card-desc">
             Cancel 7+ days before departure to qualify for a partial refund. Cancellations within 6 days may incur a fee.
           </p>
@@ -540,10 +385,14 @@
         <div class="policy-card">
           <div class="policy-card-top">
             <div class="policy-icon-box">
-              <img src="Images/rescheduling.png" alt="Rescheduling" />
+              <img src="assets/images/rescheduling.png" alt="Rescheduling" />
             </div>
-            <h3>RESCHEDULING</h3>
           </div>
+
+            <h3 style= "color: #FFE599; font-family: 'Crimson Text', serif; font-size: 19px; font-weight: 700; letter-spacing: 1.2px; line-height: 22px; margin: 10px 0px 0; text-align: center;">
+              RESCHEDULING
+            </h3>
+
           <p class="policy-card-desc">
             You may reschedule your trip up to 5 days before departure, subject to availability and possible fare adjustment.
           </p>
@@ -553,10 +402,14 @@
         <div class="policy-card">
           <div class="policy-card-top">
             <div class="policy-icon-box">
-              <img src="Images/refund.png" alt="Refund" />
+              <img src="assets/images/refund.png" alt="Refund" />
             </div>
-            <h3>REFUND<br>ELIGIBILITY</h3>
           </div>
+
+            <h3 style= "color: #FFE599; font-family: 'Crimson Text', serif; font-size: 19px; font-weight: 700; letter-spacing: 1.2px; line-height: 22px; margin: 10px 0px 0; text-align: center;">
+              REFUND ELIGIBILITY
+            </h3>
+          
           <p class="policy-card-desc">
             Refund are processed within 7-14 business days after approval. The amount may vary depending on the package and cancellations terms.
           </p>
@@ -569,27 +422,17 @@
         <div class="policy-help-pill">
           <span>Need help with a change? Contact our travel team</span>
         </div>
-
-        <a href="#" class="btn-view-policy">
-          View Full Policy
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
-      </div>
-
     </div>
   </section>
 
-  <!-- ==================== FOOTER SECTION (bg8.png) ==================== -->
-  <footer class="footer-section" style="background-image: url('Images/gBG8.png');">
+  <!------------------------- FOOTER SECTION ---------------------------->
+  <footer class="footer-section">
     <div class="footer-wrapper">
       
       <!-- Top Header Row: Logo sa Kaliwa, Slogan sa Kanan -->
       <div class="footer-top-row">
         <a href="#" class="footer-logo">
-          <img src="Images/TeyvatLogo.png" alt="Teyvat Travel Services" />
+          <img src="assets/images/travel-logo.png" alt="Teyvat Travel Services" />
         </a>
         <p class="footer-slogan">Seven Nations. One Extraordinary Journey.</p>
       </div>
@@ -630,19 +473,19 @@
           <ul class="footer-contact-list">
             <li>
               <div class="contact-icon-circle">
-                <img src="Images/Email.png" alt="Email" />
+                <img src="assets/images/Email.png" alt="Email" />
               </div>
               <span>teyvattravelservices@gmail.com</span>
             </li>
             <li>
               <div class="contact-icon-circle">
-                <img src="Images/Call.png" alt="Call" />
+                <img src="assets/images/Call.png" alt="Call" />
               </div>
               <span>(+63) 91234567910</span>
             </li>
             <li>
               <div class="contact-icon-circle">
-                <img src="Images/location.png" alt="Location" />
+                <img src="assets/images/location.png" alt="Location" />
               </div>
               <span>Liyue, Teyvat Travel Services</span>
             </li>
@@ -655,25 +498,25 @@
           <ul class="footer-contact-list">
             <li>
               <div class="contact-icon-circle">
-                <img src="Images/fb.png" alt="Facebook" />
+                <img src="assets/icons/facebook-icon.png" alt="Facebook" />
               </div>
               <a href="#">Teyvat Travel Services</a>
             </li>
             <li>
               <div class="contact-icon-circle">
-                <img src="Images/ig.png" alt="Instagram" />
+                <img src="assets/icons/instagram-icon.png" alt="Instagram" />
               </div>
               <a href="#">@teyvattravelservices</a>
             </li>
             <li>
               <div class="contact-icon-circle">
-                <img src="Images/x.png" alt="X" />
+                <img src="assets/icons/x-icon.png" alt="X" />
               </div>
               <a href="#">@teyvattravelservices</a>
             </li>
             <li>
               <div class="contact-icon-circle">
-                <img src="Images/youtube.png" alt="YouTube" />
+                <img src="assets/icons/youtube-icon.png" alt="YouTube" />
               </div>
               <a href="#">Teyvat Travel Services</a>
             </li>

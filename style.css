@@ -11,9 +11,9 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* FIXED NAVIGATION BAR */
+/* --------------------------------FIXED NAVIGATION ---------------------------------- BAR */
 .navbar {
-  position: fixed;            /* Ginagawang fixed sa ibabaw ng screen */
+  position: fixed;           
   top: 0;
   left: 0;
   width: 100%;
@@ -27,7 +27,7 @@ body {
   background-size: cover;
   background-position: center;
   border-bottom: 1px solid rgba(255, 229, 153, 0.2);
-  z-index: 999;               /* Mananatili sa pinaka-ibabaw habang nagso-scroll */
+  z-index: 999;               
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -108,14 +108,14 @@ body {
   color: #06192a;
 }
 
-/* HERO SECTION */
+/* ---------------------------------------- HERO SECTION ------------------------------------------- */
 .hero-container {
   width: 100%;
   min-height: 100vh;
   padding-top: 75px;          
   background: 
       linear-gradient(rgba(3, 20, 36, 0.35), rgba(3, 20, 36, 0.55)),
-      url('./Images/gBG1.png') center/cover no-repeat;
+      url('assets/images/home-bg.png') center/cover no-repeat;
   display: flex;
   flex-direction: column;
 }
@@ -183,148 +183,12 @@ body {
   background-color: #FFE599;
   color: #04101e;
 }
-
-/* ABOUT SECTION */
-.about-section {
-  width: 100%;
-  background: linear-gradient(rgba(11, 28, 51, 0.82), rgba(8, 20, 38, 0.9)),
-              url('images/gBG2.png') center/cover no-repeat;
-  padding-bottom: 80px;
-  border-top: 4px solid #ffffff;
-}
-
-/* Header Bar ng About Section */
-.about-header-bar {
-  background-color: #162436;
-  border-top: 1.5px solid rgba(255, 229, 153, 0.3);
-  padding: 14px 55px;
-}
-
-.about-header-bar h2 {
-  font-family: 'Crimson Text', serif;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #FFE599;
-}
-
-/* Content Container */
-.about-content-wrapper {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 30px 30px 0 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
-}
-
-.know-more-container {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.btn-know-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 18px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  color: #F8F3E8;
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-size: 13px;
-  font-weight: 500;
-  text-decoration: none;
-  background-color: rgba(22, 36, 54, 0.6);
-  backdrop-filter: blur(4px);
-  transition: all 0.2s ease;
-}
-
-.btn-know-more:hover {
-  background-color: #FFE599;
-  border-color: #FFE599;
-  color: #0c1a2e;
-}
-
-.about-grid-row {
-  display: grid;
-  grid-template-columns: 1fr 1.35fr;
-  align-items: center;
-  gap: 35px;
-}
-
-.about-grid-row.reverse-row {
-  grid-template-columns: 1.35fr 1fr;
-}
-
-.about-image-box {
-  width: 100%;
-}
-
-.profile-img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 8px;
-  display: block;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-}
-
-/* Text Card */
-.about-card-box {
-  background-color: rgba(14, 27, 44, 0.75);
-  padding: 24px 30px;
-  border-radius: 6px;
-  backdrop-filter: blur(6px);
-}
-
-.about-card-box p {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  color: #e2e8f0;
-  text-align: justify;
-}
-
-.card-border-right {
-  border-right: 5px solid #FFE599;
-}
-
-.card-border-left {
-  border-left: 5px solid #FFE599;
-}
-
-/* ABOUT BANNER SECTION */
-
-.about-banner-card {
-  width: 100%;
-  height: 220px;
-  /* 8090728 1.png ang nagsisilbing background image */
-  background: linear-gradient(rgba(4, 15, 26, 0.3), rgba(4, 15, 26, 0.5)),
-              url('8090728 1.png') center/cover no-repeat;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-  overflow: hidden;
-}
-
-.banner-overlay-img {
-  max-width: 80%;
-  max-height: 80%;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.7));
-}
-
-/* DESTINATIONS SECTION */
+/* --------------------------------DESTINATIONS SECTION ----------------------------------------*/
 .destinations-section {
   width: 100%;
-  background: linear-gradient(rgba(10, 26, 47, 0.85), rgba(7, 18, 33, 0.92)),
-              url('Images/gBG3.png') center/cover no-repeat;
+  background: linear-gradient(rgba(3, 20, 36, 0.35), rgba(3, 20, 36, 0.55)),
+              url('assets/Images/destination-bg.png') center/cover no-repeat;
   padding-bottom: 70px;
-  border-top: 4px solid #ffffff;
 }
 
 .destinations-header-bar {
@@ -376,214 +240,46 @@ body {
   letter-spacing: 0.2px;
 }
 
-.explore-btn-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 25px;
-}
-
-.btn-explore-all {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 18px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  color: #F8F3E8;
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  background-color: rgba(22, 36, 54, 0.6);
-  backdrop-filter: blur(4px);
-  transition: all 0.2s ease;
-}
-
-.btn-explore-all:hover {
-  background-color: #FFE599;
-  border-color: #FFE599;
-  color: #0c1a2e;
-}
-
 /* 7 Cards Grid */
 .destinations-cards-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 12px;
-}
-
-.nation-card {
-  border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.nation-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
-}
-
-.card-img-container {
-  position: relative;
+  gap: 14px;
+  align-items: stretch;
   width: 100%;
-  height: 180px;
 }
 
-.nation-bg-img {
+/* Hover effect ng card */
+.destination-card-link:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.75);
+}
+
+.destination-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 8px;
 }
 
-/* Circle Icon */
-.element-icon-circle {
-  position: absolute;
-  bottom: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 50px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
-  z-index: 3;
-  overflow: hidden;
-}
 
-.element-icon-circle img {
+/* -------------------------------TOUR PACKAGES SECTION ------------------------------*/
+.tour-section {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Base Card Info Layout */
-.card-info {
-  position: relative;
-  padding: 34px 10px 14px 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  flex: 1;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  border-top: 1px solid rgba(255, 255, 255, 0.8);
-}
-
-/* Background Image Overlay bawat Nation */
-.card-info.bg-mondstadt {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.65)),
-                    url('Images/WMondstadt.png');
-}
-
-.card-info.bg-liyue {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.65)),
-                    url('Images/WLiyue.png');
-}
-
-.card-info.bg-inazuma {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.65)),
-                    url('Images/WInazuma.png');
-}
-
-.card-info.bg-sumeru {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.65)),
-                    url('Images/WSumeru.png');
-}
-
-.card-info.bg-fontaine {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.65)),
-                    url('Images/WFontaine.png');
-}
-
-.card-info.bg-natlan {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.65)),
-                    url('Images/WNatlan.png');
-}
-
-.card-info.bg-snezhnaya {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.65)),
-                    url('Images/WSnezhnaya.png');
-}
-
-.card-info h4 {
-  font-family: 'Crimson Text', serif;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #0c1a2e;
-  margin-bottom: 4px;
-}
-
-.nation-desc {
-  font-family: 'Inter', sans-serif;
-  font-size: 9px;
-  font-weight: 500;
-  color: #000000;
-  line-height: 13px;
-  min-height: 26px;
-  margin-bottom: 12px;
-  display: block;
-}
-
-/* Explore Button */
-.btn-card-explore {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 3px 10px;
-  border: 1px solid #718096;
-  border-radius: 5px;
-  color: #1a202c;
-  font-family: 'Crimson Text', serif;
-  font-style: normal;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.5);
-  transition: all 0.2s ease;
-}
-
-.btn-card-explore:hover {
-  background-color: #FFE599;
-  border-color: #FFE599;
-  color: #0c1a2e;
-}
-
-.diamond-img {
-  width: 9px;
-  height: 9px;
-  object-fit: contain;
-  display: inline-block;
-}
-
-/* POPULAR STOPS SECTION */
-.popular-stops-section {
-  width: 100%;
-  background: linear-gradient(rgba(10, 26, 47, 0.8), rgba(7, 18, 33, 0.88)),
-              url('Images/gBG4.png') center/cover no-repeat;
+  background: linear-gradient(rgba(3, 20, 36, 0.35), rgba(3, 20, 36, 0.55)),
+              url('assets/Images/tour-bg.png') center/cover no-repeat;
   padding-bottom: 75px;
-  border-top: 4px solid #ffffff;
 }
 
 /* Header Bar */
-.stops-header-bar {
+.packages-header-bar {
   background-color: #162436;
   border-top: 1.5px solid rgba(255, 229, 153, 0.3);
   padding: 14px 55px;
 }
 
-.stops-header-bar h2 {
+.packages-header-bar h2 {
   font-family: 'Crimson Text', serif;
   font-size: 20px;
   font-weight: 700;
@@ -591,169 +287,60 @@ body {
   color: #FFE599;
 }
 
-/* Main Container with space for floating arrows */
-.stops-container {
+/* Carousel Container na may floating room para sa buttons */
+.packages-carousel-container {
   position: relative;
-  max-width: 1240px;
+  max-width: 1220px;
   margin: 0 auto;
-  padding: 45px 65px 0 65px;  /* 65px padding creates side room for the buttons */
+  padding: 65px 65px 0 65px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
 
-/* Cards Wrapper Grid */
-.stops-cards-wrapper {
+/* 3-Cards Grid */
+.packages-cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
   width: 100%;
+  align-items: stretch;
 }
 
 /* Individual Card Styling */
-.stop-card {
-  position: relative;
-  height: 410px;
-  border-radius: 8px;          /* 8px border-radius matching design */
-  border: 1.5px solid #FFE599;
+.package-card-link {
+  display: block;
+  text-decoration: none;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.stop-card:hover {
-  transform: translateY(-5px);
+.package-card-link:hover {
+  transform: translateY(-6px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8);
 }
 
-.stop-bg-img {
+.package-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 8px;
 }
 
-/* Card Internal Overlay */
-.stop-overlay {
+/* Left & Right Circular Nav Buttons */
+.carousel-nav-btn {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 14px 0 0 0;
-}
-
-/* Top-Right Circular Element Badge */
-.stop-element-badge {
-  align-self: flex-end;
-  margin-right: 14px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
-  overflow: hidden;
-}
-
-.stop-element-badge img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Bottom Wrapper */
-.stop-bottom-wrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Location Tag on Top of Bottom Banner */
-.location-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background-color: #0b1a2d;
-  border: 1.5px solid #FFE599;
-  border-radius: 6px;
-  padding: 4px 14px;
-  margin-bottom: 13px;       /* Pulls tag downward to overlap banner top border */
-  z-index: 5;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
-}
-
-.location-pin {
-  width: 11px;
-  height: 11px;
-  object-fit: contain;
-}
-
-.location-tag span {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  color: #FFE599;
-}
-
-/* Bottom Title Banner with Custom Background Images */
-.stop-bottom-banner {
-  width: 100%;
-  padding: 24px 14px 16px 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border-top: 1px solid rgba(255, 229, 153, 0.35);
-}
-
-.banner-mondstadt {
-  background: linear-gradient(rgba(3, 14, 26, 0.45), rgba(3, 14, 26, 0.75)),
-              url('BOTTOM MONDSTADT PACKAGE.png') center/cover no-repeat;
-}
-
-.banner-liyue {
-  background: linear-gradient(rgba(3, 14, 26, 0.45), rgba(3, 14, 26, 0.75)),
-              url('BOTTOM LIYUE PACKAGE.png') center/cover no-repeat;
-}
-
-.banner-inazuma {
-  background: linear-gradient(rgba(3, 14, 26, 0.45), rgba(3, 14, 26, 0.75)),
-              url('BOTTOM INAZUMA PACKAGE.png') center/cover no-repeat;
-}
-
-.stop-name {
-  font-family: 'Inter', sans-serif;
-  font-size: 19px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  color: #ffffff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
-}
-
-/* ARROWS: Floating Centered on Sides */
-.carousel-arrow {
-  position: absolute;
-  top: 54%;
+  top: 50%;
   transform: translateY(-50%);
   width: 44px;
   height: 44px;
   border-radius: 50%;
   background-color: rgba(5, 18, 32, 0.75);
   border: 1.5px solid rgba(255, 229, 153, 0.45);
-  color: #ffffff;
-  font-family: 'Irish Grover', cursive;
-  font-size: 26px;
-  line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -762,29 +349,140 @@ body {
   backdrop-filter: blur(4px);
   z-index: 10;
   transition: all 0.2s ease;
-  user-select: none;
+  padding: 0;
 }
 
-.prev-arrow {
-  left: 8px;
+.carousel-nav-btn img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  display: block;
 }
 
-.next-arrow {
-  right: 8px;
-}
-
-.carousel-arrow:hover {
+.carousel-nav-btn:hover {
   background-color: #FFE599;
   border-color: #FFE599;
-  color: #06192a;
+  transform: translateY(-50%) scale(1.05);
 }
 
-/* SPLIT SECTION: WHY TRAVEL & FAQ */
+/* Button Positioning */
+.prev-btn {
+  left: -20px;
+}
+
+.next-btn {
+  right: -20px;
+}
+
+/*---------------------------- ABOUT SECTION ----------------------------*/
+.about-section {
+  width: 100%;
+  background: linear-gradient(rgba(3, 20, 36, 0.35), rgba(3, 20, 36, 0.55)),
+              url('assets/Images/about-bg.png') center/cover no-repeat;
+  padding-bottom: 80px;
+}
+
+/* Header Bar ng About Section */
+.about-header-bar {
+  background-color: #162436;
+  border-top: 1.5px solid rgba(255, 229, 153, 0.3);
+  padding: 14px 55px;
+}
+
+.about-header-bar h2 {
+  font-family: 'Crimson Text', serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #FFE599;
+}
+
+/* Content Container */
+.about-content-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 30px 0 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.about-grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  align-items: center;
+  gap: 35px;
+}
+
+.about-grid-row.reverse-row {
+  grid-template-columns: 1.35fr 1fr;
+}
+
+.about-image-box {
+  width: 100%;
+}
+
+.profile-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Text Card */
+.about-card-box {
+  background-color: rgba(14, 27, 44, 0.75);
+  padding: 24px 30px;
+  backdrop-filter: blur(6px);
+}
+
+.about-card-box p {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: #e2e8f0;
+  text-align: justify;
+}
+
+.card-border-right {
+  border-right: 5px solid #FFE599;
+}
+
+.card-border-left {
+  border-left: 5px solid #FFE599;
+}
+
+/* ABOUT BANNER SECTION */
+
+.about-banner-card {
+  width: 100%;
+  height: 220px;
+  background: url('assets/images/about-teyvat.png') center/cover no-repeat;
+  border-radius: 8px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.banner-overlay-img {
+  max-width: 90%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.7));
+}
+
+
+/*---------------------- SPLIT SECTION: WHY TRAVEL & FAQ -------------------------*/
 .split-info-section {
   width: 100%;
-  display: flex !important;   /* Pwersahang gawing magkatabi */
+  display: flex !important;   
   flex-direction: row !important;
-  border-top: 4px solid #ffffff;
 }
 
 /* Kalahating column bawat isa */
@@ -794,19 +492,18 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  position: relative;
 }
 
-/* Left Background: bg5.1.png */
 .why-travel-col {
-  background: linear-gradient(rgba(10, 26, 47, 0.78), rgba(7, 18, 33, 0.88)),
-              url('Images/gBG5.1.png') center/cover no-repeat;
-  border-right: 2px solid rgba(255, 255, 255, 0.25);
+  background: linear-gradient(rgba(3, 20, 36, 0.35), rgba(3, 20, 36, 0.55)),
+              url('assets/images/why-bg.png') center/cover no-repeat;
+  border-right: 5px solid white;
 }
 
-/* Right Background: bg5.2.png */
 .faq-col {
-  background: linear-gradient(rgba(10, 26, 47, 0.78), rgba(7, 18, 33, 0.88)),
-              url('Images/gBG5.2.png') center/cover no-repeat;
+  background: linear-gradient(rgba(3, 20, 36, 0.35), rgba(3, 20, 36, 0.55)),
+              url('assets/images/faq-bg.png') center/cover no-repeat;
 }
 
 /* Section Header Bar */
@@ -832,7 +529,7 @@ body {
   color: #cbd5e1;
 }
 
-/* WHY TRAVEL CARDS */
+/*  WHY TRAVEL CARDS  */
 .why-travel-cards {
   display: flex;
   flex-direction: column;
@@ -843,7 +540,6 @@ body {
 .why-card {
   display: flex;
   height: 120px;
-  border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
   border-right: 5px solid #FFE599;
@@ -863,7 +559,7 @@ body {
 
 .why-card-text {
   width: 56%;
-  background-color: rgba(14, 27, 44, 0.3);
+  background-color: rgba(14, 27, 44, 0.60);
   padding: 10px 18px;
   display: flex;
   flex-direction: column;
@@ -922,7 +618,6 @@ body {
   backdrop-filter: blur(6px);
   border-left: 5px solid #FFE599;
   padding: 9px 18px;
-  border-radius: 4px;
   font-family: 'Inter', sans-serif;
   font-size: 12px;
   font-weight: 600;
@@ -943,13 +638,12 @@ body {
   margin-top: 10px;
 }
 
-/* PAYMENT METHOD AND GUIDELINES SECTION */
+/*----------------------------- PAYMENT METHOD AND GUIDELINES SECTION ---------------------------*/
 .payment-section {
   width: 100%;
-  background: linear-gradient(rgba(10, 26, 47, 0.8), rgba(7, 18, 33, 0.9)),
-              url('Images/gBG6.png') center/cover no-repeat;
+  background: linear-gradient(rgba(3, 20, 36, 0.35), rgba(3, 20, 36, 0.55)),
+              url('assets/images/payment-bg.png') center/cover no-repeat;
   padding-bottom: 80px;
-  border-top: 4px solid #ffffff;
 }
 
 /* Main Section Header Bar */
@@ -996,7 +690,6 @@ body {
   display: inline-flex;
   align-self: flex-start;
   background-color: rgba(9, 25, 43, 0.9);
-  border: 1.5px solid #FFE599;
   border-radius: 6px;
   padding: 6px 18px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
@@ -1064,14 +757,13 @@ body {
 
 .guideline-card {
   background-color: rgba(14, 27, 44, 0.78);
-  border-left: 25px solid #FFE599; /* Gold accent border sa kaliwa */
-  border-radius: 6px;
-  padding: 16px 22px;
+  border-left: 8px solid #FFE599; 
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 1rem 1.5rem;
 }
 
 .guideline-card h3 {
@@ -1091,13 +783,12 @@ body {
   text-align: justify;
 }
 
-/* REFUND AND CANCELLATION POLICY SECTION */
+/* --------------------------- REFUND AND CANCELLATION POLICY SECTION --------------------------------*/
 .refund-section {
   width: 100%;
-  background: linear-gradient(rgba(10, 26, 47, 0.78), rgba(7, 18, 33, 0.88)),
-              url('Images/gBG7.png') center/cover no-repeat;
+  background: linear-gradient(rgba(3, 20, 36, 0.35), rgba(3, 20, 36, 0.55)),
+              url('assets/images/refund-bg.png') center/cover no-repeat;
   padding-bottom: 70px;
-  border-top: 4px solid #ffffff;
 }
 
 /* Header Bar */
@@ -1143,14 +834,16 @@ body {
 
 /* Individual Card */
 .policy-card {
-  background-color: rgba(10, 24, 40, 0.5);
-  border: 1.5px solid #FFE599;  /* Gold stroke border */
+  background-color: rgba(10, 24, 40, 0.80);
+  border: 1.5px solid #FFE599;  
   border-radius: 8px;
   padding: 28px 24px 24px 24px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items:center;
+  text-align: center;
   min-height: 220px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -1186,13 +879,15 @@ body {
   object-fit: contain;
 }
 
-.policy-card-top h3 {
-  font-family: 'Crimson Text', serif;
-  font-size: 19px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  color: #ffffff;
-  line-height: 22px;
+.policy-card- > h3 {
+  color: #FFE599 !important;
+  font-family: 'Crimson Text', serif !important;
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  text-align: center !important;
+  margin: 12px 8px 0 !important;
+  line-height: 1.3 !important;
 }
 
 /* Deskripsyon ng Card */
@@ -1202,13 +897,17 @@ body {
   line-height: 19px;
   color: #e2e8f0;
   text-align: center;
+  margin: 0;
+  margin-top: 10px;
 }
 
 /* Bottom Action Row */
 .policy-bottom-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  margin-top: 24px;
+  width: 100%;
 }
 
 /* Help Pill Tag sa Kaliwa */
@@ -1227,43 +926,20 @@ body {
   color: #ffffff;
 }
 
-/* View Full Policy Button sa Kanan */
-.btn-view-policy {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 22px;
-  border: 1.5px solid rgba(255, 255, 255, 0.6);
-  border-radius: 20px;
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  font-size: 12.5px;
-  font-weight: 600;
-  text-decoration: none;
-  background-color: rgba(14, 27, 44, 0.7);
-  backdrop-filter: blur(4px);
-  transition: all 0.2s ease;
-}
 
-.btn-view-policy:hover {
-  background-color: #FFE599;
-  border-color: #FFE599;
-  color: #0c1a2e;
-}
-
-/* FOOTER SECTION */
+/* ----------------------------- FOOTER SECTION ---------------------------- */
 .footer-section {
   width: 100%;
-  background: linear-gradient(rgba(4, 18, 32, 0.75), rgba(2, 10, 20, 0.92)),
-              url('Images/gBG8.png') center/cover no-repeat;
-  padding: 45px 0 55px 0;
+  background: linear-gradient(rgba(3, 20, 36, 0.35), rgba(3, 20, 36, 0.55)),
+              url('assets/images/footer-bg (2).png') center/cover no-repeat;
+  padding: 45px 0 55px;
   border-top: 3px solid rgba(255, 229, 153, 0.3);
 }
 
 .footer-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   gap: 35px;
@@ -1274,12 +950,23 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 0;
+}
+
+.footer-logo {
+  margin-left: -70px;
+  margin-right: 0;
+  text-align: left;
+  padding-left: 0;
 }
 
 .footer-logo img {
   height: 44px;
   width: auto;
   object-fit: contain;
+  display: block;
+  margin-left: 0;
 }
 
 .footer-slogan {
@@ -1288,6 +975,8 @@ body {
   font-weight: 600;
   color: #f1f5f9;
   letter-spacing: 0.4px;
+  text-align: right;
+  margin-top: 6px;
 }
 
 /* 4-Columns Grid */
@@ -1390,4 +1079,9 @@ body {
 
 .footer-contact-list a:hover {
   color: #FFE599;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
 }
