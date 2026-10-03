@@ -12,31 +12,35 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!---------------------- NAVIGATION BAR ------------------------->
+  <nav class="navbar">
+    <!-- Logo -->
+    <a href="index.html" class="brand-logo">
+      <img src="assets/images/travel-logo.png" alt="Teyvat Travel Services" class="logo-image" />
+    </a>
 
-    <header class="navbar">
-        <a href="index.html" class="logo-brand">
-            <img src="assets/images/teyvat-logo.png" alt="TEYVAT" class="logo-main">
-            <img src="assets/images/travel-services.png" alt="TRAVEL SERVICES" class="logo-subtitle">
-        </a>
+    <!-- Navigation Menu Links -->
+    <ul class="nav-menu">
+      <li><a href="index.html#home" >Home</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#packages"class="nav-item active">Packages</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#other-services">Other Services</a></li>
+    </ul>
 
-        <nav aria-label="Main Navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="inazuma.html" class="active">Destinations</a></li>
-                <li><a href="#packages">Packages</a></li>
-                <li><a href="#itinerary">Itinerary</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
+    <!-- Search Icon & Login Button -->
+    <div class="nav-actions">
+      <button class="search-icon-btn" aria-label="Search">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+      <a href="#" class="btn-login">Log In/ Sign Up</a>
+    </div>
+  </nav>
 
-        <div class="nav-actions">
-            <button class="search-btn flex-center" aria-label="Search">
-                <img src="assets/icons/search-icon.png" alt="Search" width="24" height="24">
-            </button>
-            <a href="#" class="btn-login flex-center">Log In / Sign Up</a>
-        </div>
-    </header>
 
     <section class="hero-container hero-inazuma">
         <img src="assets/images/tagline-realm-of-eternal-thunder.png" alt="THE REALM OF ETERNAL THUNDER" class="hero-tagline-img">
@@ -163,71 +167,108 @@
             </div>
         </div>
     </section>
+ <!------------------------- FOOTER SECTION ---------------------------->
+  <footer class="footer-section">
+    <div class="footer-wrapper">
+      
+      <!-- Footer Top Row -->
+      <div class="footer-top-row">
+        <a href="#" class="footer-logo">
+          <img src="assets/images/travel-logo.png" alt="Teyvat Travel Services" />
+        </a>
+        <p class="footer-slogan">Seven Nations. One Extraordinary Journey.</p>
+      </div>
 
-    <footer id="faq" class="footer-container">
-        <div class="footer-top">
-            <a href="index.html" class="logo-brand">
-                <img src="assets/images/teyvat-logo.png" alt="TEYVAT" class="logo-main">
-                <img src="assets/images/travel-services.png" alt="TRAVEL SERVICES" class="logo-subtitle">
-            </a>
-            <div class="footer-tagline">
-                Seven Nations. One Extraordinary Journey.
-            </div>
+      <!-- Main Columns Grid -->
+      <div class="footer-grid">
+
+        <!-- Column 1: Navigate -->
+        <div class="footer-col">
+          <h3 class="footer-heading">NAVIGATE</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">Packages</a></li>
+            <li><a href="#">Itinerary</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
         </div>
 
-        <div class="footer-columns">
-            <div class="footer-col">
-                <div class="footer-col-title">NAVIGATE</div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#destinations">Destinations</a></li>
-                    <li><a href="#packages">Packages</a></li>
-                    <li><a href="#itinerary">Itinerary</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <div class="footer-col-title">EXPLORE</div>
-                <ul>
-                    <li><a href="index.html">Mondstadt</a></li>
-                    <li><a href="liyue.html">Liyue</a></li>
-                    <li><a href="inazuma.html">Inazuma</a></li>
-                    <li><a href="sumeru.html">Sumeru</a></li>
-                    <li><a href="fontaine.html">Fontaine</a></li>
-                    <li><a href="natlan.html">Natlan</a></li>
-                    <li><a href="snezhnaya.html">Snezhnaya</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <div class="footer-col-title">CONTACT US</div>
-                <div class="footer-contact-item">
-                    <img src="assets/icons/mail-icon.png" alt="Email" width="20">
-                    <span>teyvattravelservices@gmail.com</span>
-                </div>
-                <div class="footer-contact-item">
-                    <img src="assets/icons/phone-icon.png" alt="Phone" width="20">
-                    <span>(+63) 91234567910</span>
-                </div>
-                <div class="footer-contact-item">
-                    <img src="assets/icons/location-icon.png" alt="Location" width="20">
-                    <span>Inazuma, Teyvat Travel Services</span>
-                </div>
-            </div>
-
-            <div class="footer-col">
-                <div class="footer-col-title">CONNECT WITH US</div>
-                <ul class="footer-social-list">
-                    <li><a href="#"><img src="assets/icons/facebook-icon.png" alt="FB" width="18"> Facebook: Teyvat Travel Services</a></li>
-                    <li><a href="#"><img src="assets/icons/instagram-icon.png" alt="IG" width="18"> Instagram: @teyvattravelservices</a></li>
-                    <li><a href="#"><img src="assets/icons/x-icon.png" alt="X" width="18"> X: @teyvattravelservices</a></li>
-                    <li><a href="#"><img src="assets/icons/youtube-icon.png" alt="YouTube" width="18"> YouTube: Teyvat Travel Services</a></li>
-                </ul>
-            </div>
+        <!-- Column 2: Explore -->
+        <div class="footer-col">
+          <h3 class="footer-heading">EXPLORE</h3>
+          <ul class="footer-links">
+            <li><a href="#">Mondstadt</a></li>
+            <li><a href="#">Liyue</a></li>
+            <li><a href="#">Inazuma</a></li>
+            <li><a href="#">Sumeru</a></li>
+            <li><a href="#">Fontaine</a></li>
+            <li><a href="#">Natlan</a></li>
+            <li><a href="#">Snezhnaya</a></li>
+          </ul>
         </div>
-    </footer>
+
+        <!-- Column 3: Contact Us -->
+        <div class="footer-col">
+          <h3 class="footer-heading">CONTACT US</h3>
+          <ul class="footer-contact-list">
+            <li>
+              <div class="contact-icon-circle">
+                <img src="assets/images/Email.png" alt="Email" />
+              </div>
+              <span>teyvattravelservices@gmail.com</span>
+            </li>
+            <li>
+              <div class="contact-icon-circle">
+                <img src="assets/images/Call.png" alt="Call" />
+              </div>
+              <span>(+63) 91234567910</span>
+            </li>
+            <li>
+              <div class="contact-icon-circle">
+                <img src="assets/images/location.png" alt="Location" />
+              </div>
+              <span>Liyue, Teyvat Travel Services</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Connect With Us -->
+        <div class="footer-col">
+          <h3 class="footer-heading">CONNECT WITH US</h3>
+          <ul class="footer-contact-list">
+            <li>
+              <div class="contact-icon-circle">
+                <img src="assets/icons/facebook-icon.png" alt="Facebook" />
+              </div>
+              <a href="#">Teyvat Travel Services</a>
+            </li>
+            <li>
+              <div class="contact-icon-circle">
+                <img src="assets/icons/instagram-icon.png" alt="Instagram" />
+              </div>
+              <a href="#">@teyvattravelservices</a>
+            </li>
+            <li>
+              <div class="contact-icon-circle">
+                <img src="assets/icons/x-icon.png" alt="X" />
+              </div>
+              <a href="#">@teyvattravelservices</a>
+            </li>
+            <li>
+              <div class="contact-icon-circle">
+                <img src="assets/icons/youtube-icon.png" alt="YouTube" />
+              </div>
+              <a href="#">Teyvat Travel Services</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
 
 </body>
 </html>
