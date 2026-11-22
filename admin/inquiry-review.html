@@ -75,34 +75,62 @@
     </main>
 
     <script>
-        const inquiries = {
-            "1": {
-                name: "Rimuru Tempest",
-                email: "rimurutempest@gmail.com",
-                phone: "",
-                message: "Hi! Do you offer private airport transfers and kid-friendly tour options for a 3-day trip to Mondstadt this December?"
-            },
-            "2": {
-                name: "Aeion Matthew",
-                email: "aeionbuenavidez@gmail.com",
-                phone: "+63 911 6767 988",
-                message: "Hello! We're a group of 3 planning a 4-day trip to Inazuma this December and wanted to ask if inter-island ferry passes, guided shrine visits, and local dining recommendations are included in your standard package."
+        document.addEventListener("DOMContentLoaded", () => {
+            const defaultInquiries = [
+                {
+                    id: 1,
+                    name: 'Rimuru Tempest',
+                    email: 'rimurutempest@gmail.com',
+                    phoneNumber: '',
+                    message: 'Hi! Do you offer private airport transfers and kid-friendly tour options for a 3-day trip to Mondstadt this December?',
+                    status: 'pending'
+                },
+                {
+                    id: 2,
+                    name: 'Aeion Matthew',
+                    email: 'aeionbuenavidez@gmail.com',
+                    phoneNumber: '+63 emergency services 6767 emergency services',
+                    message: "Hello! We're a group of 3 planning a 4-day trip to Inazuma this December and wanted to ask if inter-island ferry passes, guided shrine visits, and local dining recommendations are included in your standard package.",
+                    status: 'pending'
+                }
+            ];
+
+            const params = new URLSearchParams(window.location.search);
+            const inquiryId = Number(params.get('id'));
+            const savedInquiries = JSON.parse(localStorage.getItem('inquiries')) || [];
+            const allInquiries = [...defaultInquiries, ...savedInquiries];
+
+            const inquiry = allInquiries.find(item => item.id === inquiryId);
+
+            if (inquiry) {
+                document.getElementById('fullName').value = inquiry.name;
+                document.getElementById('emailAddress').value = inquiry.email;
+                document.getElementById('phoneNumber').value = inquiry.phoneNumber || 'N/A';
+                document.getElementById('inquiryMessage').value = inquiry.message;
+
+                if (inquiry.reply) {
+                    document.getElementById('replyMessage').value = inquiry.reply;
+                }
+            } else if (inquiryId) {
+                alert('Inquiry not found!');
+                window.location.href = 'inquiries.html';
+                return;
             }
-        };
 
-        const params = new URLSearchParams(window.location.search);
-        const id = params.get("id") || "1";
-        const data = inquiries[id] || inquiries["1"];
+            document.getElementById('replyForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const replyText = document.getElementById('replyMessage').value.trim();
 
-        document.getElementById("fullName").value = data.name;
-        document.getElementById("emailAddress").value = data.email;
-        document.getElementById("phoneNumber").value = data.phone;
-        document.getElementById("inquiryMessage").value = data.message;
+                const index = savedInquiries.findIndex(item => item.id === inquiryId);
+                if (index !== -1) {
+                    savedInquiries[index].status = 'answered';
+                    savedInquiries[index].reply = replyText;
+                    localStorage.setItem('inquiries', JSON.stringify(savedInquiries));
+                }
 
-        document.getElementById("replyForm").addEventListener("submit", (e) => {
-            e.preventDefault();
-            alert(`Reply sent to ${data.name} (${data.email})!`);
-            window.location.href = "inquiries.html";
+                alert(`Reply sent to ${document.getElementById('fullName').value}!`);
+                window.location.href = 'inquiries.html';
+            });
         });
     </script>
 

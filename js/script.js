@@ -77,9 +77,16 @@ document.addEventListener("DOMContentLoaded", () => {
         generalInquiryForm.addEventListener("submit", (e) => {
             e.preventDefault();
 
+            const inquiries = JSON.parse(localStorage.getItem("inquiries")) || [];
+
+            const nextId = inquiries.length > 0
+            ? Math.max(...inquiries.map(item => item.id)) + 1
+            : 3;
+
             const fullName = document.getElementById("fullName").value.trim();
             const emailAddress = document.getElementById("emailAddress").value.trim();
             const phoneNumber = document.getElementById("phoneNumber").value.trim();
+            const inquiryMessage = document.getElementById("inquiryMessage").value.trim();
 
             const isNameValid = setFieldError(
                 "fullName",
@@ -103,7 +110,19 @@ document.addEventListener("DOMContentLoaded", () => {
                     : ""
             );
 
+            const newInquiry = {
+                id: nextId,
+                name: fullName,
+                email: emailAddress,
+                phoneNumber: phoneNumber || "",
+                message: inquiryMessage,
+                status: "pending"
+            };
+            
             if (isNameValid && isEmailValid && isPhoneValid) {
+                inquiries.push(newInquiry);
+                localStorage.setItem("inquiries", JSON.stringify(inquiries));
+
                 alert("Your general inquiry has been submitted. Our travel team will get back to you soon.");
                 generalInquiryForm.reset();
             }
