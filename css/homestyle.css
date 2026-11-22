@@ -1,7 +1,7 @@
 /* ---- CUSTOM FONT ---- */
 @font-face {
   font-family: 'HYWenHei';
-  src: url('../assets/fonts/HYWenHei-85W.ttf') format('truetype'); /* Update filename/extension to match your exact file in assets/fonts */
+  src: url('../assets/fonts/HYWenHei-85W.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -766,15 +766,15 @@ img {
 }
 
 .why-thumb {
-  flex-shrink: 0; /* Prevents the text column from squishing the image */
+  flex-shrink: 0;
   display: flex;
   overflow: hidden;
 }
 
 .why-thumb img {
-  height: 100%; /* Matches the exact height of the card */
-  width: auto;  /* Automatically scales width to preserve the SVG's exact aspect ratio */
-  max-width: none; /* Overrides global img { max-width: 100% } so it never shrinks */
+  height: 100%; 
+  width: auto; 
+  max-width: none;
   display: block;
 }
 
