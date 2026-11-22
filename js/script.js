@@ -235,6 +235,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const age = Number(document.getElementById("pkgAge").value);
             const startDate = document.getElementById("departureDate").value;
             const endDate = document.getElementById("returnDate").value;
+            const messageEl = document.getElementById("pkgMessage") || pkgForm.querySelector("textarea");
+            const message = messageEl ? messageEl.value.trim() : "";
 
             const vName = setFieldError("pkgFullName", "pkgFullNameError", fullName ? "" : "Full name is required.");
             const vEmail = setFieldError(
@@ -259,6 +261,34 @@ document.addEventListener("DOMContentLoaded", () => {
             if (vName && vEmail && vPhone && vAge && vPkg && vStart && vEnd) {
                 const pkg = PACKAGE_DATA[selectedKey];
                 const total = formatPhp(pkg.pricePerPerson * travelers);
+
+                const existingInquiries = JSON.parse(localStorage.getItem("packageInquiries")) || [];
+                const nextId = existingInquiries.length > 0
+                    ? Math.max(...existingInquiries.map(item => Number(item.id))) + 1
+                    : 3;
+
+                const shortName = pkg.name.split("—").split("-").trim();
+
+                existingInquiries.push({
+                    id: nextId,
+                    name: fullName,
+                    email: email,
+                    phone: phone,
+                    age: age,
+                    packageKey: selectedKey,
+                    packageFull: pkg.name,
+                    packageShort: shortName,
+                    travelers: travelers,
+                    totalPrice: total,
+                    departureDate: startDate,
+                    returnDate: endDate,
+                    message: message,
+                    status: "pending",
+                    reply: ""
+                });
+
+                localStorage.setItem("packageInquiries", JSON.stringify(existingInquiries));
+
                 alert(`Package inquiry submitted for ${pkg.name} (${travelers} traveler${travelers > 1 ? "s" : ""}, Estimated Total: ${total}).`);
                 pkgForm.reset();
                 selectedKey = "";
