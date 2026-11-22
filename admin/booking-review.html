@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teyvat Travel Services - Package Inquiry</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- ADMIN TOP NAVIGATION -->
+    <header class="admin-navbar">
+        <a href="../index.html" class="admin-logo">
+            <img src="../assets/images/travel-logo-blue.png" alt="Teyvat Travel Services">
+        </a>
+
+        <div class="admin-nav-right">
+            <a href="../index.html" class="view-site-link">View website</a>
+            <a href="bookings.html" class="view-site-link">Back to Package Inquiries</a>
+            <div class="admin-user-box">
+                <span class="admin-role-name">Travel team</span>
+                <a href="login.html" class="admin-signout">Sign out</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="review-main">
+        <section class="inquiry-form-card package-review-card">
+            <div class="form-card-header">
+                <h1 class="form-card-title">Package Inquiry</h1>
+                <a href="bookings.html" class="close-card-btn" aria-label="Close package inquiry">X</a>
+            </div>
+
+            <form id="packageReviewForm" class="inquiry-review-form">
+                <div class="form-row-two">
+                    <div class="form-group">
+                        <label for="pkgFullName">Full Name</label>
+                        <input type="text" id="pkgFullName" class="form-control" value="Rimuru Tempest" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pkgEmail">Email Address</label>
+                        <input type="email" id="pkgEmail" class="form-control" value="rimurutempest@gmail.com" readonly>
+                    </div>
+                </div>
+
+                <div class="form-row-two">
+                    <div class="form-group">
+                        <label for="pkgPhone">Phone Number</label>
+                        <input type="text" id="pkgPhone" class="form-control" value="+63 912 3456 789" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pkgAge">Age</label>
+                        <input type="text" id="pkgAge" class="form-control" placeholder="Your age" value="" readonly>
+                    </div>
+                </div>
+
+                <!-- Travel Details Box -->
+                <fieldset class="travel-details-box">
+                    <legend class="travel-details-title">Travel Details</legend>
+
+                    <div class="form-group">
+                        <label for="travelPackage">Travel Package</label>
+                        <input type="text" id="travelPackage" class="form-control" value="Mondstadt" readonly>
+                    </div>
+
+                    <div class="form-row-two">
+                        <div class="form-group">
+                            <label for="numTravelers">Number of Travelers</label>
+                            <input type="text" id="numTravelers" class="form-control" value="2" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="totalPrice">Total Price</label>
+                            <input type="text" id="totalPrice" class="form-control" value="Php 200,000" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-row-two">
+                        <div class="form-group">
+                            <label for="departureDate">Departure Date</label>
+                            <input type="text" id="departureDate" class="form-control" value="December 04 , 2026" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="returnDate">Return Date</label>
+                            <input type="text" id="returnDate" class="form-control" value="December 06 , 2026" readonly>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Message / Request -->
+                <div class="form-group">
+                    <label for="messageRequest">Message/Request</label>
+                    <textarea id="messageRequest" class="form-control package-message-box" rows="4" readonly>Hi! Do you offer private airport transfers and kid-friendly tour options for a 3-day trip to Mondstadt this December?</textarea>
+                </div>
+
+                <!-- Admin Actions Box -->
+                <fieldset class="admin-actions-box">
+                    <legend class="admin-actions-title">Admin Actions</legend>
+
+                    <div class="admin-actions-layout">
+                        <div class="form-group admin-reply-col">
+                            <label for="packageReply">Reply to Inquiry</label>
+                            <textarea id="packageReply" class="form-control package-reply-box" rows="5" placeholder="Write a reply..."></textarea>
+                        </div>
+
+                        <div class="admin-decision-col">
+                            <button type="button" id="acceptBtn" class="btn-decision">Accept</button>
+                            <button type="button" id="declineBtn" class="btn-decision">Decline</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const bookings = {
+            "1": {
+                name: "Rimuru Tempest",
+                email: "rimurutempest@gmail.com",
+                phone: "+63 912 3456 789",
+                age: "",
+                travelPackage: "Mondstadt",
+                travelers: "2",
+                totalPrice: "Php 200,000",
+                departure: "December 04 , 2026",
+                returnDate: "December 06 , 2026",
+                message: "Hi! Do you offer private airport transfers and kid-friendly tour options for a 3-day trip to Mondstadt this December?"
+            },
+            "2": {
+                name: "Aeion Matthew",
+                email: "aeionbuenavidez@gmail.com",
+                phone: "+63 911 6767 988",
+                age: "",
+                travelPackage: "Inazuma",
+                travelers: "3",
+                totalPrice: "Php 300,000",
+                departure: "December 22 , 2026",
+                returnDate: "December 25 , 2026",
+                message: "Hello! We're a group of 3 planning a 4-day trip to Inazuma this December and wanted to ask if inter-island ferry passes, guided shrine visits, and local dining recommendations are included in your standard package."
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id") || "1";
+        const booking = bookings[id] || bookings["1"];
+
+        document.getElementById("pkgFullName").value = booking.name;
+        document.getElementById("pkgEmail").value = booking.email;
+        document.getElementById("pkgPhone").value = booking.phone;
+        document.getElementById("pkgAge").value = booking.age;
+        document.getElementById("travelPackage").value = booking.travelPackage;
+        document.getElementById("numTravelers").value = booking.travelers;
+        document.getElementById("totalPrice").value = booking.totalPrice;
+        document.getElementById("departureDate").value = booking.departure;
+        document.getElementById("returnDate").value = booking.returnDate;
+        document.getElementById("messageRequest").value = booking.message;
+
+        function handleDecision(decision) {
+            const replyText = document.getElementById("packageReply").value.trim();
+            alert(`Package inquiry for ${booking.name} marked as ${decision}${replyText ? " with reply." : "."}`);
+            window.location.href = "bookings.html";
+        }
+
+        document.getElementById("acceptBtn").addEventListener("click", () => handleDecision("Accepted"));
+        document.getElementById("declineBtn").addEventListener("click", () => handleDecision("Declined"));
+    </script>
+
+</body>
+</html>

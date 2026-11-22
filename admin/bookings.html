@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teyvat Travel Services - Package Inquiries</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- ADMIN TOP NAVIGATION -->
+    <header class="admin-navbar">
+        <a href="../index.html" class="admin-logo">
+            <img src="../assets/images/travel-logo-blue.png" alt="Teyvat Travel Services">
+        </a>
+
+        <div class="admin-nav-right">
+            <a href="../index.html" class="view-site-link">View website</a>
+            <div class="admin-user-box">
+                <span class="admin-role-name">Travel team</span>
+                <a href="login.html" class="admin-signout">Sign out</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="admin-main">
+
+        <!-- Module Switcher Dropdown -->
+        <div class="module-switcher">
+            <button type="button" class="module-btn" id="moduleBtn" aria-expanded="false">
+                <span>Inquiry Management</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+
+            <div class="module-dropdown" id="moduleDropdown">
+                <a href="inquiries.html">Inquiry Management</a>
+                <a href="bookings.html" class="active">Package Inquiries</a>
+            </div>
+        </div>
+
+        <!-- Page Title -->
+        <div class="admin-page-header">
+            <span class="admin-eyebrow">INQUIRY MANAGEMENT</span>
+            <h1 class="admin-page-title">Package Inquiries</h1>
+            <p class="admin-page-subtitle">Review travel requests, update their status, and help every journey move forward.</p>
+        </div>
+
+        <!-- Status Filter Tabs -->
+        <div class="status-tabs" id="statusTabs">
+            <button type="button" class="status-tab active" data-status="all">All Inquiries</button>
+            <button type="button" class="status-tab" data-status="pending">Pending</button>
+            <button type="button" class="status-tab" data-status="confirmed">Confirmed</button>
+            <button type="button" class="status-tab" data-status="closed">Closed</button>
+        </div>
+
+        <!-- Search & Filter Toolbar -->
+        <div class="toolbar-row">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search by client name or email">
+            <button type="button" id="filterBtn" class="filter-btn">
+                <span>Filter</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Package Inquiries Table Card -->
+        <section class="table-card">
+            <div class="table-responsive">
+                <table class="admin-table bookings-table">
+                    <thead>
+                        <tr>
+                            <th>Client Name</th>
+                            <th>Contact Info</th>
+                            <th>Selected Package</th>
+                            <th>Travel Dates</th>
+                            <th>No. of Guests</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookingsBody">
+                        <tr class="booking-row" data-status="pending" data-name="Rimuru Tempest" data-email="rimurutempest@gmail.com">
+                            <td class="client-name">Rimuru Tempest</td>
+                            <td>
+                                <div class="contact-stack">
+                                    <span class="contact-email">rimurutempest@gmail.com</span>
+                                    <span class="contact-phone">+63 912 3456 789</span>
+                                </div>
+                            </td>
+                            <td class="package-name">Mondstadt</td>
+                            <td>
+                                <div class="travel-dates-stack">
+                                    <span>December 04 - 06</span>
+                                    <span class="travel-year">2026</span>
+                                </div>
+                            </td>
+                            <td class="guests-cell">2</td>
+                            <td class="status-cell">
+                                <span class="status-badge status-pending">Pending</span>
+                            </td>
+                            <td class="action-cell">
+                                <a href="booking-review.html?id=1" class="btn-review">Review</a>
+                            </td>
+                        </tr>
+
+                        <tr class="booking-row" data-status="pending" data-name="Aeion Matthew" data-email="aeionbuenavidez@gmail.com">
+                            <td class="client-name">Aeion Matthew</td>
+                            <td>
+                                <div class="contact-stack">
+                                    <span class="contact-email">aeionbuenavidez@gmail.com</span>
+                                    <span class="contact-phone">+63 911 6767 988</span>
+                                </div>
+                            </td>
+                            <td class="package-name">Inazuma</td>
+                            <td>
+                                <div class="travel-dates-stack">
+                                    <span>December 22 - 25</span>
+                                    <span class="travel-year">2026</span>
+                                </div>
+                            </td>
+                            <td class="guests-cell">3</td>
+                            <td class="status-cell">
+                                <span class="status-badge status-pending">Pending</span>
+                            </td>
+                            <td class="action-cell">
+                                <a href="booking-review.html?id=2" class="btn-review">Review</a>
+                            </td>
+                        </tr>
+
+                        <tr class="empty-filler-row"><td colspan="7"></td></tr>
+                        <tr class="empty-filler-row"><td colspan="7"></td></tr>
+                        <tr class="empty-filler-row"><td colspan="7"></td></tr>
+                        <tr class="empty-filler-row"><td colspan="7"></td></tr>
+                        <tr class="empty-filler-row"><td colspan="7"></td></tr>
+                        <tr class="empty-filler-row"><td colspan="7"></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table Footer & Pagination -->
+            <div class="table-footer">
+                <span class="showing-text" id="showingText">Showing 1 of 1 inquiry</span>
+
+                <div class="pagination-controls">
+                    <button type="button" class="page-btn" disabled>Previous</button>
+                    <span class="page-number">1</span>
+                    <button type="button" class="page-btn" disabled>Next</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const moduleBtn = document.getElementById('moduleBtn');
+        const moduleDropdown = document.getElementById('moduleDropdown');
+
+        moduleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = moduleDropdown.classList.toggle('open');
+            moduleBtn.setAttribute('aria-expanded', isOpen);
+        });
+
+        document.addEventListener('click', () => {
+            moduleDropdown.classList.remove('open');
+            moduleBtn.setAttribute('aria-expanded', 'false');
+        });
+
+        const tabs = document.querySelectorAll('.status-tab');
+        const searchInput = document.getElementById('searchInput');
+        const rows = document.querySelectorAll('.booking-row');
+        const showingText = document.getElementById('showingText');
+        let activeStatus = 'all';
+
+        function applyFilters() {
+            const query = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+                const statusMatch = activeStatus === 'all' || row.dataset.status === activeStatus;
+                const name = row.dataset.name.toLowerCase();
+                const email = row.dataset.email.toLowerCase();
+                const textMatch = !query || name.includes(query) || email.includes(query);
+
+                const show = statusMatch && textMatch;
+                row.style.display = show ? '' : 'none';
+                if (show) visibleCount++;
+            });
+
+            if (activeStatus === 'all' && !query && visibleCount === rows.length) {
+                showingText.textContent = 'Showing 1 of 1 inquiry';
+            } else {
+                showingText.textContent = `Showing ${visibleCount} of ${visibleCount} ${visibleCount === 1 ? 'inquiry' : 'inquiries'}`;
+            }
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                activeStatus = tab.dataset.status;
+                applyFilters();
+            });
+        });
+
+        searchInput.addEventListener('input', applyFilters);
+    </script>
+
+</body>
+</html>

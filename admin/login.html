@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teyvat Travel Services - Admin Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- ADMIN LOGIN TOP NAVIGATION -->
+    <header class="admin-navbar">
+        <a href="../index.html" class="admin-logo">
+            <img src="../assets/images/travel-logo-blue.png" alt="Teyvat Travel Services">
+        </a>
+
+        <div class="admin-nav-right">
+            <a href="../index.html" class="login-home-link">Home &rarr;</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="login-main">
+        <section class="login-card">
+            <span class="login-eyebrow">TEYVAT ADMINISTRATION</span>
+            <h1 class="login-title">Welcome back</h1>
+            <p class="login-subtitle">Sign in to manage journeys and customer inquiries.</p>
+
+            <form id="adminLoginForm" class="login-form">
+                <div class="login-field">
+                    <label for="usernameOrEmail">Username / Email</label>
+                    <input type="text" id="usernameOrEmail" class="login-input" placeholder="Enter your username or email" required>
+                </div>
+
+                <div class="login-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="login-input" placeholder="Enter your password" required>
+                    <a href="#" class="forgot-password-link" id="forgotPasswordLink">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn-login-submit">Login</button>
+            </form>
+
+            <p class="login-notice">Authorized travel team members only</p>
+
+            <footer class="login-card-footer">
+                <strong>Teyvat Travel Services</strong>
+                <span>Need access? Contact your administrator.</span>
+            </footer>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById("forgotPasswordLink").addEventListener("click", (e) => {
+            e.preventDefault();
+            alert("Please contact your Teyvat Travel Services administrator to reset your password.");
+        });
+
+        document.getElementById("adminLoginForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            window.location.href = "inquiries.html";
+        });
+    </script>
+
+</body>
+</html>

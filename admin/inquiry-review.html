@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teyvat Travel Services - General Inquiry Form</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- ADMIN TOP NAVIGATION -->
+    <header class="admin-navbar">
+        <a href="../index.html" class="admin-logo">
+            <img src="../assets/images/travel-logo-blue.png" alt="Teyvat Travel Services">
+        </a>
+
+        <div class="admin-nav-right">
+            <a href="../index.html" class="view-site-link">View website</a>
+            <a href="inquiries.html" class="view-site-link">Back to General Inquiries</a>
+            <div class="admin-user-box">
+                <span class="admin-role-name">Travel team</span>
+                <a href="login.html" class="admin-signout">Sign out</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="review-main">
+        <section class="inquiry-form-card">
+            <div class="form-card-header">
+                <h1 class="form-card-title">General Inquiry Form</h1>
+                <a href="inquiries.html" class="close-card-btn" aria-label="Close form">X</a>
+            </div>
+
+            <form id="replyForm" class="inquiry-review-form">
+                <div class="form-row-two">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" class="form-control" value="Rimuru Tempest" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailAddress">Email Address</label>
+                        <input type="email" id="emailAddress" class="form-control" value="rimurutempest@gmail.com" readonly>
+                    </div>
+                </div>
+
+                <div class="form-row-two">
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="text" id="phoneNumber" class="form-control" value="" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inquiryMessage">Inquiry</label>
+                    <textarea id="inquiryMessage" class="form-control inquiry-readonly" rows="6" readonly>Hi! Do you offer private airport transfers and kid-friendly tour options for a 3-day trip to Mondstadt this December?</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="replyMessage">Reply to Inquiry</label>
+                    <textarea id="replyMessage" class="form-control reply-textarea" rows="6" placeholder="Write a reply..." required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-send-reply">Send Reply</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const inquiries = {
+            "1": {
+                name: "Rimuru Tempest",
+                email: "rimurutempest@gmail.com",
+                phone: "",
+                message: "Hi! Do you offer private airport transfers and kid-friendly tour options for a 3-day trip to Mondstadt this December?"
+            },
+            "2": {
+                name: "Aeion Matthew",
+                email: "aeionbuenavidez@gmail.com",
+                phone: "+63 911 6767 988",
+                message: "Hello! We're a group of 3 planning a 4-day trip to Inazuma this December and wanted to ask if inter-island ferry passes, guided shrine visits, and local dining recommendations are included in your standard package."
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id") || "1";
+        const data = inquiries[id] || inquiries["1"];
+
+        document.getElementById("fullName").value = data.name;
+        document.getElementById("emailAddress").value = data.email;
+        document.getElementById("phoneNumber").value = data.phone;
+        document.getElementById("inquiryMessage").value = data.message;
+
+        document.getElementById("replyForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert(`Reply sent to ${data.name} (${data.email})!`);
+            window.location.href = "inquiries.html";
+        });
+    </script>
+
+</body>
+</html>
