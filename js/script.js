@@ -2,6 +2,7 @@ const PACKAGE_DATA = {
     mondstadt: {
         name: "Mondstadt",
         duration: "3 Days / 2 Nights",
+        nights: 2,
         pricePerPerson: 12500,
         bannerImage: "../assets/images/mondstadt-trip-image.png",
         itinerary: ["Cider Lake", "Windrise", "Cathedral of Mondstadt"]
@@ -9,6 +10,7 @@ const PACKAGE_DATA = {
     liyue: {
         name: "Liyue",
         duration: "4 Days / 3 Nights",
+        nights: 3,
         pricePerPerson: 15000,
         bannerImage: "../assets/images/liyue-trip-image.png",
         itinerary: ["Liyue Harbor", "Jueyun Karst", "Guili Plains"]
@@ -16,6 +18,7 @@ const PACKAGE_DATA = {
     inazuma: {
         name: "Inazuma",
         duration: "4 Days / 3 Nights",
+        nights: 3,
         pricePerPerson: 18000,
         bannerImage: "../assets/images/inazuma-trip-image.png",
         itinerary: ["Inazuma City", "Grand Narukami Shrine", "Ritou"]
@@ -23,6 +26,7 @@ const PACKAGE_DATA = {
     sumeru: {
         name: "Sumeru",
         duration: "3 Days / 2 Nights",
+        nights: 2,
         pricePerPerson: 12500,
         bannerImage: "../assets/images/sumeru-trip-image.png",
         itinerary: ["Sumeru City", "Gandharva Ville", "Devantaka Mountain"]
@@ -30,6 +34,7 @@ const PACKAGE_DATA = {
     fontaine: {
         name: "Fontaine",
         duration: "3 Days / 2 Nights",
+        nights: 2,
         pricePerPerson: 12500,
         bannerImage: "../assets/images/fontaine-trip-image.png",
         itinerary: ["Court of Fontaine", "Poisson", "Beryl Region"]
@@ -37,6 +42,7 @@ const PACKAGE_DATA = {
     natlan: {
         name: "Natlan",
         duration: "3 Days / 2 Nights",
+        nights: 2,
         pricePerPerson: 12500,
         bannerImage: "../assets/images/natlan-trip-image.png",
         itinerary: ["Stadium of the Sacred Flame", "Scions of the Canopy", "People of the Springs"]
@@ -44,6 +50,7 @@ const PACKAGE_DATA = {
     snezhnaya: {
         name: "Snezhnaya",
         duration: "3 Days / 2 Nights",
+        nights: 2,
         pricePerPerson: 12500,
         bannerImage: "../assets/images/snezhnaya-trip-image.png",
         itinerary: ["Zapolyarny Palace", "Morepesok", "Snezhnaya Winter Promenade"]
@@ -52,6 +59,18 @@ const PACKAGE_DATA = {
 
 function formatPhp(amount) {
     return "Php " + Number(amount).toLocaleString("en-US");
+}
+
+function shiftDate(dateStr, days) {
+    if (!dateStr) return "";
+    const [year, month, day] = dateStr.split("-").map(Number);
+    const date = new Date(year, month - 1, day);
+    date.setDate(date.getDate() + days);
+
+    const yyyy = date.getFullYear();
+    const mm = String(date.getMonth() + 1).padStart(2, "0");
+    const dd = String(date.getDate()).padStart(2, "0");
+    return `${yyyy}-${mm}-${dd}`;
 }
 
 function setFieldError(inputId, errorId, message) {
@@ -80,8 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const inquiries = JSON.parse(localStorage.getItem("inquiries")) || [];
 
             const nextId = inquiries.length > 0
-            ? Math.max(...inquiries.map(item => item.id)) + 1
-            : 3;
+                ? Math.max(...inquiries.map(item => item.id)) + 1
+                : 3;
 
             const fullName = document.getElementById("fullName").value.trim();
             const emailAddress = document.getElementById("emailAddress").value.trim();
@@ -118,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 message: inquiryMessage,
                 status: "pending"
             };
-            
+
             if (isNameValid && isEmailValid && isPhoneValid) {
                 inquiries.push(newInquiry);
                 localStorage.setItem("inquiries", JSON.stringify(inquiries));
@@ -140,6 +159,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const totalDisplay = document.getElementById("pkgTotalDisplay");
         const formHeading = document.getElementById("pkgFormHeading");
 
+        const departureInput = document.getElementById("departureDate");
+        const returnInput = document.getElementById("returnDate");
+
         const withoutPkgState = document.getElementById("withoutPackageState");
         const withPkgState = document.getElementById("withPackageState");
         const changePkgBtn = document.getElementById("changePackageBtn");
@@ -152,6 +174,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let selectedKey = "";
         let travelers = 1;
+
+        function recalculateDates(changedField) {
+            const pkg = PACKAGE_DATA[selectedKey];
+            if (!pkg) return;
+
+            if (changedField === "departure" && departureInput.value) {
+                returnInput.value = shiftDate(departureInput.value, pkg.nights);
+            } else if (changedField === "return" && returnInput.value) {
+                departureInput.value = shiftDate(returnInput.value, -pkg.nights);
+            } else if (changedField === "package") {
+                if (departureInput.value) {
+                    returnInput.value = shiftDate(departureInput.value, pkg.nights);
+                } else if (returnInput.value) {
+                    departureInput.value = shiftDate(returnInput.value, -pkg.nights);
+                }
+            }
+        }
 
         function syncPackageUI() {
             const pkg = PACKAGE_DATA[selectedKey] || null;
@@ -181,7 +220,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             withoutPkgState.classList.add("pkg-hidden");
             withPkgState.classList.remove("pkg-hidden");
+
+            recalculateDates("package");
         }
+
+        departureInput.addEventListener("change", () => recalculateDates("departure"));
+        returnInput.addEventListener("change", () => recalculateDates("return"));
 
         document.querySelectorAll(".btn-choose-pkg, .pkg-option-card-graphic").forEach((el) => {
             el.addEventListener("click", () => {
@@ -233,8 +277,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const email = document.getElementById("pkgEmail").value.trim();
             const phone = document.getElementById("pkgPhone").value.trim();
             const age = Number(document.getElementById("pkgAge").value);
-            const startDate = document.getElementById("departureDate").value;
-            const endDate = document.getElementById("returnDate").value;
+            const startDate = departureInput.value;
+            const endDate = returnInput.value;
             const messageEl = document.getElementById("pkgMessage") || pkgForm.querySelector("textarea");
             const message = messageEl ? messageEl.value.trim() : "";
 
@@ -267,8 +311,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     ? Math.max(...existingInquiries.map(item => Number(item.id))) + 1
                     : 3;
 
-                const shortName = pkg.name.split("—").split("-").trim();
-
                 existingInquiries.push({
                     id: nextId,
                     name: fullName,
@@ -277,7 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     age: age,
                     packageKey: selectedKey,
                     packageFull: pkg.name,
-                    packageShort: shortName,
+                    packageShort: pkg.name,
                     travelers: travelers,
                     totalPrice: total,
                     departureDate: startDate,
