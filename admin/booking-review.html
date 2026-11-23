@@ -141,27 +141,57 @@
         const index = savedBookings.findIndex(item => Number(item.id) === id);
         const booking = index !== -1 ? savedBookings[index] : null;
 
+        const replyBox = document.getElementById("packageReply");
+        const acceptBtn = document.getElementById("acceptBtn");
+        const declineBtn = document.getElementById("declineBtn");
+
         if (booking) {
             document.getElementById("pkgFullName").value = booking.name;
             document.getElementById("pkgEmail").value = booking.email;
-            document.getElementById("pkgPhone").value = booking.phone;
-            document.getElementById("pkgAge").value = booking.age;
+            document.getElementById("pkgPhone").value = booking.phone || "";
+            document.getElementById("pkgAge").value = booking.age || "";
             document.getElementById("travelPackage").value = booking.packageShort;
             document.getElementById("numTravelers").value = booking.travelers;
             document.getElementById("totalPrice").value = booking.totalPrice;
-            document.getElementById("departureDate").value = booking.departureDate;
-            document.getElementById("returnDate").value = booking.returnDate;
+            document.getElementById("departureDate").value = formatDisplayDate(booking.departureDate);
+            document.getElementById("returnDate").value = formatDisplayDate(booking.returnDate);
             document.getElementById("messageRequest").value = booking.message;
+
             if (booking.reply) {
-                    document.getElementById("packageReply").value = booking.reply;
-                }
-            } else {
-                alert("Package inquiry not found!");
-                window.location.href = "bookings.html";
+                replyBox.value = booking.reply;
             }
 
+            const currentStatus = (booking.status || "pending").toLowerCase();
+            if (currentStatus !== "pending") {
+                replyBox.readOnly = true;
+                acceptBtn.disabled = true;
+                declineBtn.disabled = true;
+                acceptBtn.style.opacity = "0.55";
+                declineBtn.style.opacity = "0.55";
+                acceptBtn.style.cursor = "not-allowed";
+                declineBtn.style.cursor = "not-allowed";
+
+                if (currentStatus === "confirmed") {
+                    acceptBtn.textContent = "Accepted";
+                } else if (currentStatus === "closed") {
+                    declineBtn.textContent = "Declined";
+                }
+            }
+        } else {
+            alert("Package inquiry not found!");
+            window.location.href = "bookings.html";
+        }
+
         function handleDecision(decision, statusKey) {
-            const replyText = document.getElementById("packageReply").value.trim();
+            if (!booking) return;
+
+            const currentStatus = (booking.status || "pending").toLowerCase();
+            if (currentStatus !== "pending") {
+                alert(`This package inquiry has already been ${currentStatus === "confirmed" ? "accepted" : "declined"} and cannot be changed.`);
+                return;
+            }
+
+            const replyText = replyBox.value.trim();
 
             if (index !== -1) {
                 savedBookings[index].status = statusKey;
@@ -173,8 +203,8 @@
             window.location.href = "bookings.html";
         }
 
-        document.getElementById("acceptBtn").addEventListener("click", () => handleDecision("Accepted", "confirmed"));
-        document.getElementById("declineBtn").addEventListener("click", () => handleDecision("Declined", "closed"));
+        acceptBtn.addEventListener("click", () => handleDecision("Accepted", "confirmed"));
+        declineBtn.addEventListener("click", () => handleDecision("Declined", "closed"));
     </script>
 
 </body>

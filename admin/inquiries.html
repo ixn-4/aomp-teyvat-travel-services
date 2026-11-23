@@ -81,51 +81,12 @@
                             <th>Client Name</th>
                             <th>Contact Info</th>
                             <th>Inquiry</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody id="inquiriesBody">
-                        <tr class="inquiry-row" data-status="pending" data-name="Rimuru Tempest" data-email="rimurutempest@gmail.com">
-                            <td class="client-name">Rimuru Tempest</td>
-                            <td>
-                                <div class="contact-stack">
-                                    <span class="contact-email">rimurutempest@gmail.com</span>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="inquiry-preview">
-                                    Hi! Do you offer private airport transfers and kid-friendly tour options for a 3-day trip to Mondstadt this December?
-                                </div>
-                            </td>
-                            <td class="action-cell">
-                                <a href="inquiry-review.html?id=1" class="btn-review">Review</a>
-                            </td>
-                        </tr>
-
-                        <tr class="inquiry-row" data-status="pending" data-name="Aeion Matthew" data-email="aeionbuenavidez@gmail.com">
-                            <td class="client-name">Aeion Matthew</td>
-                            <td>
-                                <div class="contact-stack">
-                                    <span class="contact-email">aeionbuenavidez@gmail.com</span>
-                                    <span class="contact-phone">+63 911 6767 988</span>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="inquiry-preview">
-                                    Hello! We're a group of 3 planning a 4-day trip to Inazuma this December and wanted to ask if inter-island ferry passes, guided shri...
-                                </div>
-                            </td>
-                            <td class="action-cell">
-                                <a href="inquiry-review.html?id=2" class="btn-review">Review</a>
-                            </td>
-                        </tr>
-
-                        <tr class="empty-filler-row"><td colspan="4"></td></tr>
-                        <tr class="empty-filler-row"><td colspan="4"></td></tr>
-                        <tr class="empty-filler-row"><td colspan="4"></td></tr>
-                        <tr class="empty-filler-row"><td colspan="4"></td></tr>
-                        <tr class="empty-filler-row"><td colspan="4"></td></tr>
-                        <tr class="empty-filler-row"><td colspan="4"></td></tr>
+                        <tr class="empty-filler-row"><td colspan="5"></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -173,27 +134,44 @@
             id: 1,
             name: 'Rimuru Tempest',
             email: 'rimurutempest@gmail.com',
-            phone: '',
+            phoneNumber: '',
             message: 'Hi! Do you offer private airport transfers and kid-friendly tour options for a 3-day trip to Mondstadt this December?',
-            status: 'pending'
+            status: 'pending',
+            reply: ''
         },
         {
             id: 2,
             name: 'Aeion Matthew',
             email: 'aeionbuenavidez@gmail.com',
-            phone: '+63 911 6767 988',
+            phoneNumber: '+63 911 6767 988',
             message: "Hello! We're a group of 3 planning a 4-day trip to Inazuma this December and wanted to ask if inter-island ferry passes, guided shrine tours, and hotel accommodations are included in your package.",
-            status: 'pending'
+            status: 'pending',
+            reply: ''
         }
     ];
 
+    function getInquiries() {
+        let saved = JSON.parse(localStorage.getItem('inquiries'));
+        if (!saved) {
+            saved = [...defaultInquiries];
+            localStorage.setItem('inquiries', JSON.stringify(saved));
+        } else {
+            defaultInquiries.forEach(def => {
+                if (!saved.some(item => Number(item.id) === Number(def.id))) {
+                    saved.unshift(def);
+                }
+            });
+            localStorage.setItem('inquiries', JSON.stringify(saved));
+        }
+        return saved;
+    }
+
     function renderTable() {
-        const savedInquiries = JSON.parse(localStorage.getItem('inquiries')) || [];
-        const allInquiries = [...defaultInquiries, ...savedInquiries];
+        const allInquiries = getInquiries();
         const query = searchInput.value.trim().toLowerCase();
 
         const filteredInquiries = allInquiries.filter(item => {
-            const itemStatus = item.status || 'pending';
+            const itemStatus = (item.status || 'pending').toLowerCase();
             const statusMatch = activeStatus === 'all' || itemStatus === activeStatus;
             const textMatch = !query ||
                 item.name.toLowerCase().includes(query) ||
@@ -214,14 +192,19 @@
         tbody.innerHTML = '';
 
         pageItems.forEach(item => {
+            const statusKey = (item.status || 'pending').toLowerCase();
+            const statusLabel = statusKey.charAt(0).toUpperCase() + statusKey.slice(1);
+            const badgeStyleClass = statusKey === 'answered' ? 'status-confirmed' : `status-${statusKey}`;
+
             const tr = document.createElement('tr');
             tr.className = 'inquiry-row';
-            tr.dataset.status = item.status || 'pending';
+            tr.dataset.status = statusKey;
             tr.dataset.name = item.name;
             tr.dataset.email = item.email;
 
-            const phoneHTML = item.phoneNumber
-                ? `<span class="contact-phone">${item.phoneNumber}</span>`
+            const phone = item.phoneNumber || item.phone || '';
+            const phoneHTML = phone
+                ? `<span class="contact-phone">${phone}</span>`
                 : '';
 
             tr.innerHTML = `
@@ -235,6 +218,9 @@
                 <td>
                     <div class="inquiry-preview">${item.message}</div>
                 </td>
+                <td class="status-cell">
+                    <span class="status-badge ${badgeStyleClass}">${statusLabel}</span>
+                </td>
                 <td class="action-cell">
                     <a href="inquiry-review.html?id=${item.id}" class="btn-review">Review</a>
                 </td>
@@ -246,7 +232,7 @@
         for (let i = 0; i < neededFillers; i++) {
             const fillerTr = document.createElement('tr');
             fillerTr.className = 'empty-filler-row';
-            fillerTr.innerHTML = `<td colspan="4"></td>`;
+            fillerTr.innerHTML = `<td colspan="5"></td>`;
             tbody.appendChild(fillerTr);
         }
 
@@ -268,7 +254,7 @@
         if (!controls) return;
 
         let html = `
-            <button class="page-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">
+            <button type="button" class="page-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">
                 Previous
             </button>
         `;
@@ -276,14 +262,14 @@
         for (let page = 1; page <= totalPages; page++) {
             const activeClass = page === currentPage ? 'active' : '';
             html += `
-                <button class="page-btn page-num ${activeClass}" onclick="changePage(${page})">
+                <button type="button" class="page-btn ${activeClass}" onclick="changePage(${page})">
                     ${page}
                 </button>
             `;
         }
 
         html += `
-            <button class="page-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">
+            <button type="button" class="page-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">
                 Next
             </button>
         `;
@@ -300,14 +286,14 @@
         tab.addEventListener('click', () => {
             tabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            activeStatus = tab.dataset.status;
-            currentPage = 1; 
+            activeStatus = tab.dataset.status.toLowerCase();
+            currentPage = 1;
             renderTable();
         });
     });
 
     searchInput.addEventListener('input', () => {
-        currentPage = 1; 
+        currentPage = 1;
         renderTable();
     });
 
@@ -317,7 +303,6 @@
         if (e.key === 'inquiries') renderTable();
     });
     </script>
-
 
 </body>
 </html>
