@@ -77,9 +77,16 @@ document.addEventListener("DOMContentLoaded", () => {
         generalInquiryForm.addEventListener("submit", (e) => {
             e.preventDefault();
 
+            const inquiries = JSON.parse(localStorage.getItem("inquiries")) || [];
+
+            const nextId = inquiries.length > 0
+            ? Math.max(...inquiries.map(item => item.id)) + 1
+            : 3;
+
             const fullName = document.getElementById("fullName").value.trim();
             const emailAddress = document.getElementById("emailAddress").value.trim();
             const phoneNumber = document.getElementById("phoneNumber").value.trim();
+            const inquiryMessage = document.getElementById("inquiryMessage").value.trim();
 
             const isNameValid = setFieldError(
                 "fullName",
@@ -103,7 +110,19 @@ document.addEventListener("DOMContentLoaded", () => {
                     : ""
             );
 
+            const newInquiry = {
+                id: nextId,
+                name: fullName,
+                email: emailAddress,
+                phoneNumber: phoneNumber || "",
+                message: inquiryMessage,
+                status: "pending"
+            };
+            
             if (isNameValid && isEmailValid && isPhoneValid) {
+                inquiries.push(newInquiry);
+                localStorage.setItem("inquiries", JSON.stringify(inquiries));
+
                 alert("Your general inquiry has been submitted. Our travel team will get back to you soon.");
                 generalInquiryForm.reset();
             }
@@ -216,6 +235,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const age = Number(document.getElementById("pkgAge").value);
             const startDate = document.getElementById("departureDate").value;
             const endDate = document.getElementById("returnDate").value;
+            const messageEl = document.getElementById("pkgMessage") || pkgForm.querySelector("textarea");
+            const message = messageEl ? messageEl.value.trim() : "";
 
             const vName = setFieldError("pkgFullName", "pkgFullNameError", fullName ? "" : "Full name is required.");
             const vEmail = setFieldError(
@@ -240,6 +261,34 @@ document.addEventListener("DOMContentLoaded", () => {
             if (vName && vEmail && vPhone && vAge && vPkg && vStart && vEnd) {
                 const pkg = PACKAGE_DATA[selectedKey];
                 const total = formatPhp(pkg.pricePerPerson * travelers);
+
+                const existingInquiries = JSON.parse(localStorage.getItem("packageInquiries")) || [];
+                const nextId = existingInquiries.length > 0
+                    ? Math.max(...existingInquiries.map(item => Number(item.id))) + 1
+                    : 3;
+
+                const shortName = pkg.name.split("—").split("-").trim();
+
+                existingInquiries.push({
+                    id: nextId,
+                    name: fullName,
+                    email: email,
+                    phone: phone,
+                    age: age,
+                    packageKey: selectedKey,
+                    packageFull: pkg.name,
+                    packageShort: shortName,
+                    travelers: travelers,
+                    totalPrice: total,
+                    departureDate: startDate,
+                    returnDate: endDate,
+                    message: message,
+                    status: "pending",
+                    reply: ""
+                });
+
+                localStorage.setItem("packageInquiries", JSON.stringify(existingInquiries));
+
                 alert(`Package inquiry submitted for ${pkg.name} (${travelers} traveler${travelers > 1 ? "s" : ""}, Estimated Total: ${total}).`);
                 pkgForm.reset();
                 selectedKey = "";

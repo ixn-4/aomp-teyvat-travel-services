@@ -7,8 +7,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
   <link rel="stylesheet" href="css/homestyle.css" />
 </head>
 <body>
@@ -43,7 +43,7 @@
     <div class="container hero-content">
       <h1 class="hero-title">Your journey across<br />Teyvat begins here!</h1>
       <p class="hero-subtitle">Seven Nations. One Extraordinary Journey.</p>
-      <a href="#packages" class="btn-gold hero-cta">INQUIRE NOW</a>
+      <a href="client/inquire.html" class="btn-gold hero-cta">INQUIRE NOW</a>
     </div>
   </header>
 
@@ -206,9 +206,11 @@
 
         <div class="packages-grid">
           <article class="package-card">
-            <div class="package-banner">
-              <img src="assets/images/mondstadt-packages.svg" alt="Mondstadt - The City of Freedom Expedition" />
-            </div>
+            <a href="mondstadt.html" class="package-banner-link" aria-label="Mondstadt - The City of Freedom Expedition">
+              <div class="package-banner">
+                <img src="assets/images/mondstadt-packages.svg" alt="Mondstadt - The City of Freedom Expedition" />
+              </div>
+            </a>
             <div class="package-body">
               <span class="package-duration">3 Days / 2 Nights</span>
               <h4 class="package-title">Mondstadt</h4>
@@ -223,15 +225,17 @@
                   <span class="package-price">Php 12,500</span>
                   <span class="package-per">Per person</span>
                 </div>
-                <a href="mondstadt.html" class="btn-gold btn-sm">INQUIRE NOW</a>
+                <a href="client/inquire.html" class="btn-gold btn-sm">INQUIRE NOW</a>
               </div>
             </div>
           </article>
 
           <article class="package-card">
-            <div class="package-banner">
-              <img src="assets/images/liyue-package.svg" alt="Liyue - The Harbor of Stone and Commerce" />
-            </div>
+            <a href="liyue.html" class="package-banner-link" aria-label="Liyue - The Harbor of Stone and Commerce">
+              <div class="package-banner">
+                <img src="assets/images/liyue-package.svg" alt="Liyue - The Harbor of Stone and Commerce" />
+              </div>
+            </a>
             <div class="package-body">
               <span class="package-duration">4 Days / 3 Nights</span>
               <h4 class="package-title">Liyue</h4>
@@ -246,15 +250,17 @@
                   <span class="package-price">Php 15,000</span>
                   <span class="package-per">Per person</span>
                 </div>
-                <a href="liyue.html" class="btn-gold btn-sm">INQUIRE NOW</a>
+                <a href="client/inquire.html" class="btn-gold btn-sm">INQUIRE NOW</a>
               </div>
             </div>
           </article>
 
           <article class="package-card">
-            <div class="package-banner">
-              <img src="assets/images/inazuma-package.svg" alt="Inazuma - The Realm of Eternal Thunder" />
-            </div>
+            <a href="inazuma.html" class="package-banner-link" aria-label="Inazuma - The Realm of Eternal Thunder">
+              <div class="package-banner">
+                <img src="assets/images/inazuma-package.svg" alt="Inazuma - The Realm of Eternal Thunder" />
+              </div>
+            </a>
             <div class="package-body">
               <span class="package-duration">4 Days / 3 Nights</span>
               <h4 class="package-title">Inazuma</h4>
@@ -269,7 +275,7 @@
                   <span class="package-price">Php 18,000</span>
                   <span class="package-per">Per person</span>
                 </div>
-                <a href="inazuma.html" class="btn-gold btn-sm">INQUIRE NOW</a>
+                <a href="client/inquire.html" class="btn-gold btn-sm">INQUIRE NOW</a>
               </div>
             </div>
           </article>
@@ -625,19 +631,19 @@
         <ul class="footer-contact-list">
           <li>
             <span class="navy-icon-circle">
-              <img src="assets/icons/mail-icon.png" alt="Email" />
+              <img src="assets/images/email-icon.svg" alt="Email" />
             </span>
             <span>teyvattravelservices@gmail.com</span>
           </li>
           <li>
             <span class="navy-icon-circle">
-              <img src="assets/icons/phone-icon.png" alt="Phone" />
+              <img src="assets/images/phone-icon.svg" alt="Phone" />
             </span>
             <span>(+63) 91234567910</span>
           </li>
           <li>
             <span class="navy-icon-circle">
-              <img src="assets/icons/location-icon.png" alt="Address" />
+              <img src="assets/images/location-icon.png" alt="Address" />
             </span>
             <span>Liyue, Teyvat Travel Services</span>
           </li>
@@ -652,22 +658,22 @@
         </p>
         <div class="footer-social-row">
           <a href="#" class="navy-icon-circle" aria-label="Facebook">
-            <img src="assets/icons/facebook-icon.png" alt="Facebook" />
+            <img src="assets/images/facebook-icon.svg" alt="Facebook" />
           </a>
           <a href="#" class="navy-icon-circle" aria-label="Instagram">
-            <img src="assets/icons/instagram-icon.png" alt="Instagram" />
+            <img src="assets/images/instagram-icon.svg" alt="Instagram" />
           </a>
           <a href="#" class="navy-icon-circle" aria-label="X">
-            <img src="assets/icons/x-icon.png" alt="X" />
+            <img src="assets/images/x-icon.svg" alt="X" />
           </a>
           <a href="#" class="navy-icon-circle" aria-label="YouTube">
-            <img src="assets/icons/youtube-icon.png" alt="YouTube" />
+            <img src="assets/images/youtube-icon.svg" alt="YouTube" />
           </a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="js/homescript.js" defer></script>
 </body>
 </html>

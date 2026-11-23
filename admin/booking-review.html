@@ -15,12 +15,12 @@
 
     <!-- ADMIN TOP NAVIGATION -->
     <header class="admin-navbar">
-        <a href="../index.html" class="admin-logo">
+        <a href="../home.html" class="admin-logo">
             <img src="../assets/images/travel-logo-blue.png" alt="Teyvat Travel Services">
         </a>
 
         <div class="admin-nav-right">
-            <a href="../index.html" class="view-site-link">View website</a>
+            <a href="../home.html" class="view-site-link">View website</a>
             <a href="bookings.html" class="view-site-link">Back to Package Inquiries</a>
             <div class="admin-user-box">
                 <span class="admin-role-name">Travel team</span>
@@ -123,56 +123,58 @@
     </main>
 
     <script>
-        const bookings = {
-            "1": {
-                name: "Rimuru Tempest",
-                email: "rimurutempest@gmail.com",
-                phone: "+63 912 3456 789",
-                age: "",
-                travelPackage: "Mondstadt",
-                travelers: "2",
-                totalPrice: "Php 200,000",
-                departure: "December 04 , 2026",
-                returnDate: "December 06 , 2026",
-                message: "Hi! Do you offer private airport transfers and kid-friendly tour options for a 3-day trip to Mondstadt this December?"
-            },
-            "2": {
-                name: "Aeion Matthew",
-                email: "aeionbuenavidez@gmail.com",
-                phone: "+63 911 6767 988",
-                age: "",
-                travelPackage: "Inazuma",
-                travelers: "3",
-                totalPrice: "Php 300,000",
-                departure: "December 22 , 2026",
-                returnDate: "December 25 , 2026",
-                message: "Hello! We're a group of 3 planning a 4-day trip to Inazuma this December and wanted to ask if inter-island ferry passes, guided shrine visits, and local dining recommendations are included in your standard package."
-            }
-        };
+        function formatDisplayDate(dateStr) {
+            if (!dateStr) return "";
+            if (!/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) return dateStr;
+
+            const date = new Date(dateStr + "T00:00:00");
+            const month = date.toLocaleString("en-US", { month: "long" });
+            const day = String(date.getDate()).padStart(2, "0");
+            const year = date.getFullYear();
+            return `${month} ${day} , ${year}`;
+        }
 
         const params = new URLSearchParams(window.location.search);
-        const id = params.get("id") || "1";
-        const booking = bookings[id] || bookings["1"];
+        const id = Number(params.get("id") || 1);
 
-        document.getElementById("pkgFullName").value = booking.name;
-        document.getElementById("pkgEmail").value = booking.email;
-        document.getElementById("pkgPhone").value = booking.phone;
-        document.getElementById("pkgAge").value = booking.age;
-        document.getElementById("travelPackage").value = booking.travelPackage;
-        document.getElementById("numTravelers").value = booking.travelers;
-        document.getElementById("totalPrice").value = booking.totalPrice;
-        document.getElementById("departureDate").value = booking.departure;
-        document.getElementById("returnDate").value = booking.returnDate;
-        document.getElementById("messageRequest").value = booking.message;
+        const savedBookings = JSON.parse(localStorage.getItem("packageInquiries")) || [];
+        const index = savedBookings.findIndex(item => Number(item.id) === id);
+        const booking = index !== -1 ? savedBookings[index] : null;
 
-        function handleDecision(decision) {
+        if (booking) {
+            document.getElementById("pkgFullName").value = booking.name;
+            document.getElementById("pkgEmail").value = booking.email;
+            document.getElementById("pkgPhone").value = booking.phone;
+            document.getElementById("pkgAge").value = booking.age;
+            document.getElementById("travelPackage").value = booking.packageShort;
+            document.getElementById("numTravelers").value = booking.travelers;
+            document.getElementById("totalPrice").value = booking.totalPrice;
+            document.getElementById("departureDate").value = booking.departureDate;
+            document.getElementById("returnDate").value = booking.returnDate;
+            document.getElementById("messageRequest").value = booking.message;
+            if (booking.reply) {
+                    document.getElementById("packageReply").value = booking.reply;
+                }
+            } else {
+                alert("Package inquiry not found!");
+                window.location.href = "bookings.html";
+            }
+
+        function handleDecision(decision, statusKey) {
             const replyText = document.getElementById("packageReply").value.trim();
+
+            if (index !== -1) {
+                savedBookings[index].status = statusKey;
+                savedBookings[index].reply = replyText;
+                localStorage.setItem("packageInquiries", JSON.stringify(savedBookings));
+            }
+
             alert(`Package inquiry for ${booking.name} marked as ${decision}${replyText ? " with reply." : "."}`);
             window.location.href = "bookings.html";
         }
 
-        document.getElementById("acceptBtn").addEventListener("click", () => handleDecision("Accepted"));
-        document.getElementById("declineBtn").addEventListener("click", () => handleDecision("Declined"));
+        document.getElementById("acceptBtn").addEventListener("click", () => handleDecision("Accepted", "confirmed"));
+        document.getElementById("declineBtn").addEventListener("click", () => handleDecision("Declined", "closed"));
     </script>
 
 </body>

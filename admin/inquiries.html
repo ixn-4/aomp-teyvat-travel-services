@@ -15,12 +15,12 @@
 
     <!-- ADMIN TOP NAVIGATION -->
     <header class="admin-navbar">
-        <a href="../index.html" class="admin-logo">
+        <a href="../home.html" class="admin-logo">
             <img src="../assets/images/travel-logo-blue.png" alt="Teyvat Travel Services">
         </a>
 
         <div class="admin-nav-right">
-            <a href="../index.html" class="view-site-link">View website</a>
+            <a href="../home.html" class="view-site-link">View website</a>
             <div class="admin-user-box">
                 <span class="admin-role-name">Travel team</span>
                 <a href="login.html" class="admin-signout">Sign out</a>
@@ -134,7 +134,7 @@
             <div class="table-footer">
                 <span class="showing-text" id="showingText">Showing 1 of 1 inquiry</span>
 
-                <div class="pagination-controls">
+                <div class="pagination-controls" id="pagination-controls">
                     <button type="button" class="page-btn" disabled>Previous</button>
                     <span class="page-number">1</span>
                     <button type="button" class="page-btn" disabled>Next</button>
@@ -145,59 +145,179 @@
     </main>
 
     <script>
-        const moduleBtn = document.getElementById('moduleBtn');
-        const moduleDropdown = document.getElementById('moduleDropdown');
+    const moduleBtn = document.getElementById('moduleBtn');
+    const moduleDropdown = document.getElementById('moduleDropdown');
 
-        moduleBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isOpen = moduleDropdown.classList.toggle('open');
-            moduleBtn.setAttribute('aria-expanded', isOpen);
+    moduleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = moduleDropdown.classList.toggle('open');
+        moduleBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.addEventListener('click', () => {
+        moduleDropdown.classList.remove('open');
+        moduleBtn.setAttribute('aria-expanded', 'false');
+    });
+
+    const ROWS_PER_PAGE = 8;
+    let currentPage = 1;
+    let activeStatus = 'all';
+
+    const tabs = document.querySelectorAll('.status-tab');
+    const searchInput = document.getElementById('searchInput');
+    const showingText = document.getElementById('showingText');
+    const tbody = document.getElementById('inquiriesBody');
+
+    const defaultInquiries = [
+        {
+            id: 1,
+            name: 'Rimuru Tempest',
+            email: 'rimurutempest@gmail.com',
+            phone: '',
+            message: 'Hi! Do you offer private airport transfers and kid-friendly tour options for a 3-day trip to Mondstadt this December?',
+            status: 'pending'
+        },
+        {
+            id: 2,
+            name: 'Aeion Matthew',
+            email: 'aeionbuenavidez@gmail.com',
+            phone: '+63 911 6767 988',
+            message: "Hello! We're a group of 3 planning a 4-day trip to Inazuma this December and wanted to ask if inter-island ferry passes, guided shrine tours, and hotel accommodations are included in your package.",
+            status: 'pending'
+        }
+    ];
+
+    function renderTable() {
+        const savedInquiries = JSON.parse(localStorage.getItem('inquiries')) || [];
+        const allInquiries = [...defaultInquiries, ...savedInquiries];
+        const query = searchInput.value.trim().toLowerCase();
+
+        const filteredInquiries = allInquiries.filter(item => {
+            const itemStatus = item.status || 'pending';
+            const statusMatch = activeStatus === 'all' || itemStatus === activeStatus;
+            const textMatch = !query ||
+                item.name.toLowerCase().includes(query) ||
+                item.email.toLowerCase().includes(query);
+
+            return statusMatch && textMatch;
         });
 
-        document.addEventListener('click', () => {
-            moduleDropdown.classList.remove('open');
-            moduleBtn.setAttribute('aria-expanded', 'false');
+        const totalItems = filteredInquiries.length;
+        const totalPages = Math.max(1, Math.ceil(totalItems / ROWS_PER_PAGE));
+
+        if (currentPage > totalPages) currentPage = totalPages;
+        if (currentPage < 1) currentPage = 1;
+
+        const startIndex = (currentPage - 1) * ROWS_PER_PAGE;
+        const pageItems = filteredInquiries.slice(startIndex, startIndex + ROWS_PER_PAGE);
+
+        tbody.innerHTML = '';
+
+        pageItems.forEach(item => {
+            const tr = document.createElement('tr');
+            tr.className = 'inquiry-row';
+            tr.dataset.status = item.status || 'pending';
+            tr.dataset.name = item.name;
+            tr.dataset.email = item.email;
+
+            const phoneHTML = item.phoneNumber
+                ? `<span class="contact-phone">${item.phoneNumber}</span>`
+                : '';
+
+            tr.innerHTML = `
+                <td class="client-name">${item.name}</td>
+                <td>
+                    <div class="contact-stack">
+                        <span class="contact-email">${item.email}</span>
+                        ${phoneHTML}
+                    </div>
+                </td>
+                <td>
+                    <div class="inquiry-preview">${item.message}</div>
+                </td>
+                <td class="action-cell">
+                    <a href="inquiry-review.html?id=${item.id}" class="btn-review">Review</a>
+                </td>
+            `;
+            tbody.appendChild(tr);
         });
 
-        const tabs = document.querySelectorAll('.status-tab');
-        const searchInput = document.getElementById('searchInput');
-        const rows = document.querySelectorAll('.inquiry-row');
-        const showingText = document.getElementById('showingText');
-        let activeStatus = 'all';
+        const neededFillers = ROWS_PER_PAGE - pageItems.length;
+        for (let i = 0; i < neededFillers; i++) {
+            const fillerTr = document.createElement('tr');
+            fillerTr.className = 'empty-filler-row';
+            fillerTr.innerHTML = `<td colspan="4"></td>`;
+            tbody.appendChild(fillerTr);
+        }
 
-        function applyFilters() {
-            const query = searchInput.value.trim().toLowerCase();
-            let visibleCount = 0;
-
-            rows.forEach(row => {
-                const statusMatch = activeStatus === 'all' || row.dataset.status === activeStatus;
-                const name = row.dataset.name.toLowerCase();
-                const email = row.dataset.email.toLowerCase();
-                const textMatch = !query || name.includes(query) || email.includes(query);
-
-                const show = statusMatch && textMatch;
-                row.style.display = show ? '' : 'none';
-                if (show) visibleCount++;
-            });
-
-            if (activeStatus === 'all' && !query && visibleCount === rows.length) {
-                showingText.textContent = 'Showing 1 of 1 inquiry';
+        if (showingText) {
+            if (totalItems === 0) {
+                showingText.textContent = 'Showing 0 of 0 inquiries';
             } else {
-                showingText.textContent = `Showing ${visibleCount} of ${visibleCount} ${visibleCount === 1 ? 'inquiry' : 'inquiries'}`;
+                const showingStart = startIndex + 1;
+                const showingEnd = startIndex + pageItems.length;
+                showingText.textContent = `Showing ${showingStart}–${showingEnd} of ${totalItems} ${totalItems === 1 ? 'inquiry' : 'inquiries'}`;
             }
         }
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                activeStatus = tab.dataset.status;
-                applyFilters();
-            });
-        });
+        renderPaginationButtons(totalPages);
+    }
 
-        searchInput.addEventListener('input', applyFilters);
+    function renderPaginationButtons(totalPages) {
+        const controls = document.getElementById('pagination-controls');
+        if (!controls) return;
+
+        let html = `
+            <button class="page-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">
+                Previous
+            </button>
+        `;
+
+        for (let page = 1; page <= totalPages; page++) {
+            const activeClass = page === currentPage ? 'active' : '';
+            html += `
+                <button class="page-btn page-num ${activeClass}" onclick="changePage(${page})">
+                    ${page}
+                </button>
+            `;
+        }
+
+        html += `
+            <button class="page-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">
+                Next
+            </button>
+        `;
+
+        controls.innerHTML = html;
+    }
+
+    function changePage(newPage) {
+        currentPage = newPage;
+        renderTable();
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            activeStatus = tab.dataset.status;
+            currentPage = 1; 
+            renderTable();
+        });
+    });
+
+    searchInput.addEventListener('input', () => {
+        currentPage = 1; 
+        renderTable();
+    });
+
+    document.addEventListener('DOMContentLoaded', renderTable);
+
+    window.addEventListener('storage', (e) => {
+        if (e.key === 'inquiries') renderTable();
+    });
     </script>
+
 
 </body>
 </html>
