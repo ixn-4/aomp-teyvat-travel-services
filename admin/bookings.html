@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teyvat Travel Services - Package Inquiries</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- ADMIN TOP NAVIGATION -->
+    <header class="admin-navbar">
+        <a href="../home.html" class="admin-logo">
+            <img src="../assets/images/travel-logo-blue.png" alt="Teyvat Travel Services">
+        </a>
+
+        <div class="admin-nav-right">
+            <a href="../home.html" class="view-site-link">View website</a>
+            <div class="admin-user-box">
+                <span class="admin-role-name">Travel team</span>
+                <a href="login.html" class="admin-signout">Sign out</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="admin-main">
+
+        <!-- Module Switcher Dropdown -->
+        <div class="module-switcher">
+            <button type="button" class="module-btn" id="moduleBtn" aria-expanded="false">
+                <span>Inquiry Management</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+
+            <div class="module-dropdown" id="moduleDropdown">
+                <a href="inquiries.html">Inquiry Management</a>
+                <a href="bookings.html" class="active">Package Inquiries</a>
+            </div>
+        </div>
+
+        <!-- Page Title -->
+        <div class="admin-page-header">
+            <span class="admin-eyebrow">INQUIRY MANAGEMENT</span>
+            <h1 class="admin-page-title">Package Inquiries</h1>
+            <p class="admin-page-subtitle">Review travel requests, update their status, and help every journey move forward.</p>
+        </div>
+
+        <!-- Status Filter Tabs -->
+        <div class="status-tabs" id="statusTabs">
+            <button type="button" class="status-tab active" data-status="all">All Inquiries</button>
+            <button type="button" class="status-tab" data-status="pending">Pending</button>
+            <button type="button" class="status-tab" data-status="confirmed">Confirmed</button>
+            <button type="button" class="status-tab" data-status="closed">Closed</button>
+        </div>
+
+        <!-- Search & Filter Toolbar -->
+        <div class="toolbar-row">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search by client name or email">
+            <button type="button" id="filterBtn" class="filter-btn">
+                <span>Filter</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Package Inquiries Table Card -->
+        <section class="table-card">
+            <div class="table-responsive">
+                <table class="admin-table bookings-table">
+                    <thead>
+                        <tr>
+                            <th>Client Name</th>
+                            <th>Contact Info</th>
+                            <th>Selected Package</th>
+                            <th>Travel Dates</th>
+                            <th>No. of Guests</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookingsBody">
+                        <tr class="booking-row" data-status="pending" data-name="Rimuru Tempest" data-email="rimurutempest@gmail.com">
+                            <td class="client-name">Rimuru Tempest</td>
+                            <td>
+                                <div class="contact-stack">
+                                    <span class="contact-email">rimurutempest@gmail.com</span>
+                                    <span class="contact-phone">+63 912 3456 789</span>
+                                </div>
+                            </td>
+                            <td class="package-name">Mondstadt</td>
+                            <td>
+                                <div class="travel-dates-stack">
+                                    <span>December 04 - 06</span>
+                                    <span class="travel-year">2026</span>
+                                </div>
+                            </td>
+                            <td class="guests-cell">2</td>
+                            <td class="status-cell">
+                                <span class="status-badge status-pending">Pending</span>
+                            </td>
+                            <td class="action-cell">
+                                <a href="booking-review.html?id=1" class="btn-review">Review</a>
+                            </td>
+                        </tr>
+
+                        <tr class="booking-row" data-status="pending" data-name="Aeion Matthew" data-email="aeionbuenavidez@gmail.com">
+                            <td class="client-name">Aeion Matthew</td>
+                            <td>
+                                <div class="contact-stack">
+                                    <span class="contact-email">aeionbuenavidez@gmail.com</span>
+                                    <span class="contact-phone">+63 911 6767 988</span>
+                                </div>
+                            </td>
+                            <td class="package-name">Inazuma</td>
+                            <td>
+                                <div class="travel-dates-stack">
+                                    <span>December 22 - 25</span>
+                                    <span class="travel-year">2026</span>
+                                </div>
+                            </td>
+                            <td class="guests-cell">3</td>
+                            <td class="status-cell">
+                                <span class="status-badge status-pending">Pending</span>
+                            </td>
+                            <td class="action-cell">
+                                <a href="booking-review.html?id=2" class="btn-review">Review</a>
+                            </td>
+                        </tr>
+
+                        <tr class="empty-filler-row"><td colspan="7"></td></tr>
+                        <tr class="empty-filler-row"><td colspan="7"></td></tr>
+                        <tr class="empty-filler-row"><td colspan="7"></td></tr>
+                        <tr class="empty-filler-row"><td colspan="7"></td></tr>
+                        <tr class="empty-filler-row"><td colspan="7"></td></tr>
+                        <tr class="empty-filler-row"><td colspan="7"></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table Footer & Pagination -->
+            <div class="table-footer">
+                <span class="showing-text" id="showingText">Showing 1 of 1 inquiry</span>
+
+                <div class="pagination-controls" id="pagination-controls">
+                    <button type="button" class="page-btn" disabled>Previous</button>
+                    <span class="page-number">1</span>
+                    <button type="button" class="page-btn" disabled>Next</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const moduleBtn = document.getElementById('moduleBtn');
+        const moduleDropdown = document.getElementById('moduleDropdown');
+
+        moduleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = moduleDropdown.classList.toggle('open');
+            moduleBtn.setAttribute('aria-expanded', isOpen);
+        });
+
+        document.addEventListener('click', () => {
+            moduleDropdown.classList.remove('open');
+            moduleBtn.setAttribute('aria-expanded', 'false');
+        });
+
+        const ROWS_PER_PAGE = 8;
+        let currentPage = 1;
+        let activeStatus = 'all';
+
+        const tabs = document.querySelectorAll('.status-tab');
+        const searchInput = document.getElementById('searchInput');
+        const showingText = document.getElementById('showingText');
+        const tbody = document.querySelector('tbody');
+
+        function getPackageInquiries() {
+            let saved = JSON.parse(localStorage.getItem('packageInquiries'));
+            if (!saved) {
+                saved = [
+                    {
+                        id: 1,
+                        name: 'Rimuru Tempest',
+                        email: 'rimurutempest@gmail.com',
+                        phone: '+63 912 3456 789',
+                        age: 24,
+                        packageShort: 'Mondstadt',
+                        travelers: 2,
+                        totalPrice: 'Php 24,000',
+                        departureDate: '2026-12-04',
+                        returnDate: '2026-12-06',
+                        message: 'Hi! Looking forward to a guided tour of Mondstadt.',
+                        status: 'pending',
+                        reply: ''
+                    },
+                    {
+                        id: 2,
+                        name: 'Aeion Matthew',
+                        email: 'aeionbuenavidez@gmail.com',
+                        phone: '+63 911 6767 988',
+                        age: '',
+                        packageShort: 'Inazuma',
+                        travelers: 3,
+                        totalPrice: 'Php 300,000',
+                        departureDate: '2026-12-22',
+                        returnDate: '2026-12-25',
+                        message: "Hello! We're a group of 3 planning a 4-day trip to Inazuma this December and wanted to ask if inter-island ferry passes, guided shrine visits, and local dining recommendations are included in your standard package.",
+                        status: 'pending',
+                        reply: ''
+                    }
+                ];
+                localStorage.setItem('packageInquiries', JSON.stringify(saved));
+            }
+            return saved;
+        }
+
+        function formatDateRange(depStr, retStr) {
+            if (!depStr || !retStr) return 'TBD';
+            const dep = new Date(depStr + 'T00:00:00');
+            const ret = new Date(retStr + 'T00:00:00');
+            const depMonth = dep.toLocaleString('en-US', { month: 'long' });
+            const retMonth = ret.toLocaleString('en-US', { month: 'long' });
+            const depDay = String(dep.getDate()).padStart(2, '0');
+            const retDay = String(ret.getDate()).padStart(2, '0');
+            const year = ret.getFullYear();
+
+            if (depMonth === retMonth) {
+                return `${depMonth} ${depDay} - ${retDay}<br>${year}`;
+            }
+            return `${depMonth} ${depDay} - ${retMonth} ${retDay}<br>${year}`;
+        }
+
+        function renderPackageTable() {
+            const allInquiries = getPackageInquiries();
+            const query = searchInput.value.trim().toLowerCase();
+
+            const filtered = allInquiries.filter(item => {
+                const itemStatus = (item.status || 'pending').toLowerCase();
+                const statusMatch = activeStatus === 'all' || itemStatus === activeStatus;
+                const textMatch = !query ||
+                    item.name.toLowerCase().includes(query) ||
+                    item.email.toLowerCase().includes(query);
+
+                return statusMatch && textMatch;
+            });
+
+            const totalItems = filtered.length;
+            const totalPages = Math.max(1, Math.ceil(totalItems / ROWS_PER_PAGE));
+            if (currentPage > totalPages) currentPage = totalPages;
+            if (currentPage < 1) currentPage = 1;
+
+            const startIndex = (currentPage - 1) * ROWS_PER_PAGE;
+            const pageItems = filtered.slice(startIndex, startIndex + ROWS_PER_PAGE);
+
+            tbody.innerHTML = '';
+
+            pageItems.forEach(item => {
+                const statusKey = (item.status || 'pending').toLowerCase();
+                const statusLabel = statusKey.charAt(0).toUpperCase() + statusKey.slice(1);
+
+                const tr = document.createElement('tr');
+                tr.className = 'booking-row';
+                tr.dataset.status = statusKey;
+                tr.dataset.name = item.name;
+                tr.dataset.email = item.email;
+
+                tr.innerHTML = `
+                    <td class="client-name">${item.name}</td>
+                    <td>
+                        <div class="contact-stack">
+                            <span class="contact-email">${item.email}</span>
+                            ${item.phone ? `<span class="contact-phone">${item.phone}</span>` : ''}
+                        </div>
+                    </td>
+                    <td>${item.packageShort}</td>
+                    <td>${formatDateRange(item.departureDate, item.returnDate)}</td>
+                    <td>${item.travelers}</td>
+                    <td><span class="status-badge status-${statusKey}">${statusLabel}</span></td>
+                    <td class="action-cell">
+                        <a href="booking-review.html?id=${item.id}" class="btn-review">Review</a>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            const neededFillers = ROWS_PER_PAGE - pageItems.length;
+            for (let i = 0; i < neededFillers; i++) {
+                const fillerTr = document.createElement('tr');
+                fillerTr.className = 'empty-filler-row';
+                fillerTr.innerHTML = `<td colspan="7"></td>`;
+                tbody.appendChild(fillerTr);
+            }
+
+            if (showingText) {
+                if (totalItems === 0) {
+                    showingText.textContent = 'Showing 0 of 0 inquiries';
+                } else {
+                    const start = startIndex + 1;
+                    const end = startIndex + pageItems.length;
+                    showingText.textContent = `Showing ${start}–${end} of ${totalItems} ${totalItems === 1 ? 'inquiry' : 'inquiries'}`;
+                }
+            }
+
+            renderPaginationButtons(totalPages);
+        }
+
+        function renderPaginationButtons(totalPages) {
+            const controls = document.getElementById('pagination-controls');
+            if (!controls) return;
+
+            let html = `
+                <button type="button" class="page-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">
+                    Previous
+                </button>
+            `;
+
+            for (let page = 1; page <= totalPages; page++) {
+                const activeClass = page === currentPage ? 'active' : '';
+                html += `
+                    <button type="button" class="page-btn ${activeClass}" onclick="changePage(${page})">
+                        ${page}
+                    </button>
+                `;
+            }
+
+            html += `
+                <button type="button" class="page-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">
+                    Next
+                </button>
+            `;
+
+            controls.innerHTML = html;
+        }
+
+        function changePage(newPage) {
+            currentPage = newPage;
+            renderPackageTable();
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                activeStatus = tab.dataset.status.toLowerCase();
+                currentPage = 1;
+                renderPackageTable();
+            });
+        });
+
+        searchInput.addEventListener('input', () => {
+            currentPage = 1;
+            renderPackageTable();
+        });
+
+        document.addEventListener('DOMContentLoaded', renderPackageTable);
+
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'packageInquiries') renderPackageTable();
+        });
+    </script>
+
+</body>
+</html>

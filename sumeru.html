@@ -4,230 +4,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teyvat Travel Services - Sumeru</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700;800&family=Crimson+Text:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/nation.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <a href="index.html" class="logo-brand">
-            <img src="assets/images/teyvat-logo.png" alt="TEYVAT" class="logo-main">
-            <img src="assets/images/travel-services.png" alt="TRAVEL SERVICES" class="logo-subtitle">
+    <nav class="navbar">
+        <a href="home.html" class="brand-logo">
+            <img src="assets/images/travel-logo-blue.png" alt="Teyvat Travel Services" class="logo-image">
         </a>
 
-        <nav aria-label="Main Navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sumeru.html" class="active">Destinations</a></li>
-                <li><a href="#packages">Packages</a></li>
-                <li><a href="#itinerary">Itinerary</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
+        <ul class="nav-menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="home.html#destinations" class="active">Destinations</a></li>
+            <li><a href="home.html#packages">Packages</a></li>
+            <li><a href="home.html#about">About Us</a></li>
+            <li><a href="home.html#faq">FAQs</a></li>
+            <li><a href="home.html#other-services">Others</a></li>
+        </ul>
+    </nav>
 
-        <div class="nav-actions">
-            <button class="search-btn flex-center" aria-label="Search">
-                <img src="assets/icons/search-icon.png" alt="Search" width="24" height="24">
-            </button>
-            <a href="#" class="btn-login flex-center">Log In / Sign Up</a>
+    <header class="hero-container hero-sumeru">
+        <div class="hero-content">
+            <span class="hero-tagline">THE CITY OF WISDOM &amp; RAINFOREST RETREAT</span>
+            <h1 class="hero-title">SUMERU</h1>
+            <p class="hero-description">Where wisdom resides in the serenity of ancient roots and lush forests.</p>
+            <a href="client/inquire.html" class="btn-gold">INQUIRE NOW</a>
         </div>
     </header>
 
-    <section class="hero-container hero-sumeru">
-        <img src="assets/images/tagline-city-of-wisdom.png" alt="THE CITY OF WISDOM & RAINFOREST RETREAT" class="hero-tagline-img">
-        <img src="assets/images/title-sumeru.png" alt="SUMERU" class="hero-title-img">
-        <p class="hero-description-text">Where wisdom resides in the serenity of ancient roots and lush forests.</p>
-        <a href="#packages" class="btn-hero-book flex-center">BOOK NOW</a>
-    </section>
-
-    <section id="destinations" class="overview-wrapper">
-        <div class="section-banner-bar">
-            <h2 class="section-banner-title">OVERVIEW</h2>
+    <section id="overview" class="nation-section section-bg-sumeru-overview">
+        <div class="section-header-strip">
+            <h2 class="section-title">OVERVIEW</h2>
         </div>
 
-        <div class="overview-card">
-            <div class="overview-media-card">
-                <img src="assets/images/sumeru-overview-card.png" alt="Sumeru Overview" class="overview-card-img">
-            </div>
+        <div class="section-container">
+            <div class="overview-card-overlay-box">
+                <img src="assets/images/sumeru-overview-card.png" alt="Sumeru Overview Card" class="overview-base-img">
 
-            <div class="overview-details">
-                <div class="overview-quote-box">
-                    <img src="assets/icons/star-blue-top.png" alt="Star Accent" class="quote-star star-top-left">
-                    <p>A dual-environment journey taking you from the majestic halls of learning to the dense, mystical canopies of the rainforest.</p>
-                    <img src="assets/icons/star-blue-bottom.png" alt="Star Accent" class="quote-star star-bottom-right">
+                <div class="overview-right-content">
+                    <p class="overview-desc">
+                        A dual-environment journey taking you from the majestic halls of learning to the dense, mystical canopies of the rainforest.
+                    </p>
+
+                    <div class="overview-pricing">
+                        <span class="duration-label">3 DAYS / 3 NIGHTS</span>
+                        <div class="price-amount">Php 14,000</div>
+                        <span class="price-subtext">Base price per person</span>
+                        <a href="client/package-inquiry.html?package=sumeru" class="btn-gold overview-inquire-btn">INQUIRE NOW</a>
+                    </div>
                 </div>
 
-                <div class="badge-base-price">BASE PRICE:</div>
-                <div class="badge-price-details">PHP 14, 000.00 (Per Person) | 3 Days and 3 Nights</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="itinerary" class="featured-itineraries-section">
-        <div class="section-banner-bar">
-            <h2 class="section-banner-title">FEATURED ITINERARIES</h2>
-        </div>
-
-        <div class="location-card-container itinerary-sumeru-academy">
-            <div class="itinerary-card-item">
-                <img src="assets/images/sumeru-academy-card.png" alt="Sumeru City Academy Itinerary" class="itinerary-full-img">
-            </div>
-        </div>
-
-        <div class="location-card-container itinerary-gandharva-ville">
-            <div class="itinerary-card-item">
-                <img src="assets/images/gandharva-ville-card.png" alt="Gandharva Ville Itinerary" class="itinerary-full-img">
-            </div>
-        </div>
-
-        <div class="location-card-container itinerary-caravan-ribat">
-            <div class="itinerary-card-item">
-                <img src="assets/images/caravan-ribat-card.png" alt="Caravan Ribat Itinerary" class="itinerary-full-img">
+                <div class="overview-bottom-caption">
+                    <h3>SUMERU</h3>
+                    <p>The city of wisdom and rainforest retreat, sheltered beneath Sumeru's divine tree.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="packages" class="inclusions-section">
-        <div class="section-banner-bar">
-            <h2 class="section-banner-title">PACKAGE INCLUSIONS/ EXCLUSIONS</h2>
+    <section id="itinerary" class="nation-section section-bg-sumeru-itinerary">
+        <div class="section-header-strip">
+            <h2 class="section-title">FEATURED ITINERARIES</h2>
         </div>
 
-        <div class="inclusions-grid">
-            <div class="inc-card">
-                <div class="inc-card-header"><h3>PACKAGE</h3></div>
-                <div class="inc-card-body">
-                    <div class="inc-item">
-                        <img src="assets/icons/check-icon.png" alt="Included" class="badge-icon-img">
-                        <span>3 Days and 3 Nights Hotel Accommodation</span>
+        <div class="section-container">
+            <div class="carousel-wrapper" id="itineraryCarousel">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="itinerary-slide" data-slide="0">
+                        <img src="assets/images/sumeru-city-academy-card.png" alt="01 | Your Sumeru Journey - Sumeru City Academy">
                     </div>
-                    <div class="inc-item">
-                        <img src="assets/icons/check-icon.png" alt="Included" class="badge-icon-img">
-                        <span>Daily Hotel Breakfasts</span>
+                    <div class="itinerary-slide" data-slide="1">
+                        <img src="assets/images/gandharva-ville-card.png" alt="02 | Your Sumeru Journey - Gandharva Ville">
                     </div>
-                    <div class="inc-item">
-                        <img src="assets/icons/check-icon.png" alt="Included" class="badge-icon-img">
-                        <span>Round Trip Airport Transfer</span>
+                    <div class="itinerary-slide" data-slide="2">
+                        <img src="assets/images/caravan-ribat-card.png" alt="03 | Your Sumeru Journey - Caravan Ribat">
                     </div>
                 </div>
-                <div class="inc-card-footer"><h3>INCLUSIONS</h3></div>
-            </div>
 
-            <div class="inc-card">
-                <div class="inc-card-header"><h3>PACKAGE</h3></div>
-                <div class="inc-card-body">
-                    <div class="inc-item">
-                        <img src="assets/icons/cross-icon.png" alt="Excluded" class="badge-icon-img">
-                        <span>Round Trip Airfare</span>
-                    </div>
-                    <div class="inc-item">
-                        <img src="assets/icons/cross-icon.png" alt="Excluded" class="badge-icon-img">
-                        <span>Other meals and personal expenses</span>
-                    </div>
-                    <div class="inc-item">
-                        <img src="assets/icons/cross-icon.png" alt="Excluded" class="badge-icon-img">
-                        <span>Hotel security deposits</span>
-                    </div>
-                    <div class="inc-item">
-                        <img src="assets/icons/cross-icon.png" alt="Excluded" class="badge-icon-img">
-                        <span>Optional tours</span>
-                    </div>
-                    <div class="inc-item">
-                        <img src="assets/icons/cross-icon.png" alt="Excluded" class="badge-icon-img">
-                        <span>Other expenses not included above in inclusions</span>
-                    </div>
+                <div class="carousel-dots" id="carouselDots">
+                    <button type="button" class="carousel-dot active" data-target="0" aria-label="Slide 1"></button>
+                    <button type="button" class="carousel-dot" data-target="1" aria-label="Slide 2"></button>
+                    <button type="button" class="carousel-dot" data-target="2" aria-label="Slide 3"></button>
                 </div>
-                <div class="inc-card-footer"><h3>EXCLUSIONS</h3></div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="travel-guide-section">
-        <div class="section-banner-bar">
-            <h2 class="section-banner-title">TRAVEL GUIDE</h2>
+    <section id="packages" class="nation-section section-bg-sumeru-packages">
+        <div class="section-header-strip">
+            <h2 class="section-title">PACKAGE DETAILS</h2>
         </div>
 
-        <div class="travel-guide-container">
-            <div class="guide-box">
-                <h3 class="guide-title">Vibe & Atmosphere</h3>
-                <p>Sumeru offers a unique and breathtaking blend of vibrant academic campus life and deep-jungle exploration within a warm, incredibly humid rainforest environment.</p>
-            </div>
-
-            <div class="guide-box">
-                <h3 class="guide-title">Wardrobe & Essential Gear</h3>
-                <p>Moisture-wicking fabrics will be your best friend here, so we recommend a safari-chic wardrobe featuring lightweight cargo pants, breathable linen shirts, and a wide-rimmed sun hat. To navigate the region comfortably, you must also pack heavy-duty bug spray, a durable waterproof backpack for sudden downpours, and a physical notebook and pen for taking notes at the Akademiya.</p>
+        <div class="section-container">
+            <div class="full-export-wrapper">
+                <img src="assets/images/sumeru-package-details.png" alt="Sumeru Package Inclusions and Exclusions" class="full-export-img">
             </div>
         </div>
     </section>
 
-    <footer id="faq" class="footer-container">
-        <div class="footer-top">
-            <a href="index.html" class="logo-brand">
-                <img src="assets/images/teyvat-logo.png" alt="TEYVAT" class="logo-main">
-                <img src="assets/images/travel-services.png" alt="TRAVEL SERVICES" class="logo-subtitle">
-            </a>
-            <div class="footer-tagline">
-                Seven Nations. One Extraordinary Journey.
-            </div>
+    <section id="guide" class="nation-section section-bg-sumeru-guide">
+        <div class="section-header-strip">
+            <h2 class="section-title">TRAVEL GUIDE</h2>
         </div>
 
-        <div class="footer-columns">
-            <div class="footer-col">
-                <div class="footer-col-title">NAVIGATE</div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#destinations">Destinations</a></li>
-                    <li><a href="#packages">Packages</a></li>
-                    <li><a href="#itinerary">Itinerary</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <div class="footer-col-title">EXPLORE</div>
-                <ul>
-                    <li><a href="index.html">Mondstadt</a></li>
-                    <li><a href="liyue.html">Liyue</a></li>
-                    <li><a href="inazuma.html">Inazuma</a></li>
-                    <li><a href="sumeru.html">Sumeru</a></li>
-                    <li><a href="fontaine.html">Fontaine</a></li>
-                    <li><a href="natlan.html">Natlan</a></li>
-                    <li><a href="snezhnaya.html">Snezhnaya</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <div class="footer-col-title">CONTACT US</div>
-                <div class="footer-contact-item">
-                    <img src="assets/icons/mail-icon.png" alt="Email" width="20">
-                    <span>teyvattravelservices@gmail.com</span>
+        <div class="section-container">
+            <div class="travel-guide-grid">
+                <div class="guide-card">
+                    <h3 class="guide-card-heading">01 - Vibe &amp; Atmosphere</h3>
+                    <p>
+                        Sumeru offers a unique and breathtaking blend of vibrant academic campus life and deep-jungle exploration within a warm, incredibly humid rainforest environment.
+                    </p>
                 </div>
-                <div class="footer-contact-item">
-                    <img src="assets/icons/phone-icon.png" alt="Phone" width="20">
-                    <span>(+63) 91234567910</span>
+
+                <div class="guide-card">
+                    <h3 class="guide-card-heading">02 - Wardrobe &amp; Essential Gear</h3>
+                    <p>
+                        Moisture-wicking fabrics will be your best friend here, so we recommend a safari-chic wardrobe featuring lightweight cargo pants, breathable linen shirts, and a wide-brimmed sun hat. To navigate the region comfortably, you must also pack heavy-duty bug spray, a durable waterproof backpack for sudden downpours, and a physical notebook and pen for taking notes at the Akademiya.
+                    </p>
                 </div>
-                <div class="footer-contact-item">
-                    <img src="assets/icons/location-icon.png" alt="Location" width="20">
-                    <span>Sumeru, Teyvat Travel Services</span>
+
+                <div class="guide-card">
+                    <h3 class="guide-card-heading">YOUR DAY-BAG CHECKLIST</h3>
+                    <ul class="checklist-columns">
+                        <li>Comfortable clothes</li>
+                        <li>Pen</li>
+                        <li>Bug spray</li>
+                        <li>Waterproof Backpack</li>
+                        <li>Notebook</li>
+                    </ul>
+                </div>
+
+                <div class="guide-card">
+                    <h3 class="guide-card-heading">REMINDER</h3>
+                    <p>
+                        Our travel agency provides essential information on what to bring and what to expect throughout your journey. However, we also encourage travelers to prepare for unexpected situations by taking the necessary precautions and prioritizing their safety. At Teyvat Travel Services, your safety and well-being are just as important to us as they are to you!
+                    </p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="footer-col">
-                <div class="footer-col-title">CONNECT WITH US</div>
-                <ul class="footer-social-list">
-                    <li><a href="#"><img src="assets/icons/facebook-icon.png" alt="FB" width="18"> Facebook: Teyvat Travel Services</a></li>
-                    <li><a href="#"><img src="assets/icons/instagram-icon.png" alt="IG" width="18"> Instagram: @teyvattravelservices</a></li>
-                    <li><a href="#"><img src="assets/icons/x-icon.png" alt="X" width="18"> X: @teyvattravelservices</a></li>
-                    <li><a href="#"><img src="assets/icons/youtube-icon.png" alt="YouTube" width="18"> YouTube: Teyvat Travel Services</a></li>
-                </ul>
-            </div>
+    <footer id="footer" class="footer-section">
+        <div class="footer-img-wrapper">
+            <img src="assets/images/site-footer-light.png" alt="Teyvat Travel Services Footer" class="footer-full-img">
         </div>
     </footer>
 
+    <script src="js/nation.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teyvat Travel Services - General Inquiry</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/client.css">
+</head>
+<body>
+
+    <!-- CLIENT TOP NAVIGATION -->
+    <header class="client-navbar">
+        <a href="../home.html#home" class="client-logo">
+            <img src="../assets/images/travel-logo-blue.png" alt="Teyvat Travel Services">
+        </a>
+
+        <nav class="client-nav-links" aria-label="Primary Navigation">
+            <a href="../home.html#home">Home</a>
+            <a href="../home.html#destinations">Destinations</a>
+            <a href="../home.html#packages">Packages</a>
+            <a href="../home.html#about">About Us</a>
+            <a href="../home.html#faq">FAQs</a>
+            <a href="../home.html#other-services">Others</a>
+        </nav>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="client-hero">
+        <span class="client-hero-eyebrow">YOUR NEXT JOURNEY STARTS WITH A CONVERSATION</span>
+        <h1 class="client-hero-title">Make Time for Your Teyvat Travel</h1>
+        <p class="client-hero-subtitle">Choose a package, pick your dates, and let our travel team take it from here.</p>
+    </section>
+
+    <!-- GENERAL INQUIRY FORM -->
+    <main class="inquiry-form-main">
+        <section class="client-form-card">
+            <h2 class="client-form-title">General Inquiry Form</h2>
+
+            <form id="generalInquiryForm" class="client-form" novalidate>
+                <div class="client-form-row">
+                    <div class="client-form-group">
+                        <label for="fullName">Full Name <span class="required-star">*</span></label>
+                        <input type="text" id="fullName" name="fullName" class="client-input" placeholder="Your full name" required>
+                        <small class="client-error-msg" id="fullNameError"></small>
+                    </div>
+
+                    <div class="client-form-group">
+                        <label for="emailAddress">Email Address <span class="required-star">*</span></label>
+                        <input type="email" id="emailAddress" name="emailAddress" class="client-input" placeholder="you@example.com" required>
+                        <small class="client-error-msg" id="emailAddressError"></small>
+                    </div>
+                </div>
+
+                <div class="client-form-row">
+                    <div class="client-form-group client-form-half">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" class="client-input" placeholder="Country code and phone number">
+                        <small class="client-error-msg" id="phoneNumberError"></small>
+                    </div>
+                </div>
+
+                <div class="client-form-group">
+                    <label for="inquiryMessage">Inquiry</label>
+                    <textarea id="inquiryMessage" name="inquiryMessage" class="client-textarea" placeholder="Accessibility needs, preferred activities, or anything we should know..."></textarea>
+                    <small class="client-error-msg" id="inquiryMessageError"></small>
+                </div>
+
+                <p class="client-consent-text">
+                    By submitting, you agree that our travel team may contact you about this inquiry.
+                </p>
+
+                <div class="client-form-actions">
+                    <button type="submit" class="btn-client-submit">Inquire</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <div class="client-footer-strip"></div>
+    <footer class="client-footer">
+        <div class="footer-brand-col">
+            <img src="../assets/images/travel-logo-blue.png" alt="Teyvat Travel Services">
+            <span class="footer-tagline">Seven Nations. One Extraordinary Journey.</span>
+        </div>
+
+        <div>
+            <div class="footer-col-title">EXPLORE</div>
+            <div class="footer-explore-links">
+                <a href="../mondstadt.html">Mondstadt</a>
+                <a href="../fontaine.html">Fontaine</a>
+                <a href="../liyue.html">Liyue</a>
+                <a href="../natlan.html">Natlan</a>
+                <a href="../inazuma.html">Inazuma</a>
+                <a href="../snezhnaya.html">Snezhnaya</a>
+                <a href="../sumeru.html">Sumeru</a>
+            </div>
+        </div>
+
+        <div>
+            <div class="footer-col-title">CONTACT US</div>
+            <div class="footer-contact-list">
+                <div class="footer-contact-item">
+                    <span class="social-circle-btn">@</span>
+                    <span>teyvattravelservices@gmail.com</span>
+                </div>
+                <div class="footer-contact-item">
+                    <span class="social-circle-btn">#</span>
+                    <span>(+63) 91234567910</span>
+                </div>
+                <div class="footer-contact-item">
+                    <span class="social-circle-btn">^</span>
+                    <span>Liyue, Teyvat Travel Services</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-social-col">
+            <div class="footer-col-title">CONNECT WITH US</div>
+            <span>Teyvat Travel Services</span>
+            <span>@teyvattravelservices</span>
+            <div class="footer-social-icons">
+                <a href="#" class="social-circle-btn" aria-label="Facebook">f</a>
+                <a href="#" class="social-circle-btn" aria-label="Instagram">ig</a>
+                <a href="#" class="social-circle-btn" aria-label="X">x</a>
+                <a href="#" class="social-circle-btn" aria-label="YouTube">yt</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
